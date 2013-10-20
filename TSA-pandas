@@ -4,6 +4,8 @@ especially in the financial data analysis space.
 ---------------------------------------------------------------------------
 Timeseries with pandas
 
+% http://nbviewer.ipython.org/urls/raw.github.com/changhiskhan/talks/master/pydata2012/pandas_timeseries.ipynb
+
 Working with time-series data is an important part of data analysis.
 Starting with v0.8, the pandas library has included a rich API for time-series manipulations.
 
