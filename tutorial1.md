@@ -1,4 +1,5 @@
 Data Structures
+===========================
 
 pandas introduces two new data structures to Python - Series and DataFrame, both of which are built on top of NumPy (this means it's fast).
 
@@ -7,7 +8,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 pd.set_option('max_columns', 50)
-Series
+
+### Series
 
 A Series is a one-dimensional object similar to an array, list, or column in a table. It will assign a labeled index to each item in the Series. By default, each item will receive an index label from 0 to N, where N is the length of the Series minus one.
 
@@ -63,6 +65,7 @@ Chicago          1000
 Portland          900
 San Francisco    1100
 dtype: float64
+
 Or you can use boolean indexing for selection.
 
 <pre><code>
