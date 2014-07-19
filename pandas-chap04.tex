@@ -1,0 +1,34 @@
+\section{NumPy Basics: Arrays and Vectorized Computation}
+
+NumPy, short for Numerical Python, is the fundamental package required for high
+performance scientific computing and data analysis. It is the foundation on which
+nearly all of the higher-level tools in this book are built. Here are some of the things it
+provides:
+
+\begin{itemize}
+\item ndarray, a fast and space-efficient multidimensional array providing vectorized
+arithmetic operations and sophisticated broadcasting capabilities
+\item Standard mathematical functions for fast operations on entire arrays of data
+without having to write loops
+\item Tools for reading / writing array data to disk and working with memory-mapped
+files
+\item Linear algebra, random number generation, and Fourier transform capabilities
+\item Tools for integrating code written in C, C++, and Fortran
+\end{itemize}
+
+%----------------------------------------------------------------------------------%
+
+\subsection{Basic Indexing and Slicing}
+NumPy array indexing is a rich topic, as there are many ways you may want to select
+a subset of your data or individual elements. One-dimensional arrays are simple; on
+the surface they act similarly to Python lists.
+%----------------------------------------------------------------------------------%
+\subsection{Data Processing Using Arrays}
+Using NumPy arrays enables you to express many kinds of data processing tasks as
+concise array expressions that might otherwise require writing loops. This practice of
+replacing explicit loops with array expressions is commonly referred to as vectorization.
+In general, vectorized array operations will often be one or two (or more) orders
+of magnitude faster than their pure Python equivalents, with the biggest impact in any
+kind of numerical computations.
+%----------------------------------------------------------------------------------%
+\end{document}
