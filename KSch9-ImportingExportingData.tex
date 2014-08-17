@@ -1,0 +1,19 @@
+Importing and Exporting Data
+%- http://www.kevinsheppard.com/images/0/09/Python_introduction.pdf
+
+9.1 Importing Data using pandas
+
+Pandas is an increasingly important component of the Python scientific stack, and a complete discussion
+of its main features is included in Chapter 17. All of the data readers in pandas load data into a pandas
+DataFrame (see Section 17.1.2), and so these examples all make use of the values property to extract a
+NumPy array. In practice, the DataFrame is much more useful since it includes useful information such
+as column names read from the data source. In addition to the three formats presented here, pandas can
+also read json, SQL, html tables or from the clipboard, which is particularly useful for interactive work
+since virtually any source that can be copied to the clipboard can be imported.
+
+%===============================================%
+9.1.1 CSV and other formatted text files
+
+Comma-separated value (CSV) files can be read using read_csv. When the CSV file contains mixed data,
+the default behavior will read the file into an array with an object data type, and so further processing is
+usually required to extract the individual series.
