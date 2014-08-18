@@ -28,3 +28,10 @@ join dsAttendEnroll on dsProgReports['DISTRICT'] = dsAttendEnroll['District']
 ###############################################
 
 pd.DataFrame(data=[dsProgReports['DBN'].take(range(5)), dsSATs['DBN'].take(range(5)), dsClassSize['SCHOOL CODE'].take(range(5))])
+
+#Strip the first two characters off the DBNs so we can join to School Code
+dsProgReports.DBN = dsProgReports.DBN.map(lambda x: x[2:])
+dsSATs.DBN = dsSATs.DBN.map(lambda x: x[2:])
+
+#We can now see the keys match
+pd.DataFrame(data=[dsProgReports['DBN'].take(range(5)), dsSATs['DBN'].take(range(5)), dsClassSize['SCHOOL CODE'].take(range(5))])
