@@ -21,8 +21,26 @@ differences are:
 
 %=======================================%
 
-Accessing Elements of an Array
+\subsection{Accessing Elements of an Array}
 Four methods are available for accessing elements contained within an array: scalar selection, slicing,
 numerical indexing and logical (or Boolean) indexing. Scalar selection and slicing are the simplest and so
 are presented first. Numerical indexing and logical indexing both depends on specialized functions and
 so these methods are discussed in Chapter 12
+
+%-------------------------------------------------------------------------%
+\subsection{The \texttt{import} function}
+Python, by default, only has access to a small number of built-in types and functions. The vast majority of
+functions are located in modules, and before a function can be accessed, the module which contains the
+function must be imported. 
+
+For example, when using ipython --pylab (or any variants), a large number
+of modules are automatically imported, including NumPy and matplotlib. This is style of importing useful
+for learning and interactive use, but care is needed to make sure that the correct module is imported when
+designing more complex programs.
+
+import can be used in a variety of ways. The simplest is to use from module import * which imports
+all functions in module. This method of using import can dangerous since if you use it more than once,
+it is possible for functions to be hidden by later imports. A better method is to just import the required
+functions. This still places functions at the top level of the namespace, but can be used to avoid conflicts.
+from pylab import log2 # Will import log2 only
+from scipy import log10 # Will not import the log2 from SciPy
