@@ -1,0 +1,23 @@
+
+\subsection{Creating Dates and Times}
+
+Dates are created using date by providing integer values for year, month and day and times are created
+using time using hours, minutes, seconds and microseconds.
+
+\begin{verbatim}
+>>> import datetime as dt
+>>> yr, mo, dd = 2012, 12, 21
+>>> dt.date(yr, mo, dd)
+datetime.date(2012, 12, 21)
+>>> hr, mm, ss, ms= 12, 21, 12, 21
+>>> dt.time(hr, mm, ss, ms)
+dt.time(12,21,12,21)
+\end{verbatim}
+
+Dates created using date do not allow times, and dates which require a time stamp can be created using
+datetime, which combine the inputs from date and time, in the same order.
+\begin{verbatim}
+>>> dt.datetime(yr, mo, dd, hr, mm, ss, ms)
+datetime.datetime(2012, 12, 21, 12, 21, 12, 21)
+\end{verbatim}
+%-----------------------------------------------------------------%
