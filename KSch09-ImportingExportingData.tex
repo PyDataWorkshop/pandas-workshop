@@ -1,0 +1,39 @@
+\section{Importing and Exporting Data}
+%- http://www.kevinsheppard.com/images/0/09/Python_introduction.pdf
+
+\subsection{9.1 Importing Data using pandas}
+
+Pandas is an increasingly important component of the Python scientific stack, and a complete discussion
+of its main features is included in Chapter 17. 
+
+All of the data readers in pandas load data into a pandas
+DataFrame (see Section 17.1.2), and so these examples all make use of the values property to extract a
+NumPy array. 
+
+In practice, the DataFrame is much more useful since it includes useful information such
+as column names read from the data source. In addition to the three formats presented here, pandas can
+also read json, SQL, html tables or from the clipboard, which is particularly useful for interactive work
+since virtually any source that can be copied to the clipboard can be imported.
+
+%===============================================%
+\subsection{9.1.1 CSV and other formatted text files}
+
+Comma-separated value (CSV) files can be read using read_csv. When the CSV file contains mixed data,
+the default behavior will read the file into an array with an object data type, and so further processing is
+usually required to extract the individual series.
+
+\begin{framed}
+\begin{verbatim}
+>>> from pandas import read_csv
+>>> csv_data = read_csv(’FTSE_1984_2012.csv’)
+>>> csv_data = csv_data.values
+>>> csv_data[:4]
+array([[’2012-02-15’, 5899.9, 5923.8, 5880.6, 5892.2, 801550000L, 5892.2],
+[’2012-02-14’, 5905.7, 5920.6, 5877.2, 5899.9, 832567200L, 5899.9],
+[’2012-02-13’, 5852.4, 5920.1, 5852.4, 5905.7, 643543000L, 5905.7],
+[’2012-02-10’, 5895.5, 5895.5, 5839.9, 5852.4, 948790200L, 5852.4]], dtype=object)
+>>> open = csv_data[:,1]
+\end{verbatim}
+\end{framed}
+%===============================================%
+\end{document}
