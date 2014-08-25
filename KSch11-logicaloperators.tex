@@ -103,4 +103,27 @@ array([[ True],
 \end{verbatim}
 \end{framed}
 %----------------------------%
+
+%page 116
+is*
+A number of special purpose logical tests are provided to determine if an array has special characteristics.
+Some operate element-by-element and produce an array of the same dimension as the input while other
+produce only scalars. These functions all begin with is.
+
+\begin{verbatim}
+Operator True if . . . Method of operation
+isnan 1 if nan element-by-element
+isinf 1 if inf element-by-element
+isfinite 1 if not inf and not nan element-by-element
+isposfin,isnegfin 1 for positive or negative inf element-by-element
+isreal 1 if not complex valued element-by-element
+iscomplex 1 if complex valued element-by-element
+isreal 1 if real valued element-by-element
+is_string_like 1 if argument is a string scalar
+is_numlike 1 if is a numeric type scalar
+isscalar 1 if scalar scalar
+isvector 1 if input is a vector scalar
+\end{verbatim}
+
+
 \end{document}
