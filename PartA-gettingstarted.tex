@@ -90,6 +90,13 @@ A simple use of reindex is to alter the order of the rows:
 %--------------------------------%
 \newpage
 \subsection{Missing data basics}
+Missing data
+The occurence of missing data is so prevalent that it pays to use tools like Pandas, which seamlessly integrates missing data handling so that it can be dealt with easily, and in the manner required by the analysis at hand.
+
+Missing data are represented in Series and DataFrame objects by the NaN floating point value. However, None is also treated as missing, since it is commonly used as such in other contexts (e.g. NumPy).
+
+%--------------------%
+
 When / why does data become missing?
 
 Some might quibble over our usage of missing. By “missing” we simply mean null or “not present for whatever reason”. Many data sets simply arrive with missing data, either because it exists and was not collected or it never existed. For example, in a collection of financial time series, some of the time series might start on different dates. Thus, values prior to the start date would generally be marked as missing.
@@ -174,4 +181,8 @@ h     True
 dtype: bool
 \end{verbatim}
 Summary: NaN and None (in object arrays) are considered missing by the isnull and notnull functions. inf and -inf are no longer considered missing by default.
+%------------------------------------------------------------------------------------------%
+\newpage
+\subsection{Data summarization}
+We often wish to summarize data in Series or DataFrame objects, so that they can more easily be understood or compared with similar data. The NumPy package contains several functions that are useful here, but several summarization or reduction methods are built into Pandas data structures.
 \end{document}
