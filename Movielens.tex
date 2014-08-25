@@ -1,0 +1,131 @@
+
+
+%------------------------------------------------------------------ %
+
+Using pandas on the MovieLens dataset
+
+To show pandas in a more "applied" sense, let's use it to answer some questions about the MovieLens dataset. Recall that we've already read our data into DataFrames and merged it.
+
+In [61]:
+# pass in column names for each CSV
+u_cols = ['user_id', 'age', 'sex', 'occupation', 'zip_code']
+users = pd.read_csv('ml-100k/u.user', sep='|', names=u_cols)
+
+r_cols = ['user_id', 'movie_id', 'rating', 'unix_timestamp']
+ratings = pd.read_csv('ml-100k/u.data', sep='\t', names=r_cols)
+
+# the movies file contains columns indicating the movie's genres
+# let's only load the first five columns of the file with usecols
+m_cols = ['movie_id', 'title', 'release_date', 'video_release_date', 'imdb_url']
+movies = pd.read_csv('ml-100k/u.item', sep='|', names=m_cols, usecols=range(5))
+
+# create one merged DataFrame
+movie_ratings = pd.merge(movies, ratings)
+lens = pd.merge(movie_ratings, users)
+What are the 25 most rated movies?
+
+In [62]:
+most_rated = lens.groupby('title').size().order(ascending=False)[:25]
+print most_rated
+title
+Star Wars (1977)                             583
+Contact (1997)                               509
+Fargo (1996)                                 508
+Return of the Jedi (1983)                    507
+Liar Liar (1997)                             485
+English Patient, The (1996)                  481
+Scream (1996)                                478
+Toy Story (1995)                             452
+Air Force One (1997)                         431
+Independence Day (ID4) (1996)                429
+Raiders of the Lost Ark (1981)               420
+Godfather, The (1972)                        413
+Pulp Fiction (1994)                          394
+Twelve Monkeys (1995)                        392
+Silence of the Lambs, The (1991)             390
+Jerry Maguire (1996)                         384
+Chasing Amy (1997)                           379
+Rock, The (1996)                             378
+Empire Strikes Back, The (1980)              367
+Star Trek: First Contact (1996)              365
+Titanic (1997)                               350
+Back to the Future (1985)                    350
+Mission: Impossible (1996)                   344
+Fugitive, The (1993)                         336
+Indiana Jones and the Last Crusade (1989)    331
+dtype: int64
+
+There's a lot going on in the code above, but it's very idomatic. We're splitting the DataFrame into groups by movie title and applying the size method to get the count of records in each group. Then we order our results in descending order and limit the output to the top 25 using Python's slicing syntax.
+
+In SQL, this would be equivalent to:
+
+SELECT title, count(1)
+FROM lens
+GROUP BY title
+ORDER BY 2 DESC
+LIMIT 25;
+Alternatively, pandas has a nifty value_counts method - yes, this is simpler - the goal above was to show a basic groupby example.
+
+In [63]:
+lens.title.value_counts()[:25]
+Out[63]:
+Star Wars (1977)                             583
+Contact (1997)                               509
+Fargo (1996)                                 508
+Return of the Jedi (1983)                    507
+Liar Liar (1997)                             485
+English Patient, The (1996)                  481
+Scream (1996)                                478
+Toy Story (1995)                             452
+Air Force One (1997)                         431
+Independence Day (ID4) (1996)                429
+Raiders of the Lost Ark (1981)               420
+Godfather, The (1972)                        413
+Pulp Fiction (1994)                          394
+Twelve Monkeys (1995)                        392
+Silence of the Lambs, The (1991)             390
+Jerry Maguire (1996)                         384
+Chasing Amy (1997)                           379
+Rock, The (1996)                             378
+Empire Strikes Back, The (1980)              367
+Star Trek: First Contact (1996)              365
+Titanic (1997)                               350
+Back to the Future (1985)                    350
+Mission: Impossible (1996)                   344
+Fugitive, The (1993)                         336
+Indiana Jones and the Last Crusade (1989)    331
+dtype: int64
+Which movies are most highly rated?
+
+In [64]:
+movie_stats = lens.groupby('title').agg({'rating': [np.size, np.mean]})
+print movie_stats.head()
+                           rating          
+                             size      mean
+title                                      
+'Til There Was You (1997)       9  2.333333
+1-900 (1994)                    5  2.600000
+101 Dalmatians (1996)         109  2.908257
+12 Angry Men (1957)           125  4.344000
+187 (1997)                     41  3.024390
+
+We can use the agg method to pass a dictionary specifying the columns to aggregate (as keys) and a list of functions we'd like to apply.
+
+Let's sort the resulting DataFrame so that we can see which movies have the highest average score.
+
+In [65]:
+# sort by rating average
+print movie_stats.sort([('rating', 'mean')], ascending=False).head()
+                                            rating      
+                                              size  mean
+title                                                   
+Marlene Dietrich: Shadow and Light (1996)        1     5
+Prefontaine (1997)                               3     5
+Santa with Muscles (1996)                        2     5
+Star Kid (1997)                                  3     5
+Someone Else's America (1995)                    1     5
+
+Because movie_stats is a DataFrame, we use the sort method - only Series objects use order. Additionally, because our columns are now a MultiIndex, we need to pass in a tuple specifying how to sort.
+
+%------------------------------------------------------------------------- %
+\end{document}
