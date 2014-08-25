@@ -57,4 +57,41 @@ array([[ 0., 1.],
 NumPy permits using difference types of indexing in the same expression. Mixing numerical indexing
 with scalar selection is trivial since any scalar can be broadcast to any array shape.
 
+
+\begin{framed}
+\begin{verbatim}
+>>> x = array([[1,2],[3,4]])
+>>> sel = x <= 3
+>>> indices = nonzero(sel)
+>>> indices
+(array([0, 0, 1], dtype=int64), array([0, 1, 0], dtype=int64))
+\end{verbatim}
+\end{framed}
+
+\begin{framed}
+\begin{verbatim}
+>>> x = randn(3)
+>>> x
+array([-0.5910316 , 0.51475905, 0.68231135])
+>>> argwhere(x<0.6)
+array([[0],
+[1]], dtype=int64)
+>>> argwhere(x<-10.0) # Empty array
+array([], shape=(0L, 1L), dtype=int64)
+>>> x = randn(3,2)
+>>> x
+array([[ 0.72945913, 1.2135989 ],
+[ 0.74005449, -1.60231553],
+[ 0.16862077, 1.0589899 ]])
+>>> argwhere(x<0)
+array([[1, 1]], dtype=int64)
+>>> argwhere(x<1)
+array([[0, 0],
+[1, 0],
+[1, 1],
+[2, 0]], dtype=int64)
+
+\end{verbatim}
+\end{framed}
+%--------------------------------------------------%
 \end{document}
