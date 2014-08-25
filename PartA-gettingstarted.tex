@@ -80,7 +80,16 @@ Panel Data
 
 %--------------------------------%
 \newpage
-Missing data basics
+\subsection{Manipulating indices -Reindexing}
+
+Reindexing allows users to manipulate the data labels in a DataFrame. It forces a DataFrame to conform to the new index, and optionally, fill in missing data if requested.
+
+%- http://nbviewer.ipython.org/urls/gist.github.com/fonnesbeck/5850375/raw/c18cfcd9580d382cb6d14e4708aab33a0916ff3e/1.+Introduction+to+Pandas.ipynb
+
+A simple use of reindex is to alter the order of the rows:
+%--------------------------------%
+\newpage
+\subsection{Missing data basics}
 When / why does data become missing?
 
 Some might quibble over our usage of missing. By “missing” we simply mean null or “not present for whatever reason”. Many data sets simply arrive with missing data, either because it exists and was not collected or it never existed. For example, in a collection of financial time series, some of the time series might start on different dates. Thus, values prior to the start date would generally be marked as missing.
