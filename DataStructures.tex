@@ -227,18 +227,24 @@ dtype: bool
 Boston   NaN
 dtype: float64
 
-DataFrame
+%---------------------------------------%
+\newpage
+\subsection{DataFrame}
+
+% pandas - chapter 5 - DataFrame
 
 A DataFrame is a tablular data structure comprised of rows and columns, akin to a spreadsheet, database table, or R's data.frame object. You can also think of a DataFrame as a group of Series objects that share an index (the column names).
 
 For the rest of the tutorial, we'll be primarily working with DataFrames.
 
-Reading Data
+\subsection{Reading Data}
 
 To create a DataFrame out of common Python data structures, we can pass a dictionary of lists to the DataFrame constructor.
 
 Using the columns parameter allows us to tell the constructor how we'd like the columns ordered. By default, the DataFrame constructor will order the columns alphabetically (though this isn't the case when reading from a file - more on that next).
 
+\begin{framed}
+\begin{verbatim}
 In [17]:
 data = {'year': [2010, 2011, 2012, 2011, 2012, 2010, 2011, 2012],
         'team': ['Bears', 'Bears', 'Bears', 'Packers', 'Packers', 'Lions', 'Lions', 'Lions'],
@@ -260,7 +266,8 @@ print football
 
 Much more often, you'll have a dataset you want to read into a DataFrame. Let's go through several common ways of doing so.
 
-CSV
+%----------------%
+\subsection{CSV}
 
 Reading a CSV is as simple as calling the read_csv function. By default, the read_csv function expects the column separator to be a comma, but you can change that using the sep parameter.
 
