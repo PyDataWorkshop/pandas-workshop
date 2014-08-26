@@ -1,3 +1,17 @@
+%	13.1 Whitespace and Flow Control	
+%	13.2 if . . . elif . . . else	
+%	13.3 for	
+%		13.3.1 Whitespace
+%		13.3.2 break
+%		13.3.3 continue
+%	13.4 while	
+%		13.4.1 break
+%		13.4.2 continue
+%	13.5 try . . . except	
+%	13.6 List Comprehensions	
+%	13.7 Tuple, Dictionary and Set Comprehensions	
+%		
+
 Flow Control, Loops and Exception Handling
 %------------------------------------------------------------------------------------------%
 \subsection{13.2 if . . . elif . . . else}
@@ -19,7 +33,7 @@ Code to run if all previous logicals are false
 
 %------------------------------------------------------------------------------------------%
 \newpage
-
+%13.4.1
 \subsection{break}
 break can be used in a while loop to immediately terminate execution. Normally, break should not be
 used in a while loop – instead the logical condition should be set to False to terminate the loop. However,
@@ -49,7 +63,7 @@ i += 1
 \end{verbatim}
 \end{framed}
 %--------------------------------------------------------------------------------------%
-13.4.2 continue
+\subsubsection{13.4.2 continue}
 continue can be used in a while loop to skip any remaining code in the loop, immediately returning to the
 top of the loop, which then checks the while condition, and executes the loop if it still true. Using continue
 when the logical condition in the while loop is False is the same as using break.
