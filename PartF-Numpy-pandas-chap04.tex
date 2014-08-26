@@ -39,7 +39,7 @@ nearly all of the higher-level tools in this book are built. Here are some of th
 provides:
 
 \begin{itemize}
-\item ndarray, a fast and space-efficient multidimensional array providing vectorized
+\item \texttt{ndarray}, a fast and space-efficient multidimensional array providing vectorized
 arithmetic operations and sophisticated broadcasting capabilities
 \item Standard mathematical functions for fast operations on entire arrays of data
 without having to write loops
@@ -49,6 +49,7 @@ files
 \item Tools for integrating code written in C, C++, and Fortran
 \end{itemize}
 
+\newpage
 %----------------------------------------------------------------------------------%
 
 \subsection{Basic Indexing and Slicing}
@@ -57,11 +58,40 @@ a subset of your data or individual elements. One-dimensional arrays are simple;
 the surface they act similarly to Python lists.
 %----------------------------------------------------------------------------------%
 \subsection{Data Processing Using Arrays}
-Using NumPy arrays enables you to express many kinds of data processing tasks as
+
+\begin{itemize}
+\item Using NumPy arrays enables you to express many kinds of data processing tasks as
 concise array expressions that might otherwise require writing loops. This practice of
-replacing explicit loops with array expressions is commonly referred to as vectorization.
-In general, vectorized array operations will often be one or two (or more) orders
+replacing explicit loops with array expressions is commonly referred to as \textbf{vectorization
+}.
+
+\item In general, vectorized array operations will often be one or two (or more) orders
 of magnitude faster than their pure Python equivalents, with the biggest impact in any
 kind of numerical computations.
+\end{itemize}
+%----------------------------------------------------------------------------------%
+\newpage
+what is the difference between ndarray and array in numpy? And where can I find the implementations in the numpy source code?
+
+ np.array is just a convenience function to create an ndarray, it is not a class itself. 
+
+You can also create an array using np.ndarray, but it is not the recommended way. 
+
+From the docstring of np.ndarray: 
+
+
+Arrays should be constructed using array, zeros or empty ... 
+The parameters given here refer to a low-level method (ndarray(...)) for instantiating an array.
+ 
+Most of the meat of the implementation is in C code, here in multiarray, but you can start looking at the ndarray interfaces here:
+
+https://github.com/numpy/numpy/blob/master/numpy/core/numeric.py
+%----------------------------------------------------------------------------------%
+ 
+
+
+numpy.array is a function that returns a numpy.ndarray. There is no object type numpy.array.
+ 
+%-----------------------------------%
 %----------------------------------------------------------------------------------%
 \end{document}
