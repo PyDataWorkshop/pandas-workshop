@@ -1,5 +1,14 @@
 % Greg Reda
+\documentclass[]{article}
 
+\usepackage{framed}
+\usepackage{graphicx}
+
+%opening
+\title{}
+\author{}
+
+\begin{document}
 Working with DataFrames
 
 Now that we can get data into a DataFrame, we can finally start working with them. pandas has an abundance of functionality, far too much for me to cover in this introduction. I'd encourage anyone interested in diving deeper into the library to check out its excellent documentation. Or just use Google - there are a lot of Stack Overflow questions and blog posts covering specifics of the library.
@@ -8,7 +17,7 @@ We'll be using the MovieLens dataset in many examples going forward. The dataset
 
 
 %--------------------------------%
-In [31]:
+\begin{verbatim}
 # pass in column names for each CSV
 u_cols = ['user_id', 'age', 'sex', 'occupation', 'zip_code']
 users = pd.read_csv('ml-100k/u.user', sep='|', names=u_cols)
@@ -20,12 +29,13 @@ ratings = pd.read_csv('ml-100k/u.data', sep='\t', names=r_cols)
 # let's only load the first five columns of the file with usecols
 m_cols = ['movie_id', 'title', 'release_date', 'video_release_date', 'imdb_url']
 movies = pd.read_csv('ml-100k/u.item', sep='|', names=m_cols, usecols=range(5))
+\end{verbatim}
 %--------------------------------%
-Inspection
+\subsection{Inspection}
 
 pandas has a variety of functions for getting basic information about your DataFrame, the most basic of which is calling your DataFrame by name.
 %--------------------------------%
-In [32]:
+\begin{verbatim}
 movies
 Out[32]:
 <class 'pandas.core.frame.DataFrame'>
@@ -37,13 +47,18 @@ release_date          1681  non-null values
 video_release_date    0  non-null values
 imdb_url              1679  non-null values
 dtypes: float64(1), int64(1), object(3)
+\end{verbatim}
 The output tells a few things about our DataFrame.
 
-It's obviously an instance of a DataFrame.
-Each row was assigned an index of 0 to N-1, where N is the number of rows in the DataFrame. pandas will do this by default if an index is not specified. Don't worry, this can be changed later.
-There are 1,682 rows (every row must have an index).
-Our dataset has five total columns, one of which isn't populated at all (video_release_date) and two that are missing some values (release_date and imdb_url).
-The last line displays the datatypes of each column, but not necessarily in the corresponding order to the listed columns. You should use the dtypes method to get the datatype for each column.
+\begin{itemize}
+\item It's obviously an instance of a DataFrame.
+\item Each row was assigned an index of 0 to N-1, where N is the number of rows in the DataFrame. pandas will do this by default if an index is not specified. Don't worry, this can be changed later.
+\item There are 1,682 rows (every row must have an index).
+\item  dataset has five total columns, one of which isn't populated at all (video\_release\_date) and two that are missing some values (\texttt{release\_date} and i\texttt{mdb\_url}).
+\item The last line displays the datatypes of each column, but not necessarily in the corresponding order to the listed columns. You should use the dtypes method to get the datatype for each column.
+\end{itemize}
+\begin{framed}
+\begin{verbatim}
 In [33]:
 movies.dtypes
 Out[33]:
@@ -53,9 +68,11 @@ release_date           object
 video_release_date    float64
 imdb_url               object
 dtype: object
+\end{verbatim}
+\end{framed}
 DataFrame's also have a describe method, which is great for seeing basic statistics about the dataset's numeric columns. Be careful though, since this will return information on all columns of a numeric datatype.
 
-In [34]:
+\begin{verbatim}
 users.describe()
 Out[34]:
 user_id	age
@@ -67,13 +84,15 @@ min	 1.000000	 7.000000
 50%	 472.000000	 31.000000
 75%	 707.500000	 43.000000
 max	 943.000000	 73.000000
-Notice user_id was included since it's numeric. Since this is an ID value, the stats for it don't really matter.
+\end{verbatim}
+Notice user\_id was included since it's numeric. Since this is an ID value, the stats for it don't really matter.
 
 We can quickly see the average age of our users is just above 34 years old, with the youngest being 7 and the oldest being 73. The median age is 31, with the youngest quartile of users being 25 or younger, and the oldest quartile being at least 43.
 
 You've probably noticed that I've used the head method regularly throughout this post - by default, head displays the first five records of the dataset, while tail displays the last five.
+\begin{framed}
+\begin{verbatim}
 
-In [35]:
 print movies.head()
    movie_id              title release_date  video_release_date  \
 0         1   Toy Story (1995)  01-Jan-1995                 NaN   
@@ -88,8 +107,11 @@ print movies.head()
 2  http://us.imdb.com/M/title-exact?Four%20Rooms%...  
 3  http://us.imdb.com/M/title-exact?Get%20Shorty%...  
 4  http://us.imdb.com/M/title-exact?Copycat%20(1995)  
-
-In [36]:
+\end{verbatim} 
+\end{framed}
+%---------------------------------------------------- %
+\begin{framed}
+\begin{verbatim}
 print movies.tail(3)
       movie_id                                      title release_date  \
 1679      1680                       Sliding Doors (1998)  01-Jan-1998   
@@ -100,10 +122,11 @@ print movies.tail(3)
 1679                 NaN      http://us.imdb.com/Title?Sliding+Doors+(1998)  
 1680                 NaN  http://us.imdb.com/M/title-exact?You%20So%20Cr...  
 1681                 NaN  http://us.imdb.com/M/title-exact?Schrei%20aus%...  
-
+\end{verbatim}
+\end{framed}
 Alternatively, Python's regular slicing syntax works as well.
 
-In [37]:
+\begin{verbatim}
 print movies[20:22]
     movie_id                          title release_date  video_release_date  \
 20        21  Muppet Treasure Island (1996)  16-Feb-1996                 NaN   
@@ -112,13 +135,15 @@ print movies[20:22]
                                              imdb_url  
 20  http://us.imdb.com/M/title-exact?Muppet%20Trea...  
 21  http://us.imdb.com/M/title-exact?Braveheart%20...  
+\end{verbatim}
 %--------------------------------%
+\newpage
 
 \subsection{Selecting}
 
 You can think of a DataFrame as a group of Series that share an index (in this case the column headers). This makes it easy to select specific columns.
 
-Selecting a single column from the DataFrame will return a Series object.
+Selecting a single column from the DataFrame will return a \texttt{Series} object.
 
 \begin{framed}
 \begin{verbatim}
@@ -130,7 +155,7 @@ Out[38]:
 3    technician
 4         other
 Name: occupation, dtype: object
-\begin{verbatim}
+\end{verbatim}
 \end{framed}
 
 %-----------------------------------------%
@@ -159,7 +184,7 @@ print users[columns_you_want].head()
 2      writer   M
 3  technician   M
 4       other   F
-\begin{verbatim}
+\end{verbatim}
 \end{framed}
 
 %-----------------------------------------%
@@ -194,8 +219,9 @@ print users[(users.sex == 'F') | (users.age < 30)].head(3)
 0        1   24   M  technician    85711
 1        2   53   F       other    94043
 2        3   23   M      writer    32067
-
-Since our index is kind of meaningless right now, let's set it to the userid_ using the set_index method. By default, set_index returns a new DataFrame, so you'll have to specify if you'd like the changes to occur in place.
+\end{verbatim}
+\end{framed}
+Since our index is kind of meaningless right now, let's set it to the userid\_ using the set\_index method. By default, set\_index returns a new DataFrame, so you'll have to specify if you'd like the changes to occur in place.
 
 This has confused me in the past, so look carefully at the code and output below.
 
@@ -219,7 +245,10 @@ user_id
 4         24   M  technician    43537
 5         33   F       other    15213
 
-
+\end{verbatim}
+\end{framed}
+\begin{framed}
+	\begin{verbatim}
    user_id  age sex  occupation zip_code
 0        1   24   M  technician    85711
 1        2   53   F       other    94043
@@ -239,7 +268,8 @@ user_id
 
 ^^^ set_index actually returns a new DataFrame. ^^^
 
-
+\end{verbatim}
+\end{framed}
 If you want to modify your existing DataFrame, use the inplace parameter.
 
 
@@ -254,11 +284,11 @@ user_id
 3         23   M      writer    32067
 4         24   M  technician    43537
 5         33   F       other    15213
-\begin{verbatim}
+\end{verbatim}
 \end{framed}
 
 %-----------------------------------------%
-Notice that we've lost the default pandas 0-based index and moved the user_id into its place. We can select rows based on the index using the ix method.
+Notice that we've lost the default pandas 0-based index and moved the user\_id into its place. We can select rows based on the index using the ix method.
 
 
 \begin{framed}
@@ -277,10 +307,12 @@ Name: 99, dtype: object
 1     24   M  technician    85711
 50    21   M      writer    52245
 300   26   F  programmer    55106
+\end{verbatim}
+\end{framed}
 
-If we realize later that we liked the old pandas default index, we can just reset_index. The same rules for inplace apply.
-
-In [44]:
+If we realize later that we liked the old pandas default index, we can just \texttt{reset\_index}. The same rules for inplace apply.
+\begin{framed}
+\begin{verbatim}
 users.reset_index(inplace=True)
 print users.head()
    user_id  age sex  occupation zip_code
@@ -289,21 +321,23 @@ print users.head()
 2        3   23   M      writer    32067
 3        4   24   M  technician    43537
 4        5   33   F       other    15213
-\begin{verbatim}
+\end{verbatim}
 \end{framed}
 
-%-----------------------------------------%
-I've found that I can usually get by with boolean indexing and the ix method, but pandas has a whole host of other ways to do selection.
 
+%-----------------------------------------%
+I've found that I can usually get by with boolean indexing and the \texttt{ix} method, but pandas has a whole host of other ways to do selection.
+
+\newpage
 \subsection{Joining}
 
 Throughout an analysis, we'll often need to merge/join datasets as data is typically stored in a relational manner.
 
-Our MovieLens data is a good example of this - a rating requires both a user and a movie, and the datasets are linked together by a key - in this case, the user_id and movie_id. It's possible for a user to be associated with zero or many ratings and movies. Likewise, a movie can be rated zero or many times, by a number of different users.
+Our MovieLens data is a good example of this - a rating requires both a user and a movie, and the datasets are linked together by a key - in this case, the user\_id and movie\_id. It's possible for a user to be associated with zero or many ratings and movies. Likewise, a movie can be rated zero or many times, by a number of different users.
 
-Like SQL's JOIN clause, pandas.merge allows two DataFrames to be joined on one or more keys. The function provides a series of parameters (on, left_on, right_on, left_index, right_index) allowing you to specify the columns or indexes on which to join.
+Like SQL's JOIN clause, pandas.merge allows two DataFrames to be joined on one or more keys. The function provides a series of parameters (on, left\_on, right\_on, left\_index, right\_index) allowing you to specify the columns or indexes on which to join.
 
-By default, pandas.merge operates as an inner join, which can be changed using the how parameter.
+By default, \texttt{pandas.merge} operates as an inner join, which can be changed using the how parameter.
 
 From the function's docstring:
 
@@ -339,28 +373,32 @@ print right_frame
 2    4           h
 3    5           i
 4    6           j
-\begin{verbatim}
+\end{verbatim}
 \end{framed}
-
+\newpage
 %-----------------------------------------%
-inner join (default)
+\subsection{inner join (default)}
 
-In [46]:
+\begin{framed}
+\begin{verbatim}
 print pd.merge(left_frame, right_frame, on='key', how='inner')
    key left_value right_value
 0    2          c           f
 1    3          d           g
 2    4          e           h
-\begin{verbatim}
+\end{verbatim}
 \end{framed}
 
 %-----------------------------------------%
 We lose values from both frames since certain keys do not match up. The SQL equivalent is:
 
-    SELECT left_frame.key, left_frame.left_value, right_frame.right_value
-    FROM left_frame
-    INNER JOIN right_frame
-        ON left_frame.key = right_frame.key;
+\begin{verbatim}
+SELECT left_frame.key, left_frame.left_value, right_frame.right_value
+FROM left_frame
+INNER JOIN right_frame
+ON left_frame.key = right_frame.key;
+\end{verbatim}
+\end{document}
 Had our key columns not been named the same, we could have used the left_on and right_on parameters to specify which fields to join from each frame.
 
     pd.merge(left_frame, right_frame, left_on='left_key', right_on='right_key')
@@ -379,9 +417,12 @@ print pd.merge(left_frame, right_frame, on='key', how='left')
 2    2          c           f
 3    3          d           g
 4    4          e           h
+\end{verbatim}
+\end{framed}
 
 We keep everything from the left frame, pulling in the value from the right frame where the keys match up. The right_value is NULL where keys do not match (NaN).
-
+\begin{framed}
+	\begin{verbatim}
 SQL Equivalent:
 
 SELECT left_frame.key, left_frame.left_value, right_frame.right_value
@@ -408,6 +449,8 @@ FROM left_frame
 RIGHT JOIN right_frame
     ON left_frame.key = right_frame.key;
 full outer join
+\end{verbatim}
+\end{framed}
 
 
 \begin{framed}
@@ -421,7 +464,7 @@ print pd.merge(left_frame, right_frame, on='key', how='outer')
 4    4          e           h
 5    5        NaN           i
 6    6        NaN           j
-\begin{verbatim}
+\end{verbatim}
 \end{framed}
 
 %-----------------------------------------%
@@ -436,7 +479,7 @@ FULL OUTER JOIN right_frame
     ON left_frame.key = right_frame.key;
 %--------------------------------%
 \newpage
-Combining
+\section{Combining}
 
 pandas also provides a way to combine DataFrames along an axis - pandas.concat. While the function is equivalent to SQL's UNION clause, there's a lot more that can be done with it.
 

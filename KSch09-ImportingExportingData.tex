@@ -1,3 +1,13 @@
+\documentclass[]{article}
+
+\usepackage{framed}
+\usepackage{graphicx}
+
+%opening
+\title{}
+\author{}
+
+\begin{document}
 %===============================================%
 
 %	9.1 Importing Data using pandas	
@@ -36,7 +46,7 @@ since virtually any source that can be copied to the clipboard can be imported.
 %===============================================%
 \subsection{9.1.1 CSV and other formatted text files}
 
-Comma-separated value (CSV) files can be read using read_csv. When the CSV file contains mixed data,
+Comma-separated value (CSV) files can be read using read\_csv. When the CSV file contains mixed data,
 the default behavior will read the file into an array with an object data type, and so further processing is
 usually required to extract the individual series.
 
@@ -55,6 +65,7 @@ array([[’2012-02-15’, 5899.9, 5923.8, 5880.6, 5892.2, 801550000L, 5892.2],
 \end{framed}
 %===============================================%
 %---------------------------------------%
+\newpage
 \subsection{Reading Data}
 
 To create a DataFrame out of common Python data structures, we can pass a dictionary of lists to the DataFrame constructor.
@@ -90,13 +101,14 @@ Much more often, you'll have a dataset you want to read into a DataFrame. Let's 
 %----------------%
 \subsection{CSV}
 
-Reading a CSV is as simple as calling the read_csv function. By default, the read_csv function expects the column separator to be a comma, but you can change that using the sep parameter.
+Reading a CSV is as simple as calling the read\_csv function. By default, the read\_csv function expects the column separator to be a comma, but you can change that using the sep parameter.
 
-In [18]:
+\begin{framed}
+\begin{verbatim}
 %cd ~/Dropbox/tutorials/pandas/
 /Users/greda/Dropbox/tutorials/pandas
 
-In [19]:
+
 # Source: baseball-reference.com/players/r/riverma01.shtml
 !head -n 5 mariano-rivera.csv
 Year,Age,Tm,Lg,W,L,W-L%,ERA,G,GS,GF,CG,SHO,SV,IP,H,R,ER,HR,BB,IBB,SO,HBP,BK,WP,BF,ERA+,WHIP,H/9,HR/9,BB/9,SO/9,SO/BB,Awards
@@ -110,6 +122,8 @@ from_csv = pd.read_csv('mariano-rivera.csv')
 from_csv.head()
 \end{verbatim}
 \end{framed}
+%---------------------------- %
+\begin{framed}
 \begin{verbatim}
 
 Year	Age	Tm	Lg	W	L	W-L%	ERA	G	GS	GF	CG	SHO	SV	IP	H	R	ER	HR	BB	IBB	SO	HBP	BK	WP	BF	ERA+	WHIP	H/9	HR/9	BB/9	SO/9	SO/BB	Awards
@@ -119,9 +133,13 @@ Year	Age	Tm	Lg	W	L	W-L%	ERA	G	GS	GF	CG	SHO	SV	IP	H	R	ER	HR	BB	IBB	SO	HBP	BK	WP	B
 3	 1998	 28	 NYY	 AL	 3	 0	 1.000	 1.91	 54	 0	 49	 0	 0	 36	 61.1	 48	 13	 13	 3	 17	 1	 36	 1	 0	 0	 246	 233	 1.060	 7.0	 0.4	 2.5	 5.3	 2.12	 NaN
 4	 1999	 29	 NYY	 AL	 4	 3	 0.571	 1.83	 66	 0	 63	 0	 0	 45	 69.0	 43	 15	 14	 2	 18	 3	 52	 3	 1	 2	 268	 257	 0.884	 5.6	 0.3	 2.3	 6.8	 2.89	 ASCYA-3MVP-14
 \end{verbatim}
+\end{framed}
+
+%================================================================= %
 Our file had headers, which the function inferred upon reading in the file. Had we wanted to be more explicit, we could have passed header=None to the function along with a list of column names to use:
 
-In [21]:
+\begin{framed}
+\begin{verbatim}
 # Source: pro-football-reference.com/players/M/MannPe00/touchdowns/passing/2012/
 !head -n 5 peyton-passing-TDs-2012.csv
 1,1,2012-09-09,DEN,,PIT,W 31-19,3,71,Demaryius Thomas,Trail 7-13,Lead 14-13*
@@ -144,6 +162,8 @@ num	game	date	team	home_away	opponent	result	quarter	distance	receiver	score_bef
 2	 3	 2	 2012-09-17	 DEN	 @	 ATL	 L 21-27	 2	 17	 Demaryius Thomas	 Trail 0-20	 Trail 7-20
 3	 4	 3	 2012-09-23	 DEN	 NaN	 HOU	 L 25-31	 4	 38	 Brandon Stokley	 Trail 11-31	 Trail 18-31
 4	 5	 3	 2012-09-23	 DEN	 NaN	 HOU	 L 25-31	 4	 6	 Joel Dreessen	 Trail 18-31	 Trail 25-31
+\end{verbatim}
+\end{framed}
 pandas various reader functions have many parameters allowing you to do things like skipping lines of the file, parsing dates, or specifying how to handle NA/NULL datapoints.
 
 There's also a set of writer functions for writing to a variety of formats (CSVs, HTML tables, JSON). They function exactly as you'd expect and are typically called \texttt{to\_format}:
@@ -205,7 +225,7 @@ print football
 \end{verbatim}
 
 %===============================================%
-
+\newpage
 \subsection{Databases}
 
 pandas also has some support for reading/writing DataFrames directly from/to a database [docs]. You'll typically just need to pass a connection object to the \texttt{read\_frame} or \texttt{write\_frame} functions within the pandas.io module.

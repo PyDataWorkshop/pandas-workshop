@@ -135,11 +135,13 @@ f  1.053202 -2.338595 -0.374279  bar   True
 g       NaN       NaN       NaN  NaN    NaN
 h -2.359958 -1.157886 -0.551865  bar  False
 \end{verbatim}
+\newpage
+%----------------------------------------------------------------------------------------------------------------------------------------%
 Values considered “missing”
 
 As data comes in many shapes and forms, pandas aims to be flexible with regard to handling missing data. While NaN is the default missing value marker for reasons of computational speed and convenience, we need to be able to easily detect this value with data of different types: floating point, integer, boolean, and general object. In many cases, however, the Python None will arise and we wish to also consider that “missing” or “null”.
 
-Until recently, for legacy reasons inf and -inf were also considered to be “null” in computations. This is no longer the case by default; use the mode.use_inf_as_null option to recover it.
+Until recently, for legacy reasons inf and -inf were also considered to be “null” in computations. This is no longer the case by default; use the mode.use\_inf\_as\_null option to recover it.
 
 To make detecting missing values easier (and across different array dtypes), pandas provides the isnull() and notnull() functions, which are also methods on Series objects:
 
