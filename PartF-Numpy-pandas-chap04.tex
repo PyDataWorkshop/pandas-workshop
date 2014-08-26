@@ -71,6 +71,13 @@ kind of numerical computations.
 \end{itemize}
 %----------------------------------------------------------------------------------%
 \newpage
+An ndarray is a NumPy array.
+>>> x = np.array([1, 2, 3])
+>>> type(x)
+<type 'numpy.ndarray'>
+The difference between np.ndarray and np.array is that the former is the actual type, while the latter is a flexible shorthand function for constructing arrays from data in other formats. The TypeError comes your use of np.array arguments to np.ndarray, which takes completely different arguments (see docstrings).
+
+%----------------------%
 what is the difference between ndarray and array in numpy? And where can I find the implementations in the numpy source code?
 
  np.array is just a convenience function to create an ndarray, it is not a class itself. 
@@ -95,3 +102,6 @@ numpy.array is a function that returns a numpy.ndarray. There is no object type 
 %-----------------------------------%
 %----------------------------------------------------------------------------------%
 \end{document}
+
+
+% - http://mikolalysenko.github.io/ndarray-presentation/
