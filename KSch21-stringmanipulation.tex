@@ -1,0 +1,202 @@
+Chapter 21
+String Manipulation
+Strings are usually less interesting than numerical values in econometrics and statistics. There are, however,
+some important uses for strings:
+• Reading complex data formats
+• Outputting formatted results to screen or file
+Recall that strings are sliceable, but unlike arrays, are immutable, and so it is not possible to replace part
+of a string.
+21.1 String Building
+21.1.1 Adding Strings (+)
+Strings are concatenated using +.
+>>> a = ’Python is’
+>>> b = ’a rewarding language.’
+>>> a + ’ ’ + b
+’Python is a rewarding language.’
+While + is a simple method to join strings, the modern method is to use join. join is a string method
+which joins a list of strings (the input) using the object calling the string as the separator.
+>>> a = ’Python is’
+>>> b = ’a rewarding language.’
+>>> ’ ’.join([a,b])
+’Python is a rewarding language.’
+Alternatively, the same output may be constructed using an empty string ’’.
+>>> a = ’Python is’
+>>> b = ’a rewarding language.’
+>>> ’’.join([a,’ ’,b])
+’Python is a rewarding language.’
+join is also useful for producing comma separated lists.
+>>> words = [’Python’,’is’,’a’,’rewarding’,’language’]
+>>> ’,’.join(words)
+’Python,is,a,rewarding,language’
+21.1.2 Multiplying Strings (*)
+Strings, like lists, can be repeated using *.
+>>> a = ’Python is ’
+>>> 2*a
+’Python is Python is ’
+21.1.3 Using cStringIO
+While adding strings using + or join is extremely simple, concatenation is slow for large strings. The module
+cStringIO provides an optimized class for performing string operations, including buffering strings
+for fast string building. This example shows how write(string) fills a StringIO buffer. Before reading the
+contents seek(0) is called to return to cursor to the beginning of the buffer, and then read() returns the
+entire string from the buffer.
+>>> import cStringIO
+>>> sio = cStringIO.StringIO()
+>>> for i in xrange(10000):
+... sio.write(’cStringIO is faster than +! ’)
+>>> sio.seek(0)
+>>> sio.read()
+Note that this example is trivial since * could have been used instead.
+21.2 String Functions
+21.2.1 split and rsplit
+split splits a string into a list based on a character, for example a comma. An optional third argument
+maxsplit can be used to limit the number of outputs in the list. rsplit works identically to split, only
+scanning from the end of the string – split and rsplit only differ when maxsplit is used.
+>>> s = ’Python is a rewarding language.’
+>>> s.split(’ ’)
+[’Python’, ’is’, ’a’, ’rewarding’, ’language.’]
+>>> s.split(’ ’,3)
+[’Python’, ’is’, ’a’, ’rewarding language.’]
+>>> s.rsplit(’ ’,3)
+[’Python is’, ’a’, ’rewarding’, ’language.’]
+
+21.2.2 join
+join concatenates a list or tuple of strings, using an optional argument sep which specified a separator
+(default is space).
+>>> import string
+>>> a = ’Python is’
+>>> b = ’a rewarding language.’
+>>> string.join((a,b))
+’Python is a rewarding language.’
+>>> string.join((a,b),’:’)
+’Python is:a rewarding language.’
+>>> ’ ’.join((a,b)) # Method version
+’Python is a rewarding language.’
+21.2.3 strip, lstrip, and rstrip
+strip removes leading and trailing whitespace from a string. An optional input char removes leading
+and trailing occurrences of the input value (instead of space). lstrip and rstrip work identically, only
+stripping from the left and right, respectively.
+>>> s = ’ Python is a rewarding language. ’
+>>> s=s.strip()
+’Python is a rewarding language.’
+>>> s.strip(’P’)
+’ython is a rewarding language.’
+21.2.4 find and rfind
+find locates the lowest index of a substring in a string and returns -1 if not found. Optional arguments
+limit the range of the search, and s.find(’i’,10,20) is identical to s[10:20].find(’i’). rfind works
+identically, only returning the highest index of the substring.
+>>> s = ’Python is a rewarding language.’
+>>> s.find(’i’)
+7
+>>> s.find(’i’,10,20)
+18
+>>> s.rfind(’i’)
+18
+find and rfind are commonly used in flow control.
+>>> words = [’apple’,’banana’,’cherry’,’date’]
+>>> words_with_a = []
+>>> for word in words:
+... if word.find(’a’)>=0:
+... words_with_a.append(word)
+>>> words_with_a
+[’apple’, ’banana’, ’date’]
+21.2.5 index and rindex
+index returns the lowest index of a substring, and is identical to find except that an error is raised if the
+substring does not exist. As a result, index is only safe to use in a try . . . except block.
+>>> s = ’Python is a rewarding language.’
+>>> s.index(’i’)
+7
+>>> s.index(’q’) # Error
+ValueError: substring not found
+21.2.6 count
+count counts the number of occurrences of a substring, and takes optional arguments to limit the search
+range.
+>>> s = ’Python is a rewarding language.’
+>>> s.count(’i’)
+2
+>>> s.count(’i’, 10, 20)
+1
+21.2.7 lower and upper
+lower and upper convert strings to lower and upper case, respectively. They are useful to remove case
+when comparing strings.
+>>> s = ’Python is a rewarding language.’
+>>> s.upper()
+’PYTHON IS A REWARDING LANGUAGE.’
+>>> s.lower()
+’python is a rewarding language.’
+21.2.8 ljust, rjust and center
+ljust, rjust and center left justify, right justify and center, respectively, a string while expanding its size
+to a given length. If the desired length is smaller than the string, the unchanged string is returned.
+>>> s = ’Python is a rewarding language.’
+>>> s.ljust(40)
+’Python is a rewarding language. ’
+>>> s.rjust(40)
+’ Python is a rewarding language.’
+>>> s.center(40)
+’ Python is a rewarding language. ’
+21.2.9 replace
+replace replaces a substring with an alternative string, which can have different size. An optional argument
+limits the number of replacement.
+>>> s = ’Python is a rewarding language.’
+>>> s.replace(’g’,’Q’)
+’Python is a rewardinQ lanQuaQe.’
+>>> s.replace(’is’,’Q’)
+’Python Q a rewarding language.’
+>>> s.replace(’g’,’Q’,2)
+’Python is a rewardinQ lanQuage.’
+21.2.10 textwrap.wrap
+The module textwrap contains a function wrap which reformats a long string into a fixed width paragraph
+stored line-by-line in a list. An optional argument changes the width of the output paragraph form the
+default of 70 characters.
+>>> import textwrap
+>>> s = ’Python is a rewarding language. ’
+>>> s = 10*s
+>>> textwrap.wrap(s)
+[’Python is a rewarding language. Python is a rewarding language. Python’,
+’is a rewarding language. Python is a rewarding language. Python is a’,
+’rewarding language. Python is a rewarding language. Python is a’,
+’rewarding language. Python is a rewarding language. Python is a’,
+’rewarding language. Python is a rewarding language.’]
+>>> textwrap.wrap(s,50)
+[’Python is a rewarding language. Python is a’,
+’rewarding language. Python is a rewarding’,
+’language. Python is a rewarding language. Python’,
+’is a rewarding language. Python is a rewarding’,
+’language. Python is a rewarding language. Python’,
+’is a rewarding language. Python is a rewarding’,
+’language. Python is a rewarding language.’]
+
+21.3 Formatting Numbers
+Formatting numbers when converting to a string allows for automatic generation of tables and well formatted
+screen output. Numbers are formatted using the format function, which is used in conjunction
+with a format specifier. For example, consider these examples which format .
+>>> pi
+3.141592653589793
+>>> ’{:12.5f}’.format(pi)
+’ 3.14159’
+>>> ’{:12.5g}’.format(pi)
+’ 3.1416’
+>>> ’{:12.5e}’.format(pi)
+’ 3.14159e+00’
+These all provide alternative formats and the difference is determined by the letter in the format string.
+The generic formof a format string is {n:f a swc .p t } or {n:f a swcmt }. To understand the the various
+choices, consider the output produced by the basic output string ’{0:}’
+>>> ’{0:}’.format(pi)
+’3.14159265359’
+• n is a number 0,1,. . . indicating which value to take from the format function
+>>> ’{0:}, {1:} and {2:} are all related to pi’.format(pi,pi+1,2*pi)
+’3.14159265359, 4.14159265359 and 6.28318530718 are all related to pi’
+>>> ’{2:}, {0:} and {1:} reorder the output.’.format(pi,pi+1,2*pi)
+’6.28318530718, 3.14159265359 and 4.14159265359 reorder the output.
+f a are fill and alignment characters, typically a 2 character string. Fill may be any character except
+}, although space is the most common choice. Alignment can < (left) ,> (right), ^ (center) or = (pad
+to the right of the sign). Simple left 0-fills can omit the alignment character so that f a = 0.
+>>> ’{0:0<20}’.format(pi) # Left, 0 padding, precion 20
+’3.141592653590000000’
+>>> ’{0:0>20}’.format(pi) # Right, 0 padding, precion 20
+’00000003.14159265359’
+>>> ’{0:0^20}’.format(pi) # Center, 0 padding, precion 20
+’0003.141592653590000’
+>>> ’{0: >20}’.format(pi) # Right, space padding, precion 20
+’ 3.14159265359’
+>>> ’{0:$^20}’.format(pi) # Center, dollar sign padding, precion 20
+’$$$3.14159265359$$$$’
