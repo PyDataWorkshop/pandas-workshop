@@ -95,11 +95,15 @@ There's a lot going on in the code above, but it's very idomatic. We're splittin
 
 In SQL, this would be equivalent to:
 
+\begin{framed}
+\begin{verbatim}
 SELECT title, count(1)
 FROM lens
 GROUP BY title
 ORDER BY 2 DESC
 LIMIT 25;
+\end{verbatim}
+\end{framed}
 Alternatively, pandas has a nifty value_counts method - yes, this is simpler - the goal above was to show a basic groupby example.
 
 In [63]:
@@ -133,9 +137,13 @@ Indiana Jones and the Last Crusade (1989)    331
 dtype: int64
 Which movies are most highly rated?
 
-In [64]:
+
+\begin{framed}
+\begin{verbatim}
 movie_stats = lens.groupby('title').agg({'rating': [np.size, np.mean]})
 print movie_stats.head()
+\end{verbatim}
+\end{framed}
                            rating          
                              size      mean
 title                                      
@@ -149,9 +157,14 @@ We can use the agg method to pass a dictionary specifying the columns to aggrega
 
 Let's sort the resulting DataFrame so that we can see which movies have the highest average score.
 
-In [65]:
+\begin{framed}
+\begin{verbatim}
 # sort by rating average
 print movie_stats.sort([('rating', 'mean')], ascending=False).head()
+\end{verbatim}
+\end{framed}
+
+
                                             rating      
                                               size  mean
 title                                                   
