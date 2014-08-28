@@ -19,12 +19,32 @@
 
 \documentclass[KSmain.tex]{subfiles} 
 \begin{document} 
+\section{Arrays and Matrices}
+NumPy provides the most important data types for econometrics, statistics and numerical analysis – arrays
+and matrices. The difference between these two data types are:
+\begin{itemize}
+\item Arrays can have 1, 2, 3 or more dimensions, and matrices always have 2 dimensions. This means
+that a 1 by n vector stored as an array has 1 dimension and n elements, while the same vector stored
+as a matrix has 2-dimensions where the sizes of the dimensions are 1 and n (in either order).
+\item  Standard mathematical operators on arrays operate element-by-element. This is not the case for
+matrices, where multiplication (*) follows the rules of linear algebra. 2-dimensional arrays can be
+multiplied using the rules of linear algebra using dot. Similarly, the function multiply can be used
+on two matrices for element-by-element multiplication.
+\item  Arrays are more common than matrices, and all functions are thoroughly tested with arrays. Functions
+should also work with matrices, but an occasional strange result may be encountered.
+\item  Arrays can be quickly treated as a matrix using either asmatrix or mat without copying the underlying
+data.
+\end{itemize}
+The best practice is to use arrays and to use the asmatrix view when writing linear algebra-heavy code. It is
+also important to test any custom function with both arrays and matrices to ensure that false assumptions
+about the behavior of multiplication have not been made.
 
-\section{Arrays}
+\subsection{Arrays}
 Arrays are the base data type in NumPy, are are arrays in some ways similar to lists since they both contain
-collections of elements. The focus of this section is on homogeneous arrays containing numeric data
-– that is, an array where all elements have the same numeric type (heterogeneous arrays are covered in
-Chapters 16 and 17). 
+collections of elements. The focus of this section is on \textit{homogeneous} arrays containing numeric data
+– that is, an array where all elements have the same numeric type
+
+%(heterogeneous arrays are covered in KS Chapters 16 and 17). 
 
 Additionally, arrays, unlike lists, are always rectangular so that all rows have the same
 number of elements.
@@ -32,6 +52,36 @@ number of elements.
 Arrays are initialized from lists (or tuples) using array. Two-dimensional arrays are initialized using
 lists of lists (or tuples of tuples, or lists of tuples, etc.), and higher dimensional arrays can be initialized by
 further nesting lists or tuples.
+
+\begin{framed}
+\begin{verbatim}
+>>> x = [0.0, 1, 2, 3, 4]
+>>> y = array(x)
+>>> y
+array([ 0., 1., 2., 3., 4.])
+>>> type(y)
+numpy.ndarray
+\end{verbatim}
+\end{framed}
+Two (or higher) -dimensional arrays are initialized using nested lists.
+\begin{framed}
+\begin{verbatim}
+>>> y = array([[0.0, 1, 2, 3, 4], [5, 6, 7, 8, 9]])
+>>> y
+array([[ 0., 1., 2., 3., 4.],
+[ 5., 6., 7., 8., 9.]])
+>>> shape(y)
+(2L, 5L)
+>>> y = array([[[1,2],[3,4]],[[5,6],[7,8]]])
+>>> y
+array([[[1, 2],
+[3, 4]],
+[[5, 6],
+[7, 8]]])
+>>> shape(y)
+(2L, 2L, 2L)
+\end{verbatim}
+\end{framed}
 
 %=======================================%
 \subsection{Matrix}
@@ -44,13 +94,80 @@ differences are:
 \end{itemize}
 
 \newpage
+\subsection{1-dimensional Arrays}
+A vector
+\[x = [1 2 3 4 5]\]
+is entered as a 1-dimensional array using
+\begin{framed}
+\begin{verbatim}
+>>> x=array([1.0,2.0,3.0,4.0,5.0])
+array([ 1., 2., 3., 4., 5.])
+>>> ndim(x)
+1
+\end{verbatim}
+\end{framed}
+%----------------------%
+If an array with 2-dimensions is required, it is necessary to use a trivial nested list.
+\begin{framed}
+\begin{verbatim}
+>>> x=array([[1.0,2.0,3.0,4.0,5.0]])
+array([[ 1., 2., 3., 4., 5.]])
+>>> ndim(x)
+2
+\end{verbatim}
+\end{framed}
+%----------------------%
+A matrix is always 2-dimensional and so a nested list is not required to initialize a a row matrix
+\begin{framed}
+\begin{verbatim}
+>>> x=matrix([1.0,2.0,3.0,4.0,5.0])
+>>> x
+matrix([[ 1., 2., 3., 4., 5.]])
+>>> ndim(x)
+2
+\end{verbatim}
+\end{framed}
+Notice that the output matrix representation uses nested lists ([[ ]]) to emphasize the 2-dimensional
+structure of all matrices. The column vector,
+\[x =
+\left[ 
+\begin{array}{c}
+1 \\
+2 \
+3 \\
+4 \\
+5
+\right]
+\]
+is entered as a matrix or 2-dimensional array using a set of nested lists
+\begin{framed}
+\begin{verbatim}
+>>> x=matrix([[1.0],[2.0],[3.0],[4.0],[5.0]])
+>>> x
+matrix([[ 1.],
+[ 2.],
+[ 3.],
+[ 4.],
+[ 5.]])
+>>> x = array([[1.0],[2.0],[3.0],[4.0],[5.0]])
+>>> x
+array([[ 1.],
+[ 2.],
+[ 3.],
+[ 4.],
+[ 5.]])
+\end{verbatim}
+\end{framed}
+\newpage
 %=======================================%
 
 \subsection{Accessing Elements of an Array}
 Four methods are available for accessing elements contained within an array: scalar selection, slicing,
 numerical indexing and logical (or Boolean) indexing. Scalar selection and slicing are the simplest and so
-are presented first. Numerical indexing and logical indexing both depends on specialized functions and
-so these methods are discussed in Chapter 12
+are presented first. 
+
+% Numerical indexing and logical indexing both depends on specialized functions and
+% so these methods are discussed in Chapter 12
 
 
 
@@ -60,22 +177,24 @@ so these methods are discussed in Chapter 12
 
 4.4 2-dimensional Arrays
 Matrices and 2-dimensional arrays are rows of columns, and so
-x =
-2
-64
-1 2 3
-4 5 6
-7 8 9
-3
-75
-,
+\[x =
+\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9 \\
+\end{array}
+\]
 is input by enter the matrix one row at a time, each in a list, and then encapsulate the row lists in another
 list.
+\begin{framed}
+\begin{verbatim}
 >>> x = array([[1.0,2.0,3.0],[4.0,5.0,6.0],[7.0,8.0,9.0]])
 >>> x
 array([[ 1., 2., 3.],
 [ 4., 5., 6.],
 [ 7., 8., 9.]])
+\end{verbatim}
+\end{framed}
 %---------------------------------------------%
 % KS - 4.5 Multidimensional Arrays
 \newpage
@@ -85,13 +204,14 @@ covariance matrices. Multidimensional (N -dimensional) arrays are available forN
 depending on the size of each matrix dimension. Manually initializing higher dimension arrays is tedious
 and error prone, and so it is better to use functions such as zeros((2, 2, 2)) or empty((2, 2, 2)).
 %---------------------------------------------%
-\newpage
+
 \subsection{Concatenation}
 % KS -  4.6 Concatenation
 Concatenation is the process by which one vector or matrix is appended to another. Arrays and matrices
 can be concatenation horizontally or vertically
 %---------------------------------------------%
-4.7 Accessing Elements of an Array
+% KS 4.7 Accessing Elements of an Array
+\subsection{ Accessing Elements of an Array }
 Four methods are available for accessing elements contained within an array: scalar selection, slicing,
 numerical indexing and logical (or Boolean) indexing. Scalar selection and slicing are the simplest and so
 are presented first. Numerical indexing and logical indexing both depends on specialized functions and
@@ -114,15 +234,16 @@ import can be used in a variety of ways. The simplest is to use from module impo
 all functions in module. This method of using import can dangerous since if you use it more than once,
 it is possible for functions to be hidden by later imports. A better method is to just import the required
 functions. This still places functions at the top level of the namespace, but can be used to avoid conflicts.
+\begin{framed}
 \begin{verbatim}
 from pylab import log2 # Will import log2 only
 from scipy import log10 # Will not import the log2 from SciPy
 \end{verbatim}
-
+\end{framed}
 %KS page 59
-The only difference between these two is that import scipy is implicitly calling import scipy as scipy.
+The only difference between these two is that import scipy is implicitly calling \texttt{import scipy as scipy}.
 When this formof import is used, functions are used with the “as” name. For example, the load provided
-byNumPy is accessed using sp.log2, while the pylab load is pl.log2 – and both can be used where appropriate.
+byNumPy is accessed using sp.log2, while the pylab load is \texttt{pl.log2} – and both can be used where appropriate.
 While this method is the most general, it does require slightly more typing.
 %--------------------------------------------------------------------------------------------%
 \end{document}
