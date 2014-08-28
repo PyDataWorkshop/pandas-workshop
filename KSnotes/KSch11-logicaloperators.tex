@@ -76,6 +76,43 @@ array([[ True],
 [False]], dtype=bool)
 \end{verbatim}
 \end{framed}
+
+\subsubsection{allclose}
+allclose can be used to compare two arrays for near equality. This type of function is important when
+comparing floating point values which may be effectively the same although not identical.
+%----------------------------%
+\begin{framed}
+\begin{verbatim}
+>>> eps = np.finfo(np.float64).eps
+>>> eps
+2.2204460492503131e16
+>>> x = randn(2)
+>>> y = x + eps
+115
+>>> x == y
+array([False, False], dtype=bool)
+>>> allclose(x,y)
+True
+\end{verbatim}
+\end{framed}
+The tolerance for being close can be set using keyword arguments either relatively (rtol) or absolutely
+(atol).
+
+\subsubsection{array\_equal}
+array_equal tests if two arrays have the same shape and elements. It is safer than comparing arrays directly
+since comparing arrays which are not broadcastable produces an error.
+\subsubsection{array\_array_equiv}
+array_equiv tests if two arrays are equivalent, even if they do not have the exact same shape. Equivalence
+is defined as one array being broadcastable to produce the other.
+\begin{framed}
+\begin{verbatim}>>> x = randn(10,1)
+>>> y = tile(x,2)
+>>> array_equal(x,y)
+False
+>>> array_equiv(x,y)
+True
+\end{verbatim}
+\end{framed}
 %----------------------------%
 
 %page 116
