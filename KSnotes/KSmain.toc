@@ -1,0 +1,61 @@
+\contentsline {section}{\numberline {1}Data Types}{6}
+\contentsline {subsection}{\numberline {1.1} Variable Names}{6}
+\contentsline {section}{\numberline {2}Core Native Data Types}{8}
+\contentsline {subsection}{\numberline {2.1} Numeric}{8}
+\contentsline {subsubsection}{\numberline {2.1.1}Floating Point (float)}{8}
+\contentsline {subsubsection}{\numberline {2.1.2}Complex (complex)}{9}
+\contentsline {subsubsection}{\numberline {2.1.3}Integers (\texttt {int} and \texttt {long})}{9}
+\contentsline {subsubsection}{\numberline {2.1.4}Boolean (\texttt {bool})}{11}
+\contentsline {subsubsection}{\numberline {2.1.5}Strings (\texttt {str})}{11}
+\contentsline {subsubsection}{\numberline {2.1.6}Lists (\texttt {list})}{12}
+\contentsline {subsubsection}{\numberline {2.1.7}Xrange (\texttt {xrange})}{13}
+\contentsline {section}{\numberline {3}Arrays and Matrices}{14}
+\contentsline {subsection}{\numberline {3.1}Arrays}{14}
+\contentsline {subsection}{\numberline {3.2}Matrix}{15}
+\contentsline {subsection}{\numberline {3.3}1-dimensional Arrays}{16}
+\contentsline {subsection}{\numberline {3.4}Accessing Elements of an Array}{18}
+\contentsline {subsection}{\numberline {3.5}Multidimensional Arrays}{20}
+\contentsline {subsection}{\numberline {3.6}Concatenation}{20}
+\contentsline {subsection}{\numberline {3.7} Accessing Elements of an Array }{20}
+\contentsline {subsection}{\numberline {3.8}The \texttt {import} function}{21}
+\contentsline {subsection}{\numberline {3.9}Special Arrays}{21}
+\contentsline {subsubsection}{\numberline {3.9.1}ones}{21}
+\contentsline {subsubsection}{\numberline {3.9.2}zeros}{22}
+\contentsline {subsubsection}{\numberline {3.9.3}empty}{22}
+\contentsline {subsection}{\numberline {3.10}floats (single precision)}{22}
+\contentsline {subsubsection}{\numberline {3.10.1}eye, identity}{22}
+\contentsline {section}{\numberline {4}Data Structures}{23}
+\contentsline {subsection}{\numberline {4.1}Series}{23}
+\contentsline {subsection}{\numberline {4.2}DataFrame}{30}
+\contentsline {subsection}{\numberline {4.3}Panel}{31}
+\contentsline {section}{\numberline {5}Useful Array and Matrix Functions}{32}
+\contentsline {subsection}{\numberline {5.1}Views}{32}
+\contentsline {subsubsection}{\numberline {5.1.1}view}{32}
+\contentsline {subsubsection}{\numberline {5.1.2}asmatrix, mat}{32}
+\contentsline {subsubsection}{\numberline {5.1.3}asarray}{33}
+\contentsline {subsection}{\numberline {5.2}Shape Information and Transformation}{33}
+\contentsline {subsubsection}{\numberline {5.2.1}shape}{33}
+\contentsline {subsubsection}{\numberline {5.2.2}reshape}{33}
+\contentsline {subsubsection}{\numberline {5.2.3}size}{34}
+\contentsline {subsubsection}{\numberline {5.2.4}ndim}{34}
+\contentsline {subsubsection}{\numberline {5.2.5}tile}{35}
+\contentsline {subsubsection}{\numberline {5.2.6}ravel}{35}
+\contentsline {subsubsection}{\numberline {5.2.7}flatten}{36}
+\contentsline {subsubsection}{\numberline {5.2.8}flat}{36}
+\contentsline {subsubsection}{\numberline {5.2.9}split, vsplit, hsplit}{36}
+\contentsline {subsubsection}{\numberline {5.2.10}delete}{37}
+\contentsline {subsubsection}{\numberline {5.2.11}squeeze}{38}
+\contentsline {subsubsection}{\numberline {5.2.12}fliplr, flipud}{38}
+\contentsline {subsubsection}{\numberline {5.2.13}diag}{39}
+\contentsline {subsubsection}{\numberline {5.2.14}triu, tril}{39}
+\contentsline {subsection}{\numberline {5.3}Some Useful Linear Algebra Functions}{40}
+\contentsline {subsubsection}{\numberline {5.3.1}det}{40}
+\contentsline {subsubsection}{\numberline {5.3.2}solve}{40}
+\contentsline {subsubsection}{\numberline {5.3.3}eig}{40}
+\contentsline {section}{\numberline {6}Logical Operators}{41}
+\contentsline {subsection}{\numberline {6.1}Bitwise operators}{41}
+\contentsline {subsection}{\numberline {6.2}Multiple tests: all and any}{41}
+\contentsline {subsubsection}{\numberline {6.2.1}allclose}{42}
+\contentsline {subsubsection}{\numberline {6.2.2}array\_equal}{43}
+\contentsline {subsubsection}{\numberline {6.2.3}array\_array\_equiv}{43}
+\contentsline {subsection}{\numberline {6.3} is$\ast $}{43}

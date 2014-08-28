@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  28 AUG 2014 20:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  28 AUG 2014 20:06
 entering extended mode
-**KSmain.tex
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.tex
+**C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSmain2.tex
+(C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSmain2.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -456,19 +456,19 @@ Package tocloft Info: The document has section divisions on input line 44.
 \cftsubtabindent=\skip99
 \cftsubtabnumwidth=\skip100
 )
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain2.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -521,13 +521,15 @@ LaTeX Font Info:    ... okay on input line 35.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
- (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.toc
+ (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain2.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 1.
+)
+\tf@toc=\write3
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -537,78 +539,323 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-])
-\tf@toc=\write3
- [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 50.
+]
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch09-ImportingExportingData.t
+ex
+Overfull \hbox (25.9492pt too wide) in paragraph at lines 51--51
+[]\OT1/cmtt/m/n/10.95 array([['2012-02-15', 5899.9, 5923.8, 5880.6, 5892.2, 801
+550000L, 5892.2],[] 
+ []
 
-("C:\Program Files\Miktek\tex\latex\base\omscmr.fd"
+
+Overfull \hbox (71.9387pt too wide) in paragraph at lines 54--54
+[]\OT1/cmtt/m/n/10.95 ['2012-02-10', 5895.5, 5895.5, 5839.9, 5852.4, 948790200L
+, 5852.4]], dtype=object)[] 
+ []
+
+[2]
+Overfull \hbox (135.17427pt too wide) in paragraph at lines 71--71
+[]        \OT1/cmtt/m/n/10.95 'team': ['Bears', 'Bears', 'Bears', 'Packers', 'P
+ackers', 'Lions', 'Lions', 'Lions'],[] 
+ []
+
+
+Overfull \hbox (20.20052pt too wide) in paragraph at lines 74--74
+[]\OT1/cmtt/m/n/10.95 football = pd.DataFrame(data, columns=['year', 'team', 'w
+ins', 'losses'])[] 
+ []
+
+
+Overfull \hbox (307.6349pt too wide) in paragraph at lines 106--106
+[]\OT1/cmtt/m/n/10.95 Year,Age,Tm,Lg,W,L,W-L%,ERA,G,GS,GF,CG,SHO,SV,IP,H,R,ER,H
+R,BB,IBB,SO,HBP,BK,WP,BF,ERA+,WHIP,H/9,HR/9,BB/9,SO/9,SO/BB,Awards[] 
+ []
+
+
+Overfull \hbox (221.40459pt too wide) in paragraph at lines 107--107
+[]\OT1/cmtt/m/n/10.95 1995,25,NYY,AL,5,3,.625,5.51,19,10,2,0,0,0,67.0,71,43,41,
+11,30,0,51,2,1,0,301,84,1.507,9.5,1.5,4.0,6.9,1.70,[] 
+ []
+
+
+Overfull \hbox (301.88622pt too wide) in paragraph at lines 108--108
+[]\OT1/cmtt/m/n/10.95 1996,26,NYY,AL,8,3,.727,2.09,61,0,14,0,0,5,107.2,73,25,25
+,1,34,3,130,2,0,1,425,240,0.994,6.1,0.1,2.8,10.9,3.82,CYA-3MVP-12[] 
+ []
+
+
+Overfull \hbox (273.14278pt too wide) in paragraph at lines 109--109
+[]\OT1/cmtt/m/n/10.95 1997,27,NYY,AL,6,4,.600,1.88,66,0,56,0,0,43,71.2,65,17,15
+,5,20,6,68,0,0,2,301,239,1.186,8.2,0.6,2.5,8.5,3.40,ASMVP-25[] 
+ []
+
+
+Overfull \hbox (232.90196pt too wide) in paragraph at lines 110--110
+[]\OT1/cmtt/m/n/10.95 1998,28,NYY,AL,3,0,1.000,1.91,54,0,49,0,0,36,61.1,48,13,1
+3,3,17,1,36,1,0,0,246,233,1.060,7.0,0.4,2.5,5.3,2.12,[] 
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 121--121
+[]\OT1/cmtt/m/n/10.95 Year Age Tm Lg W L W-L% ERA G GS GF CG SHO SV IP H R ER H
+R BB IBB SO
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
+[]\OT1/cmtt/m/n/10.95 0  1995  25  NYY  AL  5  3  0.625  5.51  19  10  2  0  0 
+ 0  67.0  71
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
+\OT1/cmtt/m/n/10.95 43  41  11  30  0  51  2  1  0  301  84  1.507  9.5  1.5  4
+.0  6.9
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--123
+[]\OT1/cmtt/m/n/10.95 1  1996  26  NYY  AL  8  3  0.727  2.09  61  0  14  0  0 
+ 5  107.2
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--123
+\OT1/cmtt/m/n/10.95 73  25  25  1  34  3  130  2  0  1  425  240  0.994  6.1  0
+.1  2.8
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--124
+[]\OT1/cmtt/m/n/10.95 2  1997  27  NYY  AL  6  4  0.600  1.88  66  0  56  0  0 
+ 43  71.2
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--124
+\OT1/cmtt/m/n/10.95 65  17  15  5  20  6  68  0  0  2  301  239  1.186  8.2  0.
+6  2.5
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--125
+[]\OT1/cmtt/m/n/10.95 3  1998  28  NYY  AL  3  0  1.000  1.91  54  0  49  0  0 
+ 36  61.1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--125
+\OT1/cmtt/m/n/10.95 48  13  13  3  17  1  36  1  0  0  246  233  1.060  7.0  0.
+4  2.5
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--126
+[]\OT1/cmtt/m/n/10.95 4  1999  29  NYY  AL  4  3  0.571  1.83  66  0  63  0  0 
+ 45  69.0
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--126
+\OT1/cmtt/m/n/10.95 43  15  14  2  18  3  52  3  1  2  268  257  0.884  5.6  0.
+3  2.3
+ []
+
+
+Overfull \hbox (60.44133pt too wide) in paragraph at lines 135--135
+[]\OT1/cmtt/m/n/10.95 # Source: pro-football-reference.com/players/M/MannPe00/t
+ouchdowns/passing/2012/ 
+ []
+
+
+Overfull \hbox (37.44658pt too wide) in paragraph at lines 137--137
+[]\OT1/cmtt/m/n/10.95 1,1,2012-09-09,DEN,,PIT,W 31-19,3,71,Demaryius Thomas,Tra
+il 7-13,Lead 14-13*[] 
+ []
+
+
+Overfull \hbox (8.70314pt too wide) in paragraph at lines 138--138
+[]\OT1/cmtt/m/n/10.95 2,1,2012-09-09,DEN,,PIT,W 31-19,4,1,Jacob Tamme,Trail 14-
+19,Lead 22-19*[] 
+ []
+
+
+Overfull \hbox (37.44658pt too wide) in paragraph at lines 139--139
+[]\OT1/cmtt/m/n/10.95 3,2,2012-09-17,DEN,@,ATL,L 21-27,2,17,Demaryius Thomas,Tr
+ail 0-20,Trail 7-20[] 
+ []
+
+
+Overfull \hbox (37.44658pt too wide) in paragraph at lines 140--140
+[]\OT1/cmtt/m/n/10.95 4,3,2012-09-23,DEN,,HOU,L 25-31,4,38,Brandon Stokley,Trai
+l 11-31,Trail 18-31[] 
+ []
+
+
+Overfull \hbox (20.20052pt too wide) in paragraph at lines 141--141
+[]\OT1/cmtt/m/n/10.95 5,3,2012-09-23,DEN,,HOU,L 25-31,4,6,Joel Dreessen,Trail 1
+8-31,Trail 25-31[] 
+ []
+
+
+Overfull \hbox (43.19527pt too wide) in paragraph at lines 147--147
+[]\OT1/cmtt/m/n/10.95 no_headers = pd.read_csv('peyton-passing-TDs-2012.csv', s
+ep=',', header=None,[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--151
+[]\OT1/cmtt/m/n/10.95 num game date team home_away opponent result quarter dist
+ance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
+[]\OT1/cmtt/m/n/10.95 0  1  1  2012-09-09  DEN  NaN  PIT  W 31-19  3  71  Demar
+yius Thomas
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+[]\OT1/cmtt/m/n/10.95 1  2  1  2012-09-09  DEN  NaN  PIT  W 31-19  4  1  Jacob 
+Tamme
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--154
+[]\OT1/cmtt/m/n/10.95 2  3  2  2012-09-17  DEN  @  ATL  L 21-27  2  17  Demaryi
+us Thomas
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--155
+[]\OT1/cmtt/m/n/10.95 3  4  3  2012-09-23  DEN  NaN  HOU  L 25-31  4  38  Brand
+on Stokley
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--156
+[]\OT1/cmtt/m/n/10.95 4  5  3  2012-09-23  DEN  NaN  HOU  L 25-31  4  6  Joel D
+reessen
+ []
+
+[4] [5]
+Overfull \hbox (48.94395pt too wide) in paragraph at lines 192--192
+[]\OT1/cmtt/m/n/10.95 # since our index on the football DataFrame is meaningles
+s, let's not write it 
+ []
+
+[6]
+Overfull \hbox (3.96063pt too wide) in paragraph at lines 223--224
+\OT1/cmr/m/n/10.95 pandas also has some sup-port for read-ing/writing DataFrame
+s di-rectly from/to a database
+ []
+
+
+Overfull \hbox (8.70314pt too wide) in paragraph at lines 232--232
+[]\OT1/cmtt/m/n/10.95 conn = sqlite3.connect('/Users/greda/Dropbox/gregreda.com
+/_code/towed')[] 
+ []
+
+
+Overfull \hbox (18.64659pt too wide) in paragraph at lines 240--240
+[]     \OT1/cmtt/m/n/10.95 tow_date  make style model color    plate state     
+   towed_address  \ 
+ []
+
+
+Overfull \hbox (1.40053pt too wide) in paragraph at lines 241--241
+[]\OT1/cmtt/m/n/10.95 0  01/19/2013  FORD    LL         RED  N786361    IL  400
+ E. Lower Wacker[] 
+ []
+
+
+Overfull \hbox (1.40053pt too wide) in paragraph at lines 242--242
+[]\OT1/cmtt/m/n/10.95 1  01/19/2013  FORD    4D         GRN  L307211    IL    7
+01 N. Sacramento[] 
+ []
+
+
+Overfull \hbox (1.40053pt too wide) in paragraph at lines 243--243
+[]\OT1/cmtt/m/n/10.95 2  01/19/2013  FORD    4D         GRY  P576738    IL    7
+01 N. Sacramento[] 
+ []
+
+
+Overfull \hbox (1.40053pt too wide) in paragraph at lines 244--244
+[]\OT1/cmtt/m/n/10.95 3  01/19/2013  FORD    LL         BLK  N155890    IL     
+   10300 S. Doty[] 
+ []
+
+
+Overfull \hbox (1.40053pt too wide) in paragraph at lines 245--245
+[]\OT1/cmtt/m/n/10.95 4  01/19/2013  FORD    LL         TAN  H953638    IL     
+   10300 S. Doty[] 
+ []
+
+) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch22-ManagingFiles.tex
+[7]
+Overfull \hbox (0.5844pt too wide) in paragraph at lines 7--9
+\OT1/cmr/m/n/10.95 Manipulating files and di-rec-to-ries is sur-pris-ing use-fu
+l when un-der-tak-ing com-plex projects.
+ []
+
+
+Overfull \hbox (56.11522pt too wide) in paragraph at lines 34--42
+\OT1/cmr/m/n/10.95 /home/username/Python al-ready ex-ists). os.makedirs(dirname
+) works sim-i-lar to os.mkdir(dirname),
+ []
+
+[8]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
+ ("C:\Program Files\Miktek\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 50.
-
-Overfull \hbox (4.62444pt too wide) in paragraph at lines 70--71
-[]\OT1/cmr/m/n/10.95 Matplotlib pro-vides so-phis-ti-cated 2-D and ba-sic 3-D g
-raph-ics ca-pa-bil-i-ties with Matlab-
- []
-
-[3] [4] [5]
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch03-datatypes.tex [6]
-[7] [8] [9] [10] [11] [12])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch04-arrays.tex [13] [14]
-[15] [16] [17] [18] [19] [20])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch05-specialarrays.tex
-[21] [22]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\DataStructures.tex
-[23]
-Overfull \hbox (54.69264pt too wide) in paragraph at lines 79--79
-[]\OT1/cmtt/m/n/10.95 d = {'Chicago': 1000, 'New York': 1300, 'Portland': 900, 
-'San Francisco': 1100, 
- []
-
-[24] [25]
-Underfull \vbox (badness 10000) detected at line 173
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
+ [9])
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch12.tex
+Overfull \hbox (8.70314pt too wide) in paragraph at lines 27--27
+[]\OT1/cmtt/m/n/10.95 IndexError: arrays used as indices must be of integer (or
+ boolean) type[] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 173
+Overfull \hbox (89.18477pt too wide) in paragraph at lines 56--56
+[]\OT1/cmtt/m/n/10.95 >>> x[sel_row,sel_col] # 2 by 1 and 1 by 2 - difference s
+hapes, broadcasted as 2 by 2[] 
  []
 
-[26] [27]
-Overfull \hbox (71.9387pt too wide) in paragraph at lines 221--221
-[]\OT1/cmtt/m/n/10.95 print cities[['Chicago', 'New York', 'Portland']] + citie
-s[['Austin', 'New York']][] 
- []
-
-[28] [29] [30] [31]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch08.tex
-[32] [33] [34] [35] [36] [37] [38] [39])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch11-logicaloperators.tex
-[40] [41] [42]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 119.
-) [43] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.aux) ) 
+[10] [11])
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch18-CustomFunctions.tex
+[12] [13] [14] [15])
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch13-FlowControl.tex [16]
+[17]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch15-graphics.tex
+[18]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 14.
+ [19] [20])
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch17-pandas.tex [21])
+[22] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain2.aux) ) 
 Here is how much of TeX's memory you used:
- 3931 strings out of 493921
- 58472 string characters out of 3148886
- 126564 words of memory out of 3000000
- 7160 multiletter control sequences out of 15000+200000
- 11355 words of font info for 40 fonts, out of 3000000 for 9000
+ 3918 strings out of 493921
+ 58470 string characters out of 3148886
+ 128544 words of memory out of 3000000
+ 7150 multiletter control sequences out of 15000+200000
+ 8234 words of font info for 30 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 44i,11n,43p,542b,386s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program
- Files/Miktek/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Mik
-tek/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/Miktek/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/Miktek/fonts/type1/public/a
-msfonts/cm/cmr10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cm
-r8.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/P
-rogram Files/Miktek/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files
-/Miktek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/Miktek/font
-s/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/Miktek/fonts/type1/publ
-ic/amsfonts/cm/cmtt10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/
-cm/cmtt12.pfb>
-Output written on KSmain.pdf (43 pages, 200755 bytes).
+ 44i,11n,43p,408b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program 
+Files/Miktek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/Miktek
+/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/Miktek/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsf
+onts/cm/cmr10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmr8.
+pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
+ram Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/Mi
+ktek/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on KSmain2.pdf (22 pages, 147600 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
+ 105 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

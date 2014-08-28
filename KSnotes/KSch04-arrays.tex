@@ -1,10 +1,10 @@
 %	4.1 Array	
 %		4.1.1 Array dtypes
 %	4.2 Matrix	
-%		4.3 1-dimensional Arrays
-%	4.4 2-dimensional Arrays	
-%	4.5 Multidimensional Arrays	
-%	4.6 Concatenation	
+%	4.3 1-dimensional Arrays
+%	4.4 2-dimensional Arrays	GOOD
+%	4.5 Multidimensional Arrays	 GOOD
+%	4.6 Concatenation	MORE
 %	4.7 Accessing Elements of an Array	
 %		4.7.1 Scalar Selection
 %		4.7.2 Array Slicing
@@ -20,22 +20,25 @@
 \documentclass[KSmain.tex]{subfiles} 
 \begin{document} 
 \section{Arrays and Matrices}
-NumPy provides the most important data types for econometrics, statistics and numerical analysis – arrays
-and matrices. The difference between these two data types are:
+\textit{\textbf{NumPy}} provides the most important data types for econometrics, statistics and numerical analysis – \textbf{arrays}
+and \textbf{matrices}. The difference between these two data types are:
 \begin{itemize}
-\item Arrays can have 1, 2, 3 or more dimensions, and matrices always have 2 dimensions. This means
+\item Arrays can have 1, 2, 3 or more dimensions, and matrices \textbf{always} have 2 dimensions. This means
 that a 1 by n vector stored as an array has 1 dimension and n elements, while the same vector stored
 as a matrix has 2-dimensions where the sizes of the dimensions are 1 and n (in either order).
 \item  Standard mathematical operators on arrays operate element-by-element. This is not the case for
-matrices, where multiplication (*) follows the rules of linear algebra. 2-dimensional arrays can be
-multiplied using the rules of linear algebra using dot. Similarly, the function multiply can be used
-on two matrices for element-by-element multiplication.
-\item  Arrays are more common than matrices, and all functions are thoroughly tested with arrays. Functions
+matrices, where multiplication ($\ast$) follows the rules of \textit{linear algebra}.
+\item 2-dimensional arrays can be
+multiplied using the rules of linear algebra using dot. 
+\item Similarly, the function multiply can be used
+on two matrices for \textit{element-by-element} multiplication.
+\item  Arrays are more common than matrices, and all functions are thoroughly tested with arrays. 
+\item Functions
 should also work with matrices, but an occasional strange result may be encountered.
-\item  Arrays can be quickly treated as a matrix using either asmatrix or mat without copying the underlying
+\item  Arrays can be quickly treated as a matrix using either \texttt{asmatrix} or \texttt{mat} without copying the underlying
 data.
 \end{itemize}
-The best practice is to use arrays and to use the asmatrix view when writing linear algebra-heavy code. It is
+The best practice is to use arrays and to use the \texttt{asmatrix} view when writing linear algebra-heavy code. It is
 also important to test any custom function with both arrays and matrices to ensure that false assumptions
 about the behavior of multiplication have not been made.
 
@@ -90,7 +93,7 @@ differences are:
 
 \begin{itemize}
 \item Matrices always have 2 dimensions
-\item Matrices follow the rules of linear algebra for $\ast$
+\item Matrices follow the rules of linear algebra for Matrix Multiplication ($\ast$)
 \end{itemize}
 
 \newpage
@@ -133,10 +136,11 @@ structure of all matrices. The column vector,
 \left[ 
 \begin{array}{c}
 1 \\
-2 \
+2 \\
 3 \\
 4 \\
 5
+\end{array}
 \right]
 \]
 is entered as a matrix or 2-dimensional array using a set of nested lists
@@ -174,8 +178,9 @@ are presented first.
 %-------------------------------------------------------------------------%
 
 \newpage
-
-4.4 2-dimensional Arrays
+% KS 4.4 2-dimensional Arrays
+% GOOD
+\subsection{2-dimensional Arrays}
 Matrices and 2-dimensional arrays are rows of columns, and so
 \[x =
 \begin{array}{ccc}
@@ -195,45 +200,61 @@ array([[ 1., 2., 3.],
 [ 7., 8., 9.]])
 \end{verbatim}
 \end{framed}
+
 %---------------------------------------------%
 % KS - 4.5 Multidimensional Arrays
+% GOOD
 \newpage
 \subsection{Multidimensional Arrays}
-Higher dimensional arrays are useful when tracking matrix valued processes through time, such as a timevarying
-covariance matrices. Multidimensional (N -dimensional) arrays are available forN up to about 30,
-depending on the size of each matrix dimension. Manually initializing higher dimension arrays is tedious
-and error prone, and so it is better to use functions such as zeros((2, 2, 2)) or empty((2, 2, 2)).
+\begin{itemize}
+\item Higher dimensional arrays are useful when tracking matrix valued processes through time, such as a time varying
+covariance matrices. 
+\item Multidimensional (N -dimensional) arrays are available for N up to about 30,
+\item depending on the size of each matrix dimension. 
+\item Manually initializing higher dimension arrays is tedious
+and error prone, and so it is better to use functions such as \texttt{zeros((2, 2, 2))} or \texttt{empty((2, 2, 2))}.
+\end{itemize}
 %---------------------------------------------%
 
 \subsection{Concatenation}
 % KS -  4.6 Concatenation
+% Lots to add in
 Concatenation is the process by which one vector or matrix is appended to another. Arrays and matrices
 can be concatenation horizontally or vertically
 %---------------------------------------------%
 % KS 4.7 Accessing Elements of an Array
-\subsection{ Accessing Elements of an Array }
-Four methods are available for accessing elements contained within an array: scalar selection, slicing,
-numerical indexing and logical (or Boolean) indexing. Scalar selection and slicing are the simplest and so
-are presented first. Numerical indexing and logical indexing both depends on specialized functions and
+\subsection{Accessing Elements of an Array }
+\begin{itemize}
+\item Four methods are available for accessing elements contained within an array: scalar selection, slicing,
+numerical indexing and logical (or Boolean) indexing. 
+\item Scalar selection and slicing are the simplest and so
+are presented first. 
+\item Numerical indexing and logical indexing both depends on specialized functions and
 so these methods are discussed in Chapter 12.
+\end{itemize}
 %-------------------------------------------------------------------------%
 % KS page 59
 % KS - 4.9 import and Modules
 \newpage
 \subsection{The \texttt{import} function}
-Python, by default, only has access to a small number of built-in types and functions. The vast majority of
+\begin{itemize}
+\item Python, by default, only has access to a small number of built-in types and functions. The vast majority of
 functions are located in modules, and before a function can be accessed, the module which contains the
 function must be imported. 
 
-For example, when using ipython --pylab (or any variants), a large number
-of modules are automatically imported, including NumPy and matplotlib. This is style of importing useful
+\item For example, when using \texttt{ipython --pylab} (or any variants), a large number
+of modules are automatically imported, including NumPy and matplotlib.
+\item This is style of importing useful
 for learning and interactive use, but care is needed to make sure that the correct module is imported when
 designing more complex programs.
 
-import can be used in a variety of ways. The simplest is to use from module import * which imports
-all functions in module. This method of using import can dangerous since if you use it more than once,
-it is possible for functions to be hidden by later imports. A better method is to just import the required
-functions. This still places functions at the top level of the namespace, but can be used to avoid conflicts.
+\item \texttt{import} can be used in a variety of ways. The simplest is to use from module \texttt{import *} which imports
+all functions in module. 
+\item This method of using import can dangerous since if you use it more than once,
+it is possible for functions to be hidden by later imports. 
+\item A better method is to just import the required
+functions. 
+\item This still places functions at the top level of the namespace, but can be used to avoid conflicts.
 \begin{framed}
 \begin{verbatim}
 from pylab import log2 # Will import log2 only
@@ -241,9 +262,10 @@ from scipy import log10 # Will not import the log2 from SciPy
 \end{verbatim}
 \end{framed}
 %KS page 59
-The only difference between these two is that import scipy is implicitly calling \texttt{import scipy as scipy}.
-When this formof import is used, functions are used with the “as” name. For example, the load provided
-byNumPy is accessed using sp.log2, while the pylab load is \texttt{pl.log2} – and both can be used where appropriate.
-While this method is the most general, it does require slightly more typing.
+\item The only difference between these two is that \texttt{import scipy} is implicitly calling \texttt{import scipy as scipy}.
+\item When this formof import is used, functions are used with the “as” name. For example, the load provided
+by NumPy is accessed using sp.log2, while the pylab load is \texttt{pl.log2} – and both can be used where appropriate.
+\item While this method is the most general, it does require slightly more typing.
+\end{itemize}
 %--------------------------------------------------------------------------------------------%
 \end{document}

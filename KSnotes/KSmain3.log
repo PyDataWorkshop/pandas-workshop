@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  28 AUG 2014 20:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  28 AUG 2014 20:08
 entering extended mode
-**KSmain.tex
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.tex
+**KSmain3.tex
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain3.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -456,19 +456,19 @@ Package tocloft Info: The document has section divisions on input line 44.
 \cftsubtabindent=\skip99
 \cftsubtabnumwidth=\skip100
 )
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain3.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -521,13 +521,15 @@ LaTeX Font Info:    ... okay on input line 35.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
- (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.toc
+ (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain3.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 1.
+)
+\tf@toc=\write3
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -537,78 +539,55 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-])
-\tf@toc=\write3
- [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 50.
+]
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch19-stats.tex [2]
+Overfull \hbox (24.39528pt too wide) in paragraph at lines 101--101
+[]\OT1/cmtt/m/n/10.95 >>> x = arange(10) >>> shuffle(x) >>> x array([4, 6, 3, 7
+, 9, 0, 2, 1, 8, 5]) 
+ []
 
-("C:\Program Files\Miktek\tex\latex\base\omscmr.fd"
+[3]
+Overfull \hbox (31.69789pt too wide) in paragraph at lines 107--107
+[]\OT1/cmtt/m/n/10.95 >>> x = arange(10) >>> permutation(x) array([2, 5, 3, 0, 
+6, 1, 9, 8, 4, 7]) 
+ []
+
+[4] [5] [6] [7]
+Overfull \hbox (18.95802pt too wide) in paragraph at lines 259--261
+\OT1/cmr/m/n/10.95 standard[]t(nu) gen-er-ates a draw from a Stu-dent's t with 
+shape pa-ram-e-ter $\OML/cmm/m/it/10.95 $\OT1/cmr/m/n/10.95 . \OT1/cmtt/m/n/10
+.95 standard[]t(nu,
+ []
+
+[8] [9] [10] [11]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 372.
+
+ ("C:\Program Files\Miktek\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 50.
-
-Overfull \hbox (4.62444pt too wide) in paragraph at lines 70--71
-[]\OT1/cmr/m/n/10.95 Matplotlib pro-vides so-phis-ti-cated 2-D and ba-sic 3-D g
-raph-ics ca-pa-bil-i-ties with Matlab-
- []
-
-[3] [4] [5]
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch03-datatypes.tex [6]
-[7] [8] [9] [10] [11] [12])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch04-arrays.tex [13] [14]
-[15] [16] [17] [18] [19] [20])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch05-specialarrays.tex
-[21] [22]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\DataStructures.tex
-[23]
-Overfull \hbox (54.69264pt too wide) in paragraph at lines 79--79
-[]\OT1/cmtt/m/n/10.95 d = {'Chicago': 1000, 'New York': 1300, 'Portland': 900, 
-'San Francisco': 1100, 
- []
-
-[24] [25]
-Underfull \vbox (badness 10000) detected at line 173
- []
-
-
-Underfull \vbox (badness 10000) detected at line 173
- []
-
-[26] [27]
-Overfull \hbox (71.9387pt too wide) in paragraph at lines 221--221
-[]\OT1/cmtt/m/n/10.95 print cities[['Chicago', 'New York', 'Portland']] + citie
-s[['Austin', 'New York']][] 
- []
-
-[28] [29] [30] [31]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch08.tex
-[32] [33] [34] [35] [36] [37] [38] [39])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch11-logicaloperators.tex
-[40] [41] [42]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 119.
-) [43] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.aux) ) 
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 372.
+)
+[12] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain3.aux) ) 
 Here is how much of TeX's memory you used:
- 3931 strings out of 493921
- 58472 string characters out of 3148886
- 126564 words of memory out of 3000000
- 7160 multiletter control sequences out of 15000+200000
- 11355 words of font info for 40 fonts, out of 3000000 for 9000
+ 3899 strings out of 493921
+ 57515 string characters out of 3148886
+ 124544 words of memory out of 3000000
+ 7149 multiletter control sequences out of 15000+200000
+ 8424 words of font info for 30 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 44i,11n,43p,542b,386s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program
- Files/Miktek/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Mik
-tek/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/Miktek/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/Miktek/fonts/type1/public/a
-msfonts/cm/cmr10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cm
-r8.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/P
-rogram Files/Miktek/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files
-/Miktek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/Miktek/font
-s/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/Miktek/fonts/type1/publ
-ic/amsfonts/cm/cmtt10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/
-cm/cmtt12.pfb>
-Output written on KSmain.pdf (43 pages, 200755 bytes).
+ 44i,10n,43p,273b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program 
+Files/Miktek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/Miktek
+/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/Miktek/fonts/type1
+/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Miktek/fonts/type1/public/am
+sfonts/cm/cmmi10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cm
+r10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Pr
+ogram Files/Miktek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/
+Miktek/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on KSmain3.pdf (12 pages, 125463 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
+ 73 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

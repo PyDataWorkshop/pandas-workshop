@@ -41,8 +41,8 @@ random\_sample is the preferred NumPy function, and rand is a convenience functi
 
 \subsubsection{randn, standard\_normal}
 randn and standard\_normal are standard normal random number generators. randn, like rand, takes a
-variable number of integer inputs, and standard_normal takes an n-element tuple. Both can be called
-with no arguments to generate a single standard normal (e.g. randn()). standard_normal is the preferred
+variable number of integer inputs, and standard\_normal takes an n-element tuple. Both can be called
+with no arguments to generate a single standard normal (e.g. randn()). standard\_normal is the preferred
 NumPy function, and randn is a convenience function primarily for MATLAB users .
 \begin{framed}
 \begin{verbatim}
@@ -51,10 +51,10 @@ NumPy function, and randn is a convenience function primarily for MATLAB users .
 \end{verbatim}
 \end{framed}
 \subsubsection{randint, random\_integers}
-randint and random_integers are uniform integer random number generators which take 3 inputs, low,
+randint and random\_integers are uniform integer random number generators which take 3 inputs, low,
 high and size. Low is the lower bound of the integers generated, high is the upper and size is a n-element
 tuple. randint and random\_integers differ in that randint generates integers exclusive of the value in high
-(as do most Python functions), while random_integers includes the value in high in its range.
+(as do most Python functions), while random\_integers includes the value in high in its range.
 \begin{framed}
 \begin{verbatim}
 >>> x = randint(0,10,(100))
@@ -124,8 +124,8 @@ numpy.random.
 \texttt{get\_state()} gets the current state of the random number generator, which is a 5-element tuple. It can be
 called as a function, in which case it gets the state of the default random number generator, or as a method
 on a particular instance of RandomState.
-\subsubsection{set_state}
-\texttt{set_state(state)} sets the state of the random number generator. It can be called as a function, in which
+\subsubsection{set\_state}
+\texttt{set\_state(state)} sets the state of the random number generator. It can be called as a function, in which
 case it sets the state of the default random number generator, or as a method on a particular instance of
 RandomState. \texttt{set\_state} should generally only be called using a state tuple returned by get\_state.
 
@@ -250,13 +250,13 @@ normal() generates draws from a standard Normal (Gaussian). normal(mu, sigma) ge
 a Normal with mean $\mu$ and standard deviation $\sigma$. normal(mu, sigma, (10,10)) generates a 10 by 10 array
 of draws from a Normal with mean $\mu$ and standard deviation $\sigma$. 
 
-\texttt{normal(mu, sigma)} is equivalent to \texttt{mu + sigma * standard_normal()}.
+\texttt{normal(mu, sigma)} is equivalent to \texttt{mu + sigma $\ast$ standard\_normal()}.
 \subsubsection{poisson}
 \texttt{poisson()} generates a draw from a Poisson distribution with $\lambda = 1$. poisson(lambda) generates a draw
 from a Poisson distribution with expectation $\lambda$. poisson(lambda, (10,10)) generates a 10 by 10 array of
 draws from a Poisson distribution with expectation $\lambda$.
 \subsubsection{standard\_t}
-standard\_t(nu) generates a draw from a Student’s t with shape parameter $\nu$. \texttt{standard_t(nu, (10,10))}
+standard\_t(nu) generates a draw from a Student’s t with shape parameter $\nu$. \texttt{standard\_t(nu, (10,10))}
 generates a 10 by 10 array of draws from a Student’s t with shape parameter $\nu$.
 \subsubsection{uniform}
 \texttt{uniform()} generates a uniform random variable on (0, 1). uniform(low, high) generates a uniform on
@@ -313,7 +313,7 @@ array([ 0.37283499, 0.63661908, 1.51588209,
 \end{framed}
 The two sequences are identical since they the state is the same when \texttt{randn} is called. The state is a 5-
 element tuple where the second element is a 625 by 1 vector of unsigned 32-bit integers. In practice the
-state should only be stored using get_state and restored using \texttt{set\_state}.
+state should only be stored using get\_state and restored using \texttt{set\_state}.
 \newpage
 % 19.6 Select Statistical Tests
 % normaltest

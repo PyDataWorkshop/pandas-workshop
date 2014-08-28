@@ -82,21 +82,23 @@ builtins.list
 
 \section{Core Native Data Types}
 \subsection{ Numeric}
-Simple numbers in Python can be either integers, floats or complex. Integers correspond to either 32
+\begin{itemize}
+\item Simple numbers in Python can be either integers, floats or complex. Integers correspond to either 32
 bit or 64-bit integers, depending on whether the python interpreter was compiled for a 32-bit or 64-bit
 operating system, and floats are always 64-bit (corresponding to doubles in C/C++). 
 
-Long integers, on the
+\item Long integers, on the
 other hand, do not have a fixed size and so can accommodate numbers which are larger than maximum
-the basic integer type can handle. This chapter does not cover all Python data types, and instead focuses
-on those which are most relevant for numerical analysis, econometrics and statistics. The byte, bytearray
-and memoryview data types are not described.
+the basic integer type can handle. 
 
+\item We will not cover all Python data types, and instead focus
+on those which are most relevant for data analysis and statistics. 
+%The byte, bytearray and memoryview data types are not described.
+\end{itemize}
 \subsubsection{Floating Point (float)}
 %3.2.1.1 Floating Point (float)
 The most important (scalar) data type for numerical analysis is the float. Unfortunately, not all noncomplex
-numeric data types are floats. To input a floating data type, it is necessary to include a . (period,
-dot) in the expression. This example uses the function \texttt{type()} to determine the data type of a variable.
+numeric data types are floats. To input a floating data type, it is necessary to include a ``." (full-stop /period) in the expression. This example uses the function \texttt{type()} to determine the data type of a variable.
 \begin{framed}
 \begin{verbatim}
 >>> x = 1
@@ -113,11 +115,12 @@ float
 This example shows that using the expression that \texttt{x = 1} produces an integer-valued variable while \texttt{x = 1.0}
 produces a float-valued variable. Using integers can produce unexpected results and so it is important to
 include ``\texttt{.0}” when expecting a float.
+\newpage
 \subsubsection{Complex (complex)}
 
 % 3.2.1.2 Complex (complex)
-Complex numbers are also important for numerical analysis. Complex numbers are created in Python
-using j or the function complex().
+Complex numbers are alsooften very important for scientific computing. Complex numbers are created in Python
+using \texttt{j} or the function \texttt{complex()}.
 \begin{framed}
 \begin{verbatim}
 >>> x = 1.0
@@ -134,17 +137,22 @@ complex
 (1+0j)
 \end{verbatim}
 \end{framed}
-Note that a+b j is the same as complex(a,b ), while complex(a) is the same as a+0j.
+\noindent Note that\texttt{ a+bj}is the same as \texttt{complex(a,b )}, while \texttt{complex(a)} is the same as \texttt{a+0j}.
 %================================================================================================%
-\newpage
+
 
 % 3.2.1.3 Integers (int and long)
-Floats use an approximation to represent numbers which may contain a decimal portion. The integer data
-type stores numbers using an exact representation, so that no approximation is needed. The cost of the
+\subsubsection{Integers (\texttt{int} and \texttt{long})}
+\begin{itemize}
+\item Floats use an approximation to represent numbers which may contain a decimal portion. The integer data
+type stores numbers using an exact representation, so that no approximation is needed. \item The cost of the
 exact representation is that the integer data type cannot express anything that isn’t an integer, rendering
 integers of limited use in most numerical work.
-Basic integers can be entered either by excluding the decimal (see float), or explicitly using the int()
-function. The int() function can also be used to convert a float to an integer by round towards 0.
+\item Basic integers can be entered either by excluding the decimal, or explicitly using the \texttt{int()}
+function. 
+
+\item The \texttt{int()} function can also be used to convert a float to an integer by round towards 0.
+\end{itemize}]
 \begin{framed}
 \begin{verbatim}
 >>> x = 1
@@ -158,7 +166,7 @@ float
 int
 \end{verbatim}
 \end{framed}
-Integers can range from $-2^31$ to $2^31-1$. 
+\noindent Integers can range from $-2^{31}$ to $2^{31}-1$. 
 Python contains another type of integer, known as a long
 integer, which has no effective range limitation. Long integers are entered using the syntax \texttt{x = 1L} or by
 calling \texttt{long()}. Additionally python will automatically convert integers outside of the standard integer
@@ -185,11 +193,13 @@ int
 18446744073709551616L
 \end{verbatim}
 \end{framed}
-
-\subsubsection{Boolean (bool)}
-The Boolean data type is used to represent true and false, using the reserved keywords True and False.
-Boolean variables are important for program flow control and are typically created as a
+\newpage
+\subsubsection{Boolean (\texttt{bool})}
+\begin{itemize}
+\item The Boolean data type is used to represent true and false, using the reserved keywords \texttt{True} and \texttt{False}.
+\item Boolean variables are important for program flow control and are typically created as a
 result of logical operations , although they can be entered directly.
+\end{itemize}
 \begin{framed}
 \begin{verbatim}
 >>> x = True
@@ -207,8 +217,8 @@ Non-zero, non-empty values generally evaluate to true when evaluated by \texttt{
 such as \texttt{bool(0), bool(0.0), bool(0.0j), bool(None), bool(’’)} and \texttt{bool([])} are all false.
 %--------------------------------------------------------------%
 %3.2.3 Strings (str)
-\subsubsection{Strings (str)}
-Strings are not usually important for numerical analysis, although they are frequently encountered when
+\subsubsection{Strings (\texttt{str})}
+\noindent Strings are not usually important for numerical analysis, although they are frequently encountered when
 dealing with data files, especially when importing or when formatting output for human consumption.
 Strings are delimited using ’’ or "" but not using combination of the two delimiters (i.e. do not try ’") in
 a single string, except when used to express a quotation.
@@ -223,10 +233,10 @@ str
 "A quotation!"
 \end{verbatim}
 \end{framed}
-String manipulation is further discussed in Chapter 21.
+%String manipulation is further discussed in Chapter 21.
 
 \newpage
-\subsubsection{Lists (list)}
+\subsubsection{Lists (\texttt{list})}
 %3.2.4 Lists (list)
 \begin{itemize}
 \item Lists are a built-in data type which require other data types to be useful. 
@@ -265,16 +275,16 @@ list (list of lists)
 \end{framed}
 These examples show that lists can be regular, nested and can contain any mix of data types including
 other lists.
-\end{document}
+
 \newpage
 
-\subsection{Xrange (\texttt{xrange})}
+\subsubsection{Xrange (\texttt{xrange})}
 \begin{itemize}
-\item A xrange is a useful data type which is most commonly encounteredwhen using a for loop. 
+\item A xrange is a useful data type which is most commonly encountered when using a \texttt{for} loop. 
 \item 
-xrange(a,b,i)
+\texttt{xrange(a,b,i)}
 creates the sequences that follows the pattern $a, a +i , a +2i , . . . , a +(m -1)i$ where m is the stepsize.
-i e. In other
+\item In other
 words, it find all integers x starting with a such $a \leq x < b$ and where two consecutive values are separated
 by i . \item 
 xrange can be called with 1 or two parameters – xrange(a,b) is the same as xrange(a,b,1)
@@ -302,9 +312,15 @@ list
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 \end{verbatim}
 \end{framed}
-xrange is not technically a list, which is why the statement print(x) returns xrange(0,10). Explicitly
+\begin{itemize}
+\item xrange is not technically a list, which is why the statement \texttt{print(x) }returns \texttt{xrange(0,10)}. 
+\item Explicitly
 converting with list produces a list which allows the values to be printed. Technically xrange is an iterator
-which does not actually require the storage space of a list. This can be seen in the differences between
-using y = range(10), which returns a list and y=xrange(10) which returns an xrange object. Best practice
-is to use xrange instead of range
+which does not actually require the storage space of a list. 
+\item This can be seen in the differences between
+using \texttt{y = range(10)}, which returns a list and\texttt{ y=xrange(10)} which returns an xrange object. 
+\item Best practice
+is to use \texttt{xrange} instead of \texttt{range}.
+\end{itemize}
+
 \end{document}

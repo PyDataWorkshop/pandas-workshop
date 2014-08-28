@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  27 AUG 2014 20:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  28 AUG 2014 18:55
 entering extended mode
 **C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSch08.tex
 (C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSch08.tex
@@ -534,24 +534,35 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-] [2] [3] [4] [5]
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch08.aux) ) 
+] [2] [3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 162.
+
+
+("C:\Program Files\Miktek\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 162.
+ [4] [5] [6] [7] [8]
+[9] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch08.aux) ) 
 Here is how much of TeX's memory you used:
- 3877 strings out of 493921
- 57224 string characters out of 3148886
- 123889 words of memory out of 3000000
- 7135 multiletter control sequences out of 15000+200000
- 7427 words of font info for 27 fonts, out of 3000000 for 9000
+ 3899 strings out of 493921
+ 57576 string characters out of 3148886
+ 124889 words of memory out of 3000000
+ 7152 multiletter control sequences out of 15000+200000
+ 8389 words of font info for 30 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 53i,10n,45p,359b,227s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/
-Miktek/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/Miktek/fonts/
-type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/type1/public
-/amsfonts/cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm
-/cmtt10.pfb>
-Output written on KSch08.pdf (5 pages, 68382 bytes).
+ 53i,10n,45p,610b,244s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Fi
+les/Miktek/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Miktek
+/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/Miktek/fonts/type1/
+public/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfo
+nts/cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Pr
+ogram Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on KSch08.pdf (9 pages, 107135 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
+ 60 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

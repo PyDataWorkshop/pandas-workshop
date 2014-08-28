@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  27 AUG 2014 22:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  28 AUG 2014 20:25
 entering extended mode
-**C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSch03-datatypes.tex
-(C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSch03-datatypes.tex
+**KSch03-datatypes.tex
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch03-datatypes.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -542,17 +542,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ] [2] [3] [4]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 161.
+(Font)              <10.95> on input line 169.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 161.
+(Font)              <8> on input line 169.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 161.
+(Font)              <6> on input line 169.
  [5]
-Overfull \hbox (15.97157pt too wide) in paragraph at lines 206--210
-\OT1/cmr/m/n/10.95 Zero or empty val-ues such as \OT1/cmtt/m/n/10.95 bool(0), b
-ool(0.0), bool(0.0j), bool(None), bool('')
- []
-
 [6] [7] [8]
 (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch03-datatypes.aux) ) 
 Here is how much of TeX's memory you used:
@@ -562,16 +557,17 @@ Here is how much of TeX's memory you used:
  7161 multiletter control sequences out of 15000+200000
  9866 words of font info for 35 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 53i,10n,45p,620b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 53i,10n,45p,573b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Prog
-ram Files/Miktek/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/Mik
-tek/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/Miktek/fonts/type
-1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/type1/public/ams
-fonts/cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cms
-y10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on KSch03-datatypes.pdf (8 pages, 90558 bytes).
+ram Files/Miktek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/Mi
+ktek/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/Miktek/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/Miktek/fonts/type1/public/ams
+fonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cms
+s12.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
+Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on KSch03-datatypes.pdf (8 pages, 102532 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
+ 57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

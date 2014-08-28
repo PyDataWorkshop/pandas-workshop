@@ -8,7 +8,13 @@
 
 Logical expressions can be combined using four logical devices,
 %-----------------------------------------------%
-
+\begin{tabular}{|c|c|c|c|}
+	\hline Keyword (Scalar) & Function & Bitwise & True if . . . \\ \hline
+	and & logical\_and & Both & True \\ \hline
+	or  & logical\_or & Either or Both True \\ \hline
+	not & logical\_not & ~ & Not True \\ \hline
+	& logical\_xor & \^ & One True and One False \\ \hline
+\end{tabular} 
 \begin{verbatim}
 % BEGIN TABLE
 Keyword (Scalar) & Function & Bitwise & True if . . . \\ \hline
@@ -99,10 +105,10 @@ The tolerance for being close can be set using keyword arguments either relative
 (atol).
 
 \subsubsection{array\_equal}
-array_equal tests if two arrays have the same shape and elements. It is safer than comparing arrays directly
+array\_equal tests if two arrays have the same shape and elements. It is safer than comparing arrays directly
 since comparing arrays which are not broadcastable produces an error.
-\subsubsection{array\_array_equiv}
-array_equiv tests if two arrays are equivalent, even if they do not have the exact same shape. Equivalence
+\subsubsection{array\_array\_equiv}
+array\_equiv tests if two arrays are equivalent, even if they do not have the exact same shape. Equivalence
 is defined as one array being broadcastable to produce the other.
 \begin{framed}
 \begin{verbatim}>>> x = randn(10,1)

@@ -20,10 +20,11 @@ a function or set of function (generically) of the form:
 That is, the functions take one or more inputs and produce one or more outputs.
 
 %------------------------------------------------%
-\subsection{18.1 Functions}
+% 18.1 Functions
+\subsection{Functions}
 Python functions are very simple to declare and can occur in the same file as the main program or a standalone
-file. Functions are declared using the def keyword, and the value produced is returned using the
-return keyword. Consider a simple function which returns the square of the input, $y = x^2$.
+file. Functions are declared using the \texttt{def} keyword, and the value produced is returned using the
+\texttt{return} keyword. Consider a simple function which returns the square of the input, $y = x^2$.
 \begin{verbatim}
 from __future__ import print_function, division
 
@@ -88,11 +89,12 @@ All of these functions have been placed in the same file as the main program. Pl
 allows for reuse in multiple programs, and will be discussed later in this chapter.
 
 %----------------------------%
-MORE
-\end{document}
+% 18.1.2 Default Values
 %----------------------------%
-\subsubsection{18.1.2 Default Values}
+\subsubsection{Default Values}
 Default values are set in the function declaration using the syntax input=default.
+\begin{framed}
+\begin{verbatim}
 from __future__ import print_function, division
 import numpy as np
 def lp_norm(x,y,p = 2):
@@ -107,28 +109,39 @@ l1 = lp_norm(x,y,1)
 print("The l1 and l2 distances are ",l1,l2)
 print("Is the default value overridden?", sum(abs(xy))==
 l1)
+\end{verbatim}
+\end{framed}
 
 Default values should not normally be mutable (e.g. lists or arrays) since they are only initialized the first
 time the function is called. Subsequent calls will use the same value, which means that the default value
 could change every time the function is called.
 
+\begin{framed}
+\begin{verbatim}
+
 from __future__ import print_function, division
 import numpy as np
+\end{verbatim}
+\end{framed}
 %----------------------------%
 \newpage
-\subsection{18.4 Anonymous Functions}
+% 18.4 Anonymous Functions
+\subsection{Anonymous Functions}
 
 Python support anonymous functions using the keyword lambda. Anonymous functions are usually encountered
 when another function expects a function as an input and a simple function will suffice. Anonymous
 function take the generic formlambda a,b,c,. . .:code using a,b,c. The key elements are the keyword
 lambda, a list of comma separated inputs, a colon between the inputs and the actual function code. For
 example lambda x,y:x+y would return the sum of the variables x and y.
+
 Anonymous functions are simple but useful. For example, when lists containing other lists it isn’t
 directly possible to sort on an arbitrary element of the nested list. Anonymous functions allow sorting
 through the keyword argument key by returning the element Python should use to sort. In this example,
-a direct call to sort() will sort on the first element (first name). Using the anonymous function
-lambda x:x[1] to returnthe second element of the tuple allows for sorting on the lastname. lambda x:x[2]
+a direct call to \texttt{sort()} will sort on the first element (first name). Using the anonymous function
+lambda x:x[1] to returnthe second element of the tuple allows for sorting on the lastname. \texttt{lambda x:x[2]}
 would allow for sorting on the University.
+\begin{framed}
+	\begin{verbatim}
 >>> nested = [(’John’,’Doe’,’Oxford’),\
 ... (’Jane’,’Dearing’,’Cambridge’),\
 ... (’Jerry’,’Dawn’,’Harvard’)]
@@ -142,22 +155,27 @@ would allow for sorting on the University.
 [(’Jerry’, ’Dawn’, ’Harvard’),
 (’Jane’, ’Dearing’, ’Cambridge’),
 (’John’, ’Doe’, ’Oxford’)]
-
+\end{verbatim}
+\end{framed}
 %----------------------------%
-
-\subsection{18.8 Python Coding Conventions}
+% 18.8 Python Coding Conventions
+\subsection{Python Coding Conventions}
 There are a number of common practices which can be adopted to produce Python code which looks
 more like code found in other modules:
-1. Use 4 spaces to indent blocks – avoid using tab, except when an editor automatically converts tabs
+\begin{enumerate}
+\item Use 4 spaces to indent blocks – avoid using tab, except when an editor automatically converts tabs
 to 4 spaces
-2. Avoid more than 4 levels of nesting, if possible
-3. Limit lines to 79 characters. The \ symbol can be used to break long lines
+\item Avoid more than 4 levels of nesting, if possible
+\item Limit lines to 79 characters. The \ symbol can be used to break long lines
 219
-4. Use two blank lines to separate functions, and one to separate logical sections in a function.
-5. Use ASCII mode in text editors, not UTF-8
-6. One module per import line
-7. Avoid from module import * (for any module). Use either from module import func1, func2 or
+\item Use two blank lines to separate functions, and one to separate logical sections in a function.
+\item Use ASCII mode in text editors, not UTF-8
+\item One module per import line
+\item Avoid from module import * (for any module). Use either from module import func1, func2 or
 import module as shortname.
-8. Follow the NumPy guidelines for documenting functions
+\item Follow the NumPy guidelines for documenting functions
+\end{enumerate}
+
 More suggestions can be found in PEP8.
 %----------------------------%
+\end{document}

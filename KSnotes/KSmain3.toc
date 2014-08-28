@@ -1,0 +1,32 @@
+\contentsline {section}{\numberline {1}Probability and Statistics Functions}{2}
+\contentsline {subsection}{\numberline {1.1}Random Number Generation with NumPy}{2}
+\contentsline {subsubsection}{\numberline {1.1.1}rand, random\_sample}{2}
+\contentsline {subsubsection}{\numberline {1.1.2}randn, standard\_normal}{2}
+\contentsline {subsubsection}{\numberline {1.1.3}randint, random\_integers}{2}
+\contentsline {subsubsection}{\numberline {1.1.4}shuffle}{3}
+\contentsline {subsubsection}{\numberline {1.1.5}permutation}{3}
+\contentsline {subsubsection}{\numberline {1.1.6}shuffle}{3}
+\contentsline {subsubsection}{\numberline {1.1.7}permutation}{4}
+\contentsline {subsection}{\numberline {1.2}Select Random Number Generators}{4}
+\contentsline {subsubsection}{\numberline {1.2.1}get\_state}{5}
+\contentsline {subsubsection}{\numberline {1.2.2}set\_state}{5}
+\contentsline {subsection}{\numberline {1.3}19.2.2 Seed}{5}
+\contentsline {subsection}{\numberline {1.4}19.3 Statistics Functions}{6}
+\contentsline {subsubsection}{\numberline {1.4.1}mean}{6}
+\contentsline {subsubsection}{\numberline {1.4.2}median}{6}
+\contentsline {subsubsection}{\numberline {1.4.3}std}{7}
+\contentsline {subsubsection}{\numberline {1.4.4}var}{7}
+\contentsline {subsubsection}{\numberline {1.4.5}corrcoef}{7}
+\contentsline {subsubsection}{\numberline {1.4.6}cov}{7}
+\contentsline {subsubsection}{\numberline {1.4.7}histogram}{7}
+\contentsline {subsubsection}{\numberline {1.4.8}normal}{8}
+\contentsline {subsubsection}{\numberline {1.4.9}poisson}{8}
+\contentsline {subsubsection}{\numberline {1.4.10}standard\_t}{8}
+\contentsline {subsubsection}{\numberline {1.4.11}uniform}{8}
+\contentsline {subsection}{\numberline {1.5}Simulation and Random Number Generation}{9}
+\contentsline {subsubsection}{\numberline {1.5.1}RandomState}{9}
+\contentsline {subsubsection}{\numberline {1.5.2}19.2.1 State}{9}
+\contentsline {subsection}{\numberline {1.6}normaltest}{11}
+\contentsline {subsection}{\numberline {1.7}kstest}{11}
+\contentsline {subsubsection}{\numberline {1.7.1}ks\_2samp}{11}
+\contentsline {section}{\numberline {2}Statsmodels}{12}
