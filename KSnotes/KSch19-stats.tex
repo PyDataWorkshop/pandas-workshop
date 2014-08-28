@@ -118,8 +118,43 @@ numpy.random.
 % \subsection{Bernoulli}
 % ThereisnoBernoulligenerator. Instead usebinomial(1,p)to generateasingle draworbinomial(1,p,(10,10)) togenerate anarray where % p istheprobabilityofsuccess.
 
+\newpage
+%=================================%
+\subsubsection{get\_state}
+\texttt{get\_state()} gets the current state of the random number generator, which is a 5-element tuple. It can be
+called as a function, in which case it gets the state of the default random number generator, or as a method
+on a particular instance of RandomState.
+\subsubsection{set_state}
+\texttt{set_state(state)} sets the state of the random number generator. It can be called as a function, in which
+case it sets the state of the default random number generator, or as a method on a particular instance of
+RandomState. \texttt{set\_state} should generally only be called using a state tuple returned by get\_state.
 
-
+\subsection{19.2.2 Seed}
+\texttt{numpy.random.seed} is a more useful function for initializing the random number generator, and can be
+used in one of two ways. \texttt{seed()} will initialize (or reinitialize) the random number generator using some
+actual random data provided by the operating system.2 seed( s ) takes a vector of values (can be scalar) to
+initialize the random number generator at particular state. seed( s ) is particularly useful for producing
+simulation studies which are reproducible. In the following example, calls to \texttt{seed()} produce different
+random numbers, since these reinitialize using random data from the computer, while calls to seed(0)
+produce the same (sequence) of random numbers.
+\begin{framed}
+\begin{verbatim}
+>>> seed()
+>>> randn()
+array([ 0.62968838])
+>>> seed()
+>>> randn()
+array([ 2.230155])
+>>> seed(0)
+>>> randn()
+array([ 1.76405235])
+>>> seed(0)
+>>> randn()
+array([ 1.76405235])
+\end{verbatim}
+\end{framed}
+NumPyalways calls \texttt{seed()}  when the first randomnumberis generated. As a result. calling \texttt{standard\_normal()}
+across two “fresh” sessions will not produce the same random number.
 
 %=========================================================%
 %19.3 - Statistical Functions
@@ -131,10 +166,29 @@ numpy.random.
 % - Covariance
 % - Histograms
 % - Histogram Plots
-
+\subsection{19.3 Statistics Functions}
+\subsubsection{mean}
+mean computes the average of an array. An optional second argument provides the axis to use (default is
+to use entire array). mean can be used either as a function or as a method on an array.
+\begin{framed}
+\begin{verbatim}
+>>> x = arange(10.0)
+>>> x.mean()
+4.5
+>>> mean(x)
+4.5
+>>> x= reshape(arange(20.0),(4,5))
+>>> mean(x,0)
+231
+array([ 7.5, 8.5, 9.5, 10.5, 11.5])
+>>> x.mean(1)
+array([ 2., 7., 12., 17.])
+\end{verbatim}
+\end{framed}
 \subsubsection{median}
 median computed the median value in an array. An optional second argument provides the axis to use
 (default is to use entire array).
+\begin{framed}
 \begin{verbatim}
 >>> x= randn(4,5)
 >>> x
@@ -159,6 +213,7 @@ array([0.62950048,
 0.18769355, 0.19857318,
 0.59318936])
 \end{verbatim}
+\end{framed}
 Note that when an array or axis dimension contains an even number of elements (n), median returns the
 average of the 2 inner elements.
 %======================%
