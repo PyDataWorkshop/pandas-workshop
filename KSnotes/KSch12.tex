@@ -1,6 +1,7 @@
 \documentclass[KSmain.tex]{subfiles} 
 \begin{document} 
 
+\section{Data Wrangling}
 Elements from NumPy arrays can be selected using four methods: scalar selection, slicing, numerical (or
 list-of-locations) indexing and logical (or Boolean) indexing.
 
@@ -100,4 +101,68 @@ array([[0, 0],
 \end{verbatim}
 \end{framed}
 %--------------------------------------------------%
+%12.2 Logical Indexing
+\newpage
+\subsection{Logical Indexing}
+Logical indexing differs fromslicing and numeric indexing by using logical indices to select elements, rows
+or columns. Logical indices act as light switches and are either “on” (True) or “off” (False). Pure logical
+indexing uses a logical indexing array with the same size as the array being used for selection and always
+returns a 1-dimensional array.
+\begin{framed}
+\begin{verbatim}
+>>> x = arange(3,3)
+>>> x < 0
+array([ True, True, True, False, False, False], dtype=bool)
+>>> x[x < 0]
+array([3,
+2,
+1])
+>>> x[abs(x) >= 2]
+array([3,
+2,
+2])
+>>> x = reshape(arange(8,
+8), (4,4))
+>>> x[x < 0]
+array([8,
+7,
+6,
+5,
+4,
+3,
+2,
+1])
+\end{verbatim}
+\end{framed}
+It is tempting to use two 1-dimensional logical arrays to act as row and column masks on a 2-dimensional
+array. This does not work, and it is necessary to use \textt{ix\_} if interested in this type of indexing.
+\begin{framed}
+\begin{verbatim}
+>>> x = reshape(arange(8,8),(
+4,4))
+>>> cols = any(x < 6,
+0)
+>>> rows = any(x < 0, 1)
+>>> cols
+array([ True, True, False, False], dtype=bool
+>>> rows
+array([ True, True, False, False], dtype=bool)
+>>> x[cols,rows] # Not upper 2 by 2
+array([8,
+3])
+>>> x[ix_(cols,rows)] # Upper 2 by 2
+array([[8,
+7],
+[4,
+3]])
+\end{verbatim}
+\end{framed}
+The difference between the final 2 commands is due to how logical indexing operates when more than
+logical array is used. When using 2 or more logical indices, they are first transformed to numerical indices
+using nonzero which returns the locations of the non-zero elements (which correspond to the True
+elements of a Boolean array).
+\begin{framed}
+\begin{verbatim}>>> cols.nonzero()
+\end{verbatim}
+\end{framed}
 \end{document}
