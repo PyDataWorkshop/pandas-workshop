@@ -1,30 +1,50 @@
 \documentclass[KSmain.tex]{subfiles} 
 \begin{document} 
 
+\section{Logical and Relational Operators}
+Logical operators are useful when writing batch files or custom functions. Logical operators, when combined
+with flow control, allow for complex choices to be compactly expressed.
 
+%--------------------------------%
+%11.1
+\subsection{Relational Operators}
+
+
+The core logical operators are
+\begin{verbatim}
+
+Symbol Function Definition
+> greater Greater than
+>= greater_equal Greater than or equal to
+< less Less than
+<= less_equal Less than or equal to
+== equal Equal to
+!= not_equal Not equal to
+\end{verbatim}
+
+%-----------------------------------------------%
 % 11.2
-
 \section{Logical Operators}
 
 Logical expressions can be combined using four logical devices,
-%-----------------------------------------------%
+
 \begin{tabular}{|c|c|c|c|}
 	\hline Keyword (Scalar) & Function & Bitwise & True if . . . \\ \hline
 	and & logical\_and & Both & True \\ \hline
 	or  & logical\_or & Either or Both True \\ \hline
 	not & logical\_not & ~ & Not True \\ \hline
-	& logical\_xor & \^ & One True and One False \\ \hline
+	& logical\_xor & \wedge & One True and One False \\ \hline
 \end{tabular} 
-\begin{verbatim}
+%\begin{verbatim}
 % BEGIN TABLE
-Keyword (Scalar) & Function & Bitwise & True if . . . \\ \hline
-and & logical_and & Both & True \\ \hline
-or  & logical_or & Either or Both True \\ \hline
-not & logical_not & ~ & Not True \\ \hline
-& logical_xor & ^ & One True and One False \\ \hline
+%Keyword (Scalar) & Function & Bitwise & True if . . . \\ \hline
+%and & logical_and & Both & True \\ \hline
+%or  & logical_or & Either or Both True \\ \hline
+%not & logical_not & ~ & Not True \\ \hline
+%& logical_xor & ^ & One True and One False \\ \hline
 
 % END OF TABLE
-\end{verbatim}
+%\end{verbatim}
 %-----------------------------------------------%
 There are three versions of all operators except XOR. The keyword version (e.g. and) can only be used
 with scalars and so it not useful when working with NumPy. Both the function and bitwise operators
@@ -48,7 +68,9 @@ array([False, False, True, True, False, False], dtype=bool)
 array([False, False, True, True, False, False], dtype=bool)
 \end{verbatim}
 \end{framed}
-
+%---------------------------------------------------------------------------------------%
+%---------------------------------------------------------------------------------------%
+%11.3
 \subsection{Multiple tests: all and any}
 The commands all and any take logical input and are self-descriptive. all returns True if all logical elements
 in an array are 1.
@@ -128,18 +150,20 @@ Some operate element-by-element and produce an array of the same dimension as th
 produce only scalars. These functions all begin with is.
 
 \begin{verbatim}
-Operator True if . . . Method of operation
-isnan 1 if nan element-by-element
-isinf 1 if inf element-by-element
-isfinite 1 if not inf and not nan element-by-element
-isposfin,isnegfin 1 for positive or negative inf element-by-element
-isreal 1 if not complex valued element-by-element
-iscomplex 1 if complex valued element-by-element
-isreal 1 if real valued element-by-element
-is_string_like 1 if argument is a string scalar
-is_numlike 1 if is a numeric type scalar
-isscalar 1 if scalar scalar
-isvector 1 if input is a vector scalar
+\begin{tabular}{|c|c|c|}
+Operator & True if . . . & Method of operation \\ \hline
+isnan & 1 if nan & element-by-element \\ \hline
+isinf & 1 if inf & element-by-element \\ \hline
+isfinite & 1 if not inf and not nan & element-by-element \\ \hline
+isposfin,isnegfin & 1 for positive or negative inf & element-by-element \\ \hline
+isreal & 1 if not complex valued & element-by-element \\ \hline
+iscomplex &1 if complex valued & element-by-element \\ \hline
+isreal & 1 if real valued & element-by-element \\ \hline
+is_string_like & 1 if argument is a string & scalar \\ \hline
+is_numlike& 1 if is a numeric type & scalar \\ \hline
+isscalar & 1 if scalar & scalar \\ \hline
+isvector & 1 if input is a vector & scalar \\ \hline
+\end{tabular}
 \end{verbatim}
 
 
