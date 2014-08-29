@@ -1,31 +1,40 @@
-\contentsline {section}{\numberline {1}Importing and Exporting Data}{2}
-\contentsline {subsection}{\numberline {1.1}9.1 Importing Data using pandas}{2}
-\contentsline {subsection}{\numberline {1.2}9.1.1 CSV and other formatted text files}{2}
-\contentsline {subsection}{\numberline {1.3}Reading Data}{3}
-\contentsline {subsection}{\numberline {1.4}CSV}{3}
-\contentsline {subsection}{\numberline {1.5}Excel}{5}
-\contentsline {subsection}{\numberline {1.6}Databases}{7}
-\contentsline {section}{\numberline {2}File System Operations}{8}
-\contentsline {subsection}{\numberline {2.1}22.1 Changing the Working Directory}{8}
-\contentsline {subsection}{\numberline {2.2}22.2 Creating and Deleting Directories}{8}
-\contentsline {subsection}{\numberline {2.3}22.3 Listing the Contents of a Directory}{9}
-\contentsline {subsection}{\numberline {2.4}22.4 Copying, Moving and Deleting Files}{9}
-\contentsline {subsection}{\numberline {2.5}Mixing Numerical Indexing with Scalar Selection}{11}
-\contentsline {section}{\numberline {3}Custom Function and Modules}{12}
-\contentsline {subsection}{\numberline {3.1}Functions}{12}
-\contentsline {subsubsection}{\numberline {3.1.1}Default Values}{14}
-\contentsline {subsection}{\numberline {3.2}Anonymous Functions}{15}
-\contentsline {subsection}{\numberline {3.3}Python Coding Conventions}{15}
-\contentsline {section}{\numberline {4}Flow Control, Loops and Exception Handling}{16}
-\contentsline {subsection}{\numberline {4.1}13.2 if . . . elif . . . else}{16}
-\contentsline {subsection}{\numberline {4.2}break}{18}
-\contentsline {subsubsection}{\numberline {4.2.1}13.4.2 continue}{18}
-\contentsline {section}{\numberline {5}Graphics}{19}
-\contentsline {subsection}{\numberline {5.1}\texttt {matlibplot}}{19}
-\contentsline {subsection}{\numberline {5.2}\texttt {seaborn}}{19}
-\contentsline {subsection}{\numberline {5.3}Histograms}{19}
-\contentsline {subsection}{\numberline {5.4}Adding a Title and Legend}{20}
-\contentsline {subsection}{\numberline {5.5}Plotting}{21}
-\contentsline {subsubsection}{\numberline {5.5.1}isnull and notnull}{21}
-\contentsline {subsubsection}{\numberline {5.5.2}ix}{21}
-\contentsline {subsubsection}{\numberline {5.5.3}plot}{21}
+\contentsline {section}{\numberline {1}pandas}{2}
+\contentsline {subsection}{\numberline {1.1}Data Structures}{2}
+\contentsline {subsubsection}{\numberline {1.1.1}ix}{2}
+\contentsline {subsection}{\numberline {1.2}Statistical Function}{2}
+\contentsline {subsection}{\numberline {1.3}17.5 Graphics}{4}
+\contentsline {subsubsection}{\numberline {1.3.1}hist}{5}
+\contentsline {subsubsection}{\numberline {1.3.2}boxplot}{5}
+\contentsline {subsubsection}{\numberline {1.3.3}scatter\_plot}{5}
+\contentsline {subsubsection}{\numberline {1.3.4}scatter\_matrix}{5}
+\contentsline {subsubsection}{\numberline {1.3.5}lag\_plot}{5}
+\contentsline {section}{\numberline {2}Flow Control, Loops and Exception Handling}{5}
+\contentsline {subsection}{\numberline {2.1}13.2 if . . . elif . . . else}{5}
+\contentsline {subsection}{\numberline {2.2}break}{8}
+\contentsline {subsubsection}{\numberline {2.2.1}13.4.2 continue}{8}
+\contentsline {section}{\numberline {3}Importing and Exporting Data}{8}
+\contentsline {subsection}{\numberline {3.1}9.1 Importing Data using pandas}{8}
+\contentsline {subsection}{\numberline {3.2}9.1.1 CSV and other formatted text files}{9}
+\contentsline {subsection}{\numberline {3.3}Reading Data}{10}
+\contentsline {subsection}{\numberline {3.4}CSV}{10}
+\contentsline {subsection}{\numberline {3.5}Excel}{12}
+\contentsline {subsection}{\numberline {3.6}Databases}{14}
+\contentsline {section}{\numberline {4}File System Operations}{15}
+\contentsline {subsection}{\numberline {4.1}22.1 Changing the Working Directory}{15}
+\contentsline {subsection}{\numberline {4.2}22.2 Creating and Deleting Directories}{15}
+\contentsline {subsection}{\numberline {4.3}22.3 Listing the Contents of a Directory}{16}
+\contentsline {subsection}{\numberline {4.4}22.4 Copying, Moving and Deleting Files}{16}
+\contentsline {section}{\numberline {5}Data Wrangling}{17}
+\contentsline {subsection}{\numberline {5.1}Mixing Numerical Indexing with Scalar Selection}{18}
+\contentsline {subsection}{\numberline {5.2}Logical Indexing}{20}
+\contentsline {section}{\numberline {6}Custom Function and Modules}{22}
+\contentsline {subsection}{\numberline {6.1}Functions}{22}
+\contentsline {subsubsection}{\numberline {6.1.1}Default Values}{23}
+\contentsline {subsection}{\numberline {6.2}Anonymous Functions}{25}
+\contentsline {subsection}{\numberline {6.3}Python Coding Conventions}{25}
+\contentsline {section}{\numberline {7}Graphics}{27}
+\contentsline {subsection}{\numberline {7.1}\texttt {matlibplot}}{27}
+\contentsline {subsection}{\numberline {7.2}\texttt {seaborn}}{27}
+\contentsline {subsection}{\numberline {7.3}Histograms}{27}
+\contentsline {subsection}{\numberline {7.4}Adding a Title and Legend}{28}
+\contentsline {subsection}{\numberline {7.5}Plotting}{29}

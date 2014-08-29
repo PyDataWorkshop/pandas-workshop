@@ -1,3 +1,6 @@
+\documentclass[KSmain.tex]{subfiles} 
+\begin{document} 
+
 \section{Basic Functions and Numerical Indexing}
 % 6.3 Mathematics
 % 6.2 Rounding and Precision
@@ -121,6 +124,8 @@ x.round(2) is identical to around(x, 2). The change of names is needed to avoid 
 Python built-in function round.
 \subsubsection*{floor}
 floor rounds to the next smallest integer.
+\begin{framed}
+\begin{verbatim}
 >>> x = randn(3)
 array([ 0.60675173, 0.3361189
 , 0.56688485])
@@ -152,7 +157,7 @@ is the same as 0..
 
 
 \subsection{Generating Arrays and Matrices}
-\subsubection{linspace}
+\subsubsection{linspace}
 linspace(l,u,n) generates a set of n points uniformly spaced between l, a lower bound (inclusive) and u,
 an upper bound (inclusive).
 \begin{framed}
@@ -163,11 +168,11 @@ array([ 0., 1., 2., 3., 4., 5., 6., 7., 8., 9., 10.])
 \end{verbatim}
 \end{framed}
 %----------------------------------%
-\subsubection{logspace}
+\subsubsection{logspace}
 logspace(l,u,n) produces a set of logarithmically spaced points between 10l and 10u . It is identical to
 10**linspace(l,u,n).
 %----------------------------------%
-\subsubection{arange
+\subsubsection{arange}
 arange(l,u,s) produces a set of points spaced by s between l, a lower bound (inclusive) and u, an upper
 bound (exclusive). arange can be used with a single parameter, so that arange(n) is equivalent to
 arange(0,n,1). Note that arange will return integer data type if all inputs are integer.
@@ -182,7 +187,7 @@ array([ 4. , 5.25, 6.5 , 7.75, 9. ])
 \end{verbatim}
 \end{framed}
 %----------------------------------%
-\subsubection{meshgrid}
+\subsubsection{meshgrid}
 meshgrid broadcasts two vectors to produce two 2-dimensional arrays, and is a useful function when plotting
 3-dimensional functions.
 \begin{framed}
@@ -203,7 +208,7 @@ array([[0, 0, 0, 0, 0],
 %-----------------------------------------------%
 \subsubsection{r\_}
 r\_ is a convenience function which generates 1-dimensional arrays from slice notation. While r\_ is highly
-flexible, the most common use it r_[ start : end : stepOrCount ] where start and end are the start and end
+flexible, the most common use it r\_[ start : end : stepOrCount ] where start and end are the start and end
 points, and stepOrCount can be either a step size, if a real value, or a count, if complex.
 \begin{framed}
 \begin{verbatim}
@@ -216,7 +221,7 @@ array([ 0. , 0.5, 1. , 1.5, 2. , 2.5, 3. , 3.5, 4. , 4.5, 5. ,
 array([ 0. , 2.5, 5. , 7.5, 10. ])
 \end{verbatim}
 \end{framed}
-r_ can also be used to concatenate slices using commas to separate slice notation blocks.
+r\_ can also be used to concatenate slices using commas to separate slice notation blocks.
 \begin{framed}
 \begin{verbatim}
 >>> r_[0:2, 7:11, 1:4]
@@ -225,7 +230,7 @@ array([ 0, 1, 7, 8, 9, 10, 1, 2, 3])
 \end{framed}
 Note that r\_ is not a function and that is used with [].
 %----------------------------------%
-\subsubsection{c_}
+\subsubsection{c\_}
 c\_ is virtually identical to r\_ except that column arrays are generates, which are 2-dimensional (second
 dimension has size 1)
 \begin{framed}
@@ -244,7 +249,7 @@ array([[ 1. ],
 c\_, like r\_, is not a function and is used with [].
 
 %=============================================================================%
-\subsubsection{ix_}
+\subsubsection{ix\_}
 ix\_(a,b) constructs an n-dimensional open mesh from n 1-dimensional lists or arrays. The output of
 ix\_ is an n-element tuple containing 1-dimensional arrays. The primary use of ix\_ is to simplify selecting
 slabs inside a matrix. Slicing can also be used to select elements froman array as long as the slice pattern is

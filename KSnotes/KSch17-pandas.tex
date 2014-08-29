@@ -50,6 +50,8 @@ count returns number of non-null values – that is, those which are not NaN or 
 None or NaT (not a time, for datetimes).
 \subsubsection*{describe}
 describe provides a summary of the Series or DataFrame.
+\begin{framed}
+\begin{verbatim}
 >>> state_gdp.describe()
 gdp_2009 gdp_2010 gdp_2011 gdp_2012
 count 51.000000 51.000000 51.000000 51.000000
@@ -76,9 +78,14 @@ min 9.100000
 75% 1.050000
 3.300000 2.200000 2.500000
 max 7.700000 7.200000 7.800000 13.400000
+\end{verbatim}
+\end{framed}
 
 \subsubsection*{value\_counts}
 value\_counts performs histogramming of a Series or DataFrame.
+
+\begin{framed}
+\begin{verbatim}
 >>> state_gdp.region.value_counts()
 SE 12
 PL 7
@@ -89,7 +96,8 @@ GL 5
 RM 5
 SW 4
 dtype: int64
-
+\end{verbatim}
+\end{framed}
 %===============================================================================%
 
 \subsection{17.5 Graphics}
@@ -122,20 +130,20 @@ stacked bar chart.
 \end{itemize}
 \end{itemize}
 \subsubsection{hist}
-hist produces a histogram plot, and is similar to producing a bar plot using the output of value_count.
+hist produces a histogram plot, and is similar to producing a bar plot using the output of value\_count.
 
-\subsubsection{boxplot
+\subsubsection{boxplot}
 boxplot produces box plots of the series in a DataFrame.
-\subsubsection{scatter_plot}
-scatter_plot produce a scatter plot from two series in a DataFrame. Three inputs are required: the
-DataFrame, the column name for the x-axis data and the column name for the y-axis data. scatter_plot
+\subsubsection{scatter\_plot}
+scatter\_plot produce a scatter plot from two series in a DataFrame. Three inputs are required: the
+DataFrame, the column name for the x-axis data and the column name for the y-axis data. scatter\_plot
 is located in pandas.tools.plotting.
-\subsubsection{scatter_matrix}
-scatter_matrix produces a n by n set of subplots where each subplot contains the bivariate scatter of
-two series. One input is required, the DataFrame. scatter_matrix is located in pandas.tools.plotting.
+\subsubsection{scatter\_matrix}
+scatter\_matrix produces a n by n set of subplots where each subplot contains the bivariate scatter of
+two series. One input is required, the DataFrame. scatter\_matrix is located in pandas.tools.plotting.
 By default, the diagonal elements are histograms, and the keyword argument diagonal=’kde’ produces a
 kernel density plot.
-\subsubsection{lag_plot}
-lag_plot produces a scatter plot of a series against its lagged value. The keyword argument lag chooses
+\subsubsection{lag\_plot}
+lag\_plot produces a scatter plot of a series against its lagged value. The keyword argument lag chooses
 the lag used in the plot (default is 1).
 \end{document}

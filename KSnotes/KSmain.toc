@@ -1,61 +1,77 @@
-\contentsline {section}{\numberline {1}Data Types}{6}
-\contentsline {subsection}{\numberline {1.1} Variable Names}{6}
-\contentsline {section}{\numberline {2}Core Native Data Types}{8}
-\contentsline {subsection}{\numberline {2.1} Numeric}{8}
-\contentsline {subsubsection}{\numberline {2.1.1}Floating Point (float)}{8}
-\contentsline {subsubsection}{\numberline {2.1.2}Complex (complex)}{9}
-\contentsline {subsubsection}{\numberline {2.1.3}Integers (\texttt {int} and \texttt {long})}{9}
-\contentsline {subsubsection}{\numberline {2.1.4}Boolean (\texttt {bool})}{11}
-\contentsline {subsubsection}{\numberline {2.1.5}Strings (\texttt {str})}{11}
-\contentsline {subsubsection}{\numberline {2.1.6}Lists (\texttt {list})}{12}
-\contentsline {subsubsection}{\numberline {2.1.7}Xrange (\texttt {xrange})}{13}
-\contentsline {section}{\numberline {3}Arrays and Matrices}{14}
-\contentsline {subsection}{\numberline {3.1}Arrays}{14}
-\contentsline {subsection}{\numberline {3.2}Matrix}{15}
-\contentsline {subsection}{\numberline {3.3}1-dimensional Arrays}{16}
-\contentsline {subsection}{\numberline {3.4}Accessing Elements of an Array}{18}
-\contentsline {subsection}{\numberline {3.5}Multidimensional Arrays}{20}
-\contentsline {subsection}{\numberline {3.6}Concatenation}{20}
-\contentsline {subsection}{\numberline {3.7} Accessing Elements of an Array }{20}
-\contentsline {subsection}{\numberline {3.8}The \texttt {import} function}{21}
-\contentsline {subsection}{\numberline {3.9}Special Arrays}{21}
-\contentsline {subsubsection}{\numberline {3.9.1}ones}{21}
-\contentsline {subsubsection}{\numberline {3.9.2}zeros}{22}
-\contentsline {subsubsection}{\numberline {3.9.3}empty}{22}
-\contentsline {subsection}{\numberline {3.10}floats (single precision)}{22}
-\contentsline {subsubsection}{\numberline {3.10.1}eye, identity}{22}
-\contentsline {section}{\numberline {4}Data Structures}{23}
-\contentsline {subsection}{\numberline {4.1}Series}{23}
-\contentsline {subsection}{\numberline {4.2}DataFrame}{30}
-\contentsline {subsection}{\numberline {4.3}Panel}{31}
-\contentsline {section}{\numberline {5}Useful Array and Matrix Functions}{32}
-\contentsline {subsection}{\numberline {5.1}Views}{32}
-\contentsline {subsubsection}{\numberline {5.1.1}view}{32}
-\contentsline {subsubsection}{\numberline {5.1.2}asmatrix, mat}{32}
-\contentsline {subsubsection}{\numberline {5.1.3}asarray}{33}
-\contentsline {subsection}{\numberline {5.2}Shape Information and Transformation}{33}
-\contentsline {subsubsection}{\numberline {5.2.1}shape}{33}
-\contentsline {subsubsection}{\numberline {5.2.2}reshape}{33}
-\contentsline {subsubsection}{\numberline {5.2.3}size}{34}
-\contentsline {subsubsection}{\numberline {5.2.4}ndim}{34}
-\contentsline {subsubsection}{\numberline {5.2.5}tile}{35}
-\contentsline {subsubsection}{\numberline {5.2.6}ravel}{35}
-\contentsline {subsubsection}{\numberline {5.2.7}flatten}{36}
-\contentsline {subsubsection}{\numberline {5.2.8}flat}{36}
-\contentsline {subsubsection}{\numberline {5.2.9}split, vsplit, hsplit}{36}
-\contentsline {subsubsection}{\numberline {5.2.10}delete}{37}
-\contentsline {subsubsection}{\numberline {5.2.11}squeeze}{38}
-\contentsline {subsubsection}{\numberline {5.2.12}fliplr, flipud}{38}
-\contentsline {subsubsection}{\numberline {5.2.13}diag}{39}
-\contentsline {subsubsection}{\numberline {5.2.14}triu, tril}{39}
-\contentsline {subsection}{\numberline {5.3}Some Useful Linear Algebra Functions}{40}
-\contentsline {subsubsection}{\numberline {5.3.1}det}{40}
-\contentsline {subsubsection}{\numberline {5.3.2}solve}{40}
-\contentsline {subsubsection}{\numberline {5.3.3}eig}{40}
-\contentsline {section}{\numberline {6}Logical Operators}{41}
-\contentsline {subsection}{\numberline {6.1}Bitwise operators}{41}
-\contentsline {subsection}{\numberline {6.2}Multiple tests: all and any}{41}
-\contentsline {subsubsection}{\numberline {6.2.1}allclose}{42}
-\contentsline {subsubsection}{\numberline {6.2.2}array\_equal}{43}
-\contentsline {subsubsection}{\numberline {6.2.3}array\_array\_equiv}{43}
-\contentsline {subsection}{\numberline {6.3} is$\ast $}{43}
+\contentsline {section}{\numberline {1}Data Types}{5}
+\contentsline {subsection}{\numberline {1.1} Variable Names}{5}
+\contentsline {section}{\numberline {2}Core Native Data Types}{7}
+\contentsline {subsection}{\numberline {2.1} Numeric}{7}
+\contentsline {subsubsection}{\numberline {2.1.1}Floating Point (float)}{7}
+\contentsline {subsubsection}{\numberline {2.1.2}Complex (complex)}{8}
+\contentsline {subsubsection}{\numberline {2.1.3}Integers (\texttt {int} and \texttt {long})}{8}
+\contentsline {subsubsection}{\numberline {2.1.4}Boolean (\texttt {bool})}{10}
+\contentsline {subsubsection}{\numberline {2.1.5}Strings (\texttt {str})}{10}
+\contentsline {subsubsection}{\numberline {2.1.6}Lists (\texttt {list})}{11}
+\contentsline {subsubsection}{\numberline {2.1.7}Xrange (\texttt {xrange})}{12}
+\contentsline {section}{\numberline {3}Arrays and Matrices}{13}
+\contentsline {subsection}{\numberline {3.1}Arrays}{13}
+\contentsline {subsection}{\numberline {3.2}Matrix}{14}
+\contentsline {subsection}{\numberline {3.3}1-dimensional Arrays}{15}
+\contentsline {subsection}{\numberline {3.4}Accessing Elements of an Array}{17}
+\contentsline {subsection}{\numberline {3.5}2-dimensional Arrays}{18}
+\contentsline {subsection}{\numberline {3.6}Multidimensional Arrays}{19}
+\contentsline {subsection}{\numberline {3.7}Concatenation}{19}
+\contentsline {subsection}{\numberline {3.8}Accessing Elements of an Array }{19}
+\contentsline {subsection}{\numberline {3.9}The \texttt {import} function}{20}
+\contentsline {subsection}{\numberline {3.10}Special Arrays}{20}
+\contentsline {subsubsection}{\numberline {3.10.1}ones}{20}
+\contentsline {subsubsection}{\numberline {3.10.2}zeros}{21}
+\contentsline {subsubsection}{\numberline {3.10.3}empty}{21}
+\contentsline {subsection}{\numberline {3.11}floats (single precision)}{21}
+\contentsline {subsubsection}{\numberline {3.11.1}eye, identity}{22}
+\contentsline {section}{\numberline {4}Basic Functions and Numerical Indexing}{22}
+\contentsline {subsection}{\numberline {4.1}Mathematics}{22}
+\contentsline {subsection}{\numberline {4.2}6.2 Rounding}{24}
+\contentsline {subsection}{\numberline {4.3}Generating Arrays and Matrices}{26}
+\contentsline {subsubsection}{\numberline {4.3.1}linspace}{26}
+\contentsline {subsubsection}{\numberline {4.3.2}logspace}{26}
+\contentsline {subsubsection}{\numberline {4.3.3}arange}{26}
+\contentsline {subsubsection}{\numberline {4.3.4}meshgrid}{26}
+\contentsline {subsubsection}{\numberline {4.3.5}r\_}{27}
+\contentsline {subsubsection}{\numberline {4.3.6}c\_}{27}
+\contentsline {subsubsection}{\numberline {4.3.7}ix\_}{28}
+\contentsline {subsubsection}{\numberline {4.3.8}mgrid}{29}
+\contentsline {subsubsection}{\numberline {4.3.9}ogrid}{29}
+\contentsline {section}{\numberline {5}Data Structures}{30}
+\contentsline {subsection}{\numberline {5.1}Series}{30}
+\contentsline {subsection}{\numberline {5.2}DataFrame}{37}
+\contentsline {subsection}{\numberline {5.3}Panel}{38}
+\contentsline {section}{\numberline {6}Useful Array and Matrix Functions}{39}
+\contentsline {subsection}{\numberline {6.1}Views}{39}
+\contentsline {subsubsection}{\numberline {6.1.1}view}{39}
+\contentsline {subsubsection}{\numberline {6.1.2}asmatrix, mat}{39}
+\contentsline {subsubsection}{\numberline {6.1.3}asarray}{40}
+\contentsline {subsection}{\numberline {6.2}Shape Information and Transformation}{40}
+\contentsline {subsubsection}{\numberline {6.2.1}shape}{40}
+\contentsline {subsubsection}{\numberline {6.2.2}reshape}{40}
+\contentsline {subsubsection}{\numberline {6.2.3}size}{41}
+\contentsline {subsubsection}{\numberline {6.2.4}ndim}{41}
+\contentsline {subsubsection}{\numberline {6.2.5}tile}{42}
+\contentsline {subsubsection}{\numberline {6.2.6}ravel}{42}
+\contentsline {subsubsection}{\numberline {6.2.7}flatten}{43}
+\contentsline {subsubsection}{\numberline {6.2.8}flat}{43}
+\contentsline {subsubsection}{\numberline {6.2.9}split, vsplit, hsplit}{43}
+\contentsline {subsubsection}{\numberline {6.2.10}delete}{44}
+\contentsline {subsubsection}{\numberline {6.2.11}squeeze}{45}
+\contentsline {subsubsection}{\numberline {6.2.12}fliplr, flipud}{45}
+\contentsline {subsubsection}{\numberline {6.2.13}diag}{46}
+\contentsline {subsubsection}{\numberline {6.2.14}triu, tril}{46}
+\contentsline {subsection}{\numberline {6.3}Some Useful Linear Algebra Functions}{47}
+\contentsline {subsubsection}{\numberline {6.3.1}det}{47}
+\contentsline {subsubsection}{\numberline {6.3.2}solve}{47}
+\contentsline {subsubsection}{\numberline {6.3.3}eig}{47}
+\contentsline {section}{\numberline {7}Logical and Relational Operators}{48}
+\contentsline {subsection}{\numberline {7.1}Relational Operators}{48}
+\contentsline {section}{\numberline {8}Logical Operators}{48}
+\contentsline {subsection}{\numberline {8.1}Bitwise operators}{48}
+\contentsline {subsection}{\numberline {8.2}Multiple tests: all and any}{49}
+\contentsline {subsubsection}{\numberline {8.2.1}allclose}{49}
+\contentsline {subsubsection}{\numberline {8.2.2}array\_equal}{50}
+\contentsline {subsubsection}{\numberline {8.2.3}array\_array\_equiv}{50}
+\contentsline {subsection}{\numberline {8.3} is$\ast $}{50}

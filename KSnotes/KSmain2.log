@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  28 AUG 2014 20:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  29 AUG 2014 13:16
 entering extended mode
 **C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSmain2.tex
 (C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSmain2.tex
@@ -540,8 +540,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 ]
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch17-pandas.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 28.
+
+("C:\Program Files\Miktek\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 28.
+ [2] [3]
+Overfull \hbox (2.15584pt too wide) in paragraph at lines 126--128
+[]\OT1/cmr/m/n/10.95 'bar' to pro-duce a bar chart. Can also use the key-word a
+r-gu-ment stacked=True
+ []
+
+[4]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch13-FlowControl.tex
+[5] [6] [7])
 (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch09-ImportingExportingData.t
-ex
+ex [8]
 Overfull \hbox (25.9492pt too wide) in paragraph at lines 51--51
 []\OT1/cmtt/m/n/10.95 array([['2012-02-15', 5899.9, 5923.8, 5880.6, 5892.2, 801
 550000L, 5892.2],[] 
@@ -553,7 +569,7 @@ Overfull \hbox (71.9387pt too wide) in paragraph at lines 54--54
 , 5852.4]], dtype=object)[] 
  []
 
-[2]
+[9]
 Overfull \hbox (135.17427pt too wide) in paragraph at lines 71--71
 []        \OT1/cmtt/m/n/10.95 'team': ['Bears', 'Bears', 'Bears', 'Packers', 'P
 ackers', 'Lions', 'Lions', 'Lions'],[] 
@@ -595,7 +611,7 @@ Overfull \hbox (232.90196pt too wide) in paragraph at lines 110--110
 3,3,17,1,36,1,0,0,246,233,1.060,7.0,0.4,2.5,5.3,2.12,[] 
  []
 
-[3]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 121--121
 []\OT1/cmtt/m/n/10.95 Year Age Tm Lg W L W-L% ERA G GS GF CG SHO SV IP H R ER H
 R BB IBB SO
@@ -739,13 +755,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--156
 reessen
  []
 
-[4] [5]
+[11] [12]
 Overfull \hbox (48.94395pt too wide) in paragraph at lines 192--192
 []\OT1/cmtt/m/n/10.95 # since our index on the football DataFrame is meaningles
 s, let's not write it 
  []
 
-[6]
+[13]
 Overfull \hbox (3.96063pt too wide) in paragraph at lines 223--224
 \OT1/cmr/m/n/10.95 pandas also has some sup-port for read-ing/writing DataFrame
 s di-rectly from/to a database
@@ -794,7 +810,7 @@ Overfull \hbox (1.40053pt too wide) in paragraph at lines 245--245
  []
 
 ) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch22-ManagingFiles.tex
-[7]
+[14]
 Overfull \hbox (0.5844pt too wide) in paragraph at lines 7--9
 \OT1/cmr/m/n/10.95 Manipulating files and di-rec-to-ries is sur-pris-ing use-fu
 l when un-der-tak-ing com-plex projects.
@@ -806,56 +822,51 @@ Overfull \hbox (56.11522pt too wide) in paragraph at lines 34--42
 ) works sim-i-lar to os.mkdir(dirname),
  []
 
-[8]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
- ("C:\Program Files\Miktek\tex\latex\base\omscmr.fd"
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
- [9])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch12.tex
-Overfull \hbox (8.70314pt too wide) in paragraph at lines 27--27
+[15] [16])
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch12-DataWrangling.tex
+Overfull \hbox (8.70314pt too wide) in paragraph at lines 28--28
 []\OT1/cmtt/m/n/10.95 IndexError: arrays used as indices must be of integer (or
  boolean) type[] 
  []
 
-
-Overfull \hbox (89.18477pt too wide) in paragraph at lines 56--56
+[17]
+Overfull \hbox (89.18477pt too wide) in paragraph at lines 57--57
 []\OT1/cmtt/m/n/10.95 >>> x[sel_row,sel_col] # 2 by 1 and 1 by 2 - difference s
 hapes, broadcasted as 2 by 2[] 
  []
 
-[10] [11])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch18-CustomFunctions.tex
-[12] [13] [14] [15])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch13-FlowControl.tex [16]
-[17]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch15-graphics.tex
-[18]
+[18] [19] [20]
+Overfull \hbox (20.20052pt too wide) in paragraph at lines 184--184
+[]\OT1/cmtt/m/n/10.95 ValueError: shape mismatch: objects cannot be broadcast t
+o a single shape[] 
+ []
+
+) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch18-CustomFunctions.tex
+[21] [22] [23] [24] [25])
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch15-graphics.tex [26]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 14.
- [19] [20])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch17-pandas.tex [21])
-[22] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain2.aux) ) 
+
+[27] [28]) [29] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain2.aux) ) 
 Here is how much of TeX's memory you used:
  3918 strings out of 493921
- 58470 string characters out of 3148886
+ 58512 string characters out of 3148886
  128544 words of memory out of 3000000
  7150 multiletter control sequences out of 15000+200000
  8234 words of font info for 30 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  44i,11n,43p,408b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program 
-Files/Miktek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/Miktek
-/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/Miktek/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsf
-onts/cm/cmr10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmr8.
-pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
-ram Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/Mi
-ktek/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on KSmain2.pdf (22 pages, 147600 bytes).
+<
+C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program F
+iles/Miktek/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/Miktek/
+fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/Miktek/fonts/type1/
+public/amsfonts/cm/cmr10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Progr
+am Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on KSmain2.pdf (29 pages, 157877 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
+ 127 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
