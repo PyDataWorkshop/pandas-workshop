@@ -162,7 +162,26 @@ logical array is used. When using 2 or more logical indices, they are first tran
 using nonzero which returns the locations of the non-zero elements (which correspond to the True
 elements of a Boolean array).
 \begin{framed}
-\begin{verbatim}>>> cols.nonzero()
+\begin{verbatim}
+>>> cols.nonzero()
+(array([0, 1], dtype=int64),)
+>>> rows.nonzero()
+(array([0, 1], dtype=int64),)
+\end{verbatim}
+\end{framed}
+The corresponding numerical index arrays have compatible sizes – both are 2-element, 1-dimensional
+arrays – and so numeric selection is possible. Attempting to use two logical index arrays which have
+non-broadcastable dimensions produces the same error as using two numerical index arrays with nonbroadcastable
+sizes.
+\begin{framed}
+\begin{verbatim}
+>>> cols = any(x < 6,
+0)
+>>> rows = any(x < 4, 1)
+>>> rows
+array([ True, True, True, False], dtype=bool)
+>>> x[cols,rows] # Error
+ValueError: shape mismatch: objects cannot be broadcast to a single shape
 \end{verbatim}
 \end{framed}
 \end{document}
