@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  29 AUG 2014 13:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  30 AUG 2014 00:07
 entering extended mode
-**C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSch06-BasicFunctions.tex
-(C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSch06-BasicFunctions.tex
+**KSch06-BasicFunctions.tex
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch06-BasicFunctions.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -551,7 +551,7 @@ Here is how much of TeX's memory you used:
  7147 multiletter control sequences out of 15000+200000
  9866 words of font info for 35 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 53i,10n,45p,625b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 53i,10n,45p,578b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:
 /Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fil
 es/Miktek/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/Miktek/fon
@@ -559,7 +559,7 @@ ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/Miktek/fonts/type1/publ
 ic/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/
 cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt10.pf
 b>
-Output written on KSch06-BasicFunctions.pdf (8 pages, 91329 bytes).
+Output written on KSch06-BasicFunctions.pdf (8 pages, 90290 bytes).
 PDF statistics:
  53 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

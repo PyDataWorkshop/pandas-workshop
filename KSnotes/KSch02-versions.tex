@@ -1,0 +1,91 @@
+\documentclass[KSmain.tex]{subfiles} 
+\begin{document} 
+\section{Python 2.7 vs. 3}
+Python 2.7 is the final version of the Python 2.x line – all future development work will focus on Python 3.
+It may seem strange to learn an “old” language. The reasons for using 2.7 are:
+\begin{itemize}
+\item There are more modules available for Python 2.7. While all of the core python modules are available
+for both Python 2.7 and 3, some of the more esoteric modules are either only available for 2.7 or
+have not been extensively tested in Python 3. Over time, many of these modules will be available for
+Python 3, but they aren’t ready yet.
+\item The language changes relevant for numerical computing are very small – and these notes explicitly
+minimize these so that there should few changes needed to run against Python 3+ in the future
+(ideally none).
+\item Configuring and installing 2.7 is easier.
+\item Anaconda defaults to 2.7 and the selection of packages available for Python 3 is limited.
+\end{itemize}
+Learning Python 3 has some advantages:
+\begin{itemize}
+\item No need to update in the future.
+\item Some improved out-of-box behavior for numerical applications.
+\end{itemize}
+
+\subsection{2.A Relevant Differences between Python 2.7 and 3}
+Most differences between Python 2.7 and 3 are not important for using Python for analysis. 
+
+%I will make three common assumptions which will allow 2.7 and 3 to be used
+%interchangeable. The configuration instructions in the previous chapter for IPython will produce the expected behavior when run interactively. Note that these differences are important in stand-alone Python programs.
+\subsubsection*{print}
+print is a function used to display test in the console when running programs. In Python 2.7, \texttt{print} is a
+keyword which behaves differently from other functions. In Python 3, \texttt{print} behaves like most functions.
+The standard use in Python 2.7 is
+\begin{framed}
+	\begin{verbatim}
+	print ’String to Print’
+	\end{verbatim}
+\end{framed}
+while in Python 3 the standard use is
+\begin{framed}
+	\begin{verbatim}
+	print(’String to Print’)
+	\end{verbatim}
+\end{framed}
+which resembles calling a standard function. Python 2.7 contains a version of the Python 3 \texttt{print}, which
+can be used in any program by including
+\begin{framed}
+	\begin{verbatim}
+	from __future__ import print_function
+	\end{verbatim}
+\end{framed}
+at the top of the file. 
+%I prefer the Python 3 version of print, and so I assume that all programs will include this statement.
+%-------------------------------------------------%
+\subsubsection*{Division}
+\begin{itemize}
+	\item Python 3 changes the way integers are divided. In Python 2.7, the ratio of two integers was always an
+	integer, and so results are truncated towards 0 if the result was fractional. For example, in Python 2.7, 9/5
+	is 1. 
+	\item Python 3 gracefully converts the result to a floating point number, and so in Python 3, 9/5 is 1.8. When
+	working with numerical data, automatically converting ratios avoids some rare errors.
+	\item Python 2.7 can use
+	the Python 3 behavior by including
+	\begin{framed}
+		\begin{verbatim}
+		from __future__ import division
+		\end{verbatim}
+	\end{framed}
+	at the top of the program. We will assume that all relevant programs will include this statement.
+\end{itemize}
+%------------------------------------%
+\subsubsection*{\texttt{range} and \texttt{xrange}}
+It is often useful to generate a sequence of number for use when iterating over the some data. In Python
+2.7, the best practice is to use the keyword \texttt{xrange} to do this, while in Python 3, this keyword has been
+renamed \texttt{range}. I will always use \texttt{xrange} and so it is necessary to replace \texttt{xrange} with \texttt{range} if using Python
+3.
+%%------------------------------------%
+%\subsubsection*{Unicode strings}
+%Unicode is an industry standard for consistently encoding text. The computer alphabet was originally limited
+%to 128 characters which is insufficient to contain the vast array of characters in all written languages.
+%Unicode expands the possible space to be up to 231 characters (depending on encoding). Python 3 treats
+%all strings as unicode unlike Python 2.7 where characters are a single byte, and unicode strings require the
+%special syntax u’unicode string’ or unicode(’unicode string’). In practice this is unlikely to impact
+%most numeric code written in Python except possibly when reading or writing data. If working in a language
+%where characters outside of the standard but limited 128 character set are commonly encountered,
+%it may be useful to use
+%\begin{framed}
+%	\begin{verbatim}
+%	from __future__ import unicode_literals
+%	\end{verbatim}
+%\end{framed}
+%to will help with future compatibility when moving to Python 3.
+\end{document}

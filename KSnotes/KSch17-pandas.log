@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  29 AUG 2014 13:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  29 AUG 2014 23:19
 entering extended mode
-**C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSch17-pandas.tex
-(C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSch17-pandas.tex
+**KSch17-pandas.tex
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch17-pandas.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -461,18 +461,18 @@ Package tocloft Info: The document has section divisions on input line 44.
 \cftsubtabnumwidth=\skip100
 )))
 (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch17-pandas.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -525,12 +525,16 @@ LaTeX Font Info:    ... okay on input line 2.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 28.
- ("C:\Program Files\Miktek\tex\latex\base\omscmr.fd"
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 28.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <14.4> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 12.
+
+
+Overfull \hbox (14.45183pt too wide) in paragraph at lines 47--47
+[]\OT1/cmtt/m/n/10.95 >>> s = Series([0.1, 1.2, 2.3, 3.4, 4.5], index = ['a','b
+','c','d','e']) 
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -540,31 +544,132 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-] [2]
-Overfull \hbox (2.15584pt too wide) in paragraph at lines 126--128
-[]\OT1/cmr/m/n/10.95 'bar' to pro-duce a bar chart. Can also use the key-word a
-r-gu-ment stacked=True
+]
+Overfull \hbox (14.45183pt too wide) in paragraph at lines 83--83
+[]\OT1/cmtt/m/n/10.95 >>> s = Series([0.1, 1.2, 2.3, 3.4, 4.5], index = ['a','b
+','c','a','b']) 
  []
 
-[3] [4] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch17-pandas.aux) ) 
+[2] [3] [4]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 189.
+
+ ("C:\Program Files\Miktek\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 189.
+ [5] [6]
+[7]
+Overfull \hbox (106.43083pt too wide) in paragraph at lines 325--325
+[]\OT1/cmtt/m/n/10.95 >>> df = DataFrame(array([[1,2],[3,4]]), columns=['dogs',
+'cats'], index=['Alice','Bob']) 
+ []
+
+[8] [9]
+Overfull \hbox (2.95445pt too wide) in paragraph at lines 400--400
+[]\OT1/cmtt/m/n/10.95 gdp_growth_2009 gdp_growth_2010 gdp_growth_2011 gdp_growt
+h_2012 region[] 
+ []
+
+[10] [11]
+Overfull \hbox (2.95445pt too wide) in paragraph at lines 488--488
+[]\OT1/cmtt/m/n/10.95 gdp_growth_2009 gdp_growth_2010 gdp_growth_2011 gdp_growt
+h_2012 region[] 
+ []
+
+[12]
+Overfull \hbox (1.82951pt too wide) in paragraph at lines 527--532
+\OT1/cmr/m/n/10.95 Instead, the se-lec-tor method \OT1/cmtt/m/n/10.95 ix[rowsel
+ector,colselector] \OT1/cmr/m/n/10.95 al-lows joint se-lec-tion where
+ []
+
+
+Overfull \hbox (83.43608pt too wide) in paragraph at lines 541--541
+[]\OT1/cmtt/m/n/10.95 >>> state_gdp.ix[state_long_recession,['state','gdp_growt
+h_2009','gdp_growth_2010']][] 
+ []
+
+[13] [14]
+Overfull \hbox (23.26215pt too wide) in paragraph at lines 589--594
+[]\OT1/cmr/m/n/10.95 This syn-tax al-ways adds the col-umn at the end. \OT1/cmt
+t/m/n/10.95 insert(location,column[]name,series)
+ []
+
+
+Overfull \hbox (31.69789pt too wide) in paragraph at lines 597--597
+[]\OT1/cmtt/m/n/10.95 >>> state_gdp_2012.insert(1,'gdp_growth_2012',state_gdp['
+gdp_growth_2012'])[] 
+ []
+
+[15] [16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 698--701
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 702--705
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 760--764
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 765--772
+
+ []
+
+[19] [20] [21]
+Overfull \hbox (2.95445pt too wide) in paragraph at lines 873--873
+[]\OT1/cmtt/m/n/10.95 >>> subset = state_gdp[['gdp_growth_2009','gdp_growth_201
+0','region']] 
+ []
+
+
+Overfull \hbox (2.95445pt too wide) in paragraph at lines 877--877
+[]\OT1/cmtt/m/n/10.95 >>> grouped_data.groups # Lists group names and index lab
+els for group[] 
+ []
+
+[22]
+Overfull \hbox (158.16902pt too wide) in paragraph at lines 891--891
+[]\OT1/cmtt/m/n/10.95 >>> subset = state_gdp[['gdp_growth_2009','gdp_growth_201
+0','gdp_growth_2011','gdp_growth_2012']] 
+ []
+
+
+Overfull \hbox (2.95445pt too wide) in paragraph at lines 923--923
+[]\OT1/cmtt/m/n/10.95 >>> subset = state_gdp[['gdp_growth_2009','gdp_growth_201
+0','region']] 
+ []
+
+[23] [24]
+Overfull \hbox (4.75299pt too wide) in paragraph at lines 980--981
+\OT1/cmtt/m/n/10.95 value[]counts  \OT1/cmr/m/n/10.95 per-forms fre-quency coun
+t-ing (``his-togram-ming") of a Se-ries or DataFrame. 
+ []
+
+[25] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch17-pandas.aux) ) 
 Here is how much of TeX's memory you used:
- 3896 strings out of 493921
- 57613 string characters out of 3148886
- 122889 words of memory out of 3000000
- 7151 multiletter control sequences out of 15000+200000
- 7684 words of font info for 28 fonts, out of 3000000 for 9000
+ 3901 strings out of 493921
+ 57680 string characters out of 3148886
+ 125889 words of memory out of 3000000
+ 7154 multiletter control sequences out of 15000+200000
+ 8389 words of font info for 30 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 53i,10n,45p,617b,310s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:
-/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Fil
-es/Miktek/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/Miktek/fon
-ts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/type1/pub
-lic/amsfonts/cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt10.p
-fb>
-Output written on KSch17-pandas.pdf (4 pages, 82521 bytes).
+ 53i,10n,45p,554b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Pr
+ogram Files/Miktek/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/M
+iktek/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/
+type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/public
+/amsfonts/cm/cmssi12.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmti10.pfb
+><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on KSch17-pandas.pdf (25 pages, 135094 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
+ 111 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

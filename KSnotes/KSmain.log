@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  29 AUG 2014 13:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  29 AUG 2014 23:58
 entering extended mode
 **C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSmain.tex
 (C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSmain.tex
@@ -553,50 +553,36 @@ Overfull \hbox (4.62444pt too wide) in paragraph at lines 71--72
 raph-ics ca-pa-bil-i-ties with Matlab-
  []
 
-[2] [3] [4]
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch03-datatypes.tex [5]
-[6] [7] [8] [9] [10] [11])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch04-arrays.tex [12] [13]
-[14] [15] [16] [17] [18]
+[2] [3] [4] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch02-versions.tex
+[5]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch03-datatypes.tex
+[6] [7] [8] [9] [10] [11] [12] [13])
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch04-arrays.tex [14] [15]
+[16] [17] [18] [19] [20]
 Overfull \hbox (1.80107pt too wide) in paragraph at lines 210--212
 []\OT1/cmr/m/n/10.95 Higher di-men-sional ar-rays are use-ful when track-ing ma
 -trix val-ued pro-cesses through
  []
 
-[19]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch05-specialarrays.tex
-[20] [21])
+[21]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch05-specialarrays.tex
+[22] [23])
 (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch06-BasicFunctions.tex
-[22] [23] [24] [25] [26] [27] [28])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\DataStructures.tex [29]
-[30]
-Overfull \hbox (54.69264pt too wide) in paragraph at lines 79--79
-[]\OT1/cmtt/m/n/10.95 d = {'Chicago': 1000, 'New York': 1300, 'Portland': 900, 
-'San Francisco': 1100, 
- []
-
-[31] [32] [33]
-Overfull \hbox (71.9387pt too wide) in paragraph at lines 221--221
-[]\OT1/cmtt/m/n/10.95 print cities[['Chicago', 'New York', 'Portland']] + citie
-s[['Austin', 'New York']][] 
- []
-
-[34] [35] [36] [37] [38])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch08.tex [39] [40] [41]
-[42] [43] [44] [45] [46])
+[24] [25] [26] [27] [28] [29] [30])
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch08.tex [31] [32] [33]
+[34] [35] [36] [37] [38] [39])
 (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch11-relationallogicaloperato
-rs.tex [47] [48] [49]
+rs.tex [40] [41] [42]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 147.
- [50]
-Overfull \hbox (47.39003pt too wide) in paragraph at lines 158--158
+(Font)              <12> on input line 148.
+ [43]
+Overfull \hbox (47.39003pt too wide) in paragraph at lines 159--159
 []\OT1/cmtt/m/n/10.95 isposfin,isnegfin & 1 for positive or negative inf & elem
 ent-by-element \\ \hline[] 
  []
 
-) [51] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.aux) ) 
+) [44] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.aux) ) 
 Here is how much of TeX's memory you used:
  3934 strings out of 493921
- 58667 string characters out of 3148886
+ 58670 string characters out of 3148886
  125564 words of memory out of 3000000
  7160 multiletter control sequences out of 15000+200000
  11355 words of font info for 40 fonts, out of 3000000 for 9000
@@ -614,9 +600,9 @@ Miktek/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts
 c/amsfonts/cm/cmsy10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/c
 m/cmti10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 ><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on KSmain.pdf (51 pages, 234762 bytes).
+Output written on KSmain.pdf (44 pages, 227801 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
+ 197 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
