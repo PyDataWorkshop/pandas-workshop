@@ -1,8 +1,30 @@
-% - http://nbviewer.ipython.org/github/twiecki/financial-analysis-python-tutorial/blob/master/1.%20Pandas%20Basics.ipynb
+% - -----------------------------------------------------------------------%
 
+%---------------------------%
+\begin{framed}
+aapl = pd.io.data.get_data_yahoo('AAPL', 
+                                 start=datetime.datetime(2006, 10, 1), 
+                                 end=datetime.datetime(2012, 1, 1))
+aapl.head()
+\end{verbatim}
+%---------------------------%
 \begin{verbatim}
 close_px.plot(label='AAPL')
 mavg.plot(label='mavg')
 plt.legend()
-
 \end{verbatim}
+
+%---------------------------%
+\begin{verbatim}
+aapl.to_csv('data/aapl_ohlc.csv')
+!head data/aapl_ohlc.csv
+\end{verbatim}
+%---------------------------%
+\begin{verbatim}
+df = pd.read_csv('data/aapl_ohlc.csv', index_col='Date', parse_dates=True)
+df.head()
+\end{verbatim}
+
+
+
+%- http://nbviewer.ipython.org/github/twiecki/financial-analysis-python-tutorial/blob/master/1.%20Pandas%20Basics.ipynb
