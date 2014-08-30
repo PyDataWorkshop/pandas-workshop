@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  28 AUG 2014 20:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  30 AUG 2014 09:20
 entering extended mode
 **KSch04-arrays.tex
 (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch04-arrays.tex
@@ -546,20 +546,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-] [2] [3] [4] [5]
-[6]
-Overfull \hbox (1.80107pt too wide) in paragraph at lines 210--212
+]
+Overfull \hbox (7.48853pt too wide) in paragraph at lines 91--97
+\OT1/cmr/m/n/10.95 '\OT1/cmtt/m/n/10.95 float64\OT1/cmr/m/n/10.95 ', which cor-
+re-sponds to the python built-in data type of float (andC/C++double).
+ []
+
+[2] [3] [4] [5] [6] [7]
+Overfull \hbox (1.80107pt too wide) in paragraph at lines 263--265
 []\OT1/cmr/m/n/10.95 Higher di-men-sional ar-rays are use-ful when track-ing ma
 -trix val-ued pro-cesses through
  []
 
-[7] [8] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch04-arrays.aux) ) 
+[8] [9] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch04-arrays.aux) ) 
 Here is how much of TeX's memory you used:
- 3914 strings out of 493921
- 57798 string characters out of 3148886
- 123889 words of memory out of 3000000
- 7161 multiletter control sequences out of 15000+200000
- 10141 words of font info for 36 fonts, out of 3000000 for 9000
+ 3917 strings out of 493921
+ 57841 string characters out of 3148886
+ 124889 words of memory out of 3000000
+ 7163 multiletter control sequences out of 15000+200000
+ 10740 words of font info for 38 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  53i,10n,45p,570b,238s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:
@@ -567,14 +572,15 @@ Here is how much of TeX's memory you used:
 es/Miktek/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Miktek/
 fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/Miktek/fonts/type1/
 public/amsfonts/cm/cmmi10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmss12
-.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
-gram Files/Miktek/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/M
-iktek/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/Miktek/fonts/
-type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on KSch04-arrays.pdf (8 pages, 122080 bytes).
+nts/cm/cmr10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmss10
+.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Pro
+gram Files/Miktek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/M
+iktek/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/Miktek/fonts/
+type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/Miktek/fonts/type1/public
+/amsfonts/cm/cmtt12.pfb>
+Output written on KSch04-arrays.pdf (9 pages, 134170 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
+ 76 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

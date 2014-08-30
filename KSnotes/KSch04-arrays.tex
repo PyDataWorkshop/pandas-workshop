@@ -86,6 +86,50 @@ array([[[1, 2],
 \end{verbatim}
 \end{framed}
 
+\subsubsection*{Array dtypes}
+%4.1.1.
+Homogeneous arrays can contain a variety of numeric data types. The most useful is ’\texttt{float64}’, which corresponds
+to the python built-in data type of float (andC/C++double). By default, calls to array will preserve
+the type of the input, if possible. If an input contains all integers, it will have a dtype of ’int32’ (similar to
+the built in data type int). If an input contains integers, floats, or a mix of the two, the array’s data type will
+be float64. If the input contains a mix of integers, floats and complex types, the array will be initialized
+to hold complex data.
+\begin{framed}
+\begin{verbatim}
+>>> x = [0, 1, 2, 3, 4] # Integers
+>>> y = array(x)
+>>> y.dtype
+dtype(’int32’)
+>>> x = [0.0, 1, 2, 3, 4] # 0.0 is a float
+>>> y = array(x)
+>>> y.dtype
+dtype(’float64’)
+>>> x = [0.0 + 1j, 1, 2, 3, 4] # (0.0 + 1j) is a complex
+>>> y = array(x)
+>>> y
+array([ 0.+1.j, 1.+0.j, 2.+0.j, 3.+0.j, 4.+0.j])
+>>> y.dtype
+dtype(’complex128’)
+\end{verbatim}
+\end{framed}
+NumPy attempts to find the smallest data type which can represent the data when constructing an array.
+It is possible to force NumPy to select a particular dtype by using the keyword argument dtype=datetype
+when initializing the array.
+\begin{framed}
+\begin{verbatim}
+>>> x = [0, 1, 2, 3, 4] # Integers
+>>> y = array(x)
+>>> y.dtype
+dtype(’int32’)
+>>> y = array(x, dtype=’float64’) # String dtype
+>>> y.dtype
+dtype(’float64’)
+>>> y = array(x, dtype=float64) # NumPy type dtype
+>>> y.dtype
+dtype(’float64’)
+\end{verbatim}
+\end{framed}
+\newpage
 %=======================================%
 \subsection{Matrix}
 Matrices are essentially a subset of arrays, and behave in a virtually identical manner. The two important
@@ -96,8 +140,24 @@ differences are:
 \item Matrices follow the rules of linear algebra for Matrix Multiplication ($\ast$)
 \end{itemize}
 
+\begin{framed}
+\begin{verbatim}
+>>> x = [0.0, 1, 2, 3, 4] # Any float makes all float
+>>> y = array(x)
+>>> type(y)
+numpy.ndarray
+>>> y * y # Elementbyelement
+array([ 0., 1., 4., 9., 16.])
+>>> z = asmatrix(x)
+>>> type(z)
+numpy.matrixlib.defmatrix.matrix
+>>> z * z # Error
+ValueError: matrices are not aligned
+\end{verbatim}
+\end{framed}
 \newpage
 \subsection{1-dimensional Arrays}
+%4.3 - ALL good so far
 A vector
 \[x = [1 2 3 4 5]\]
 is entered as a 1-dimensional array using
@@ -119,7 +179,7 @@ array([[ 1., 2., 3., 4., 5.]])
 2
 \end{verbatim}
 \end{framed}
-%----------------------%
+
 A matrix is always 2-dimensional and so a nested list is not required to initialize a a row matrix
 \begin{framed}
 \begin{verbatim}
@@ -165,13 +225,6 @@ array([[ 1.],
 \newpage
 %=======================================%
 
-\subsection{Accessing Elements of an Array}
-Four methods are available for accessing elements contained within an array: scalar selection, slicing,
-numerical indexing and logical (or Boolean) indexing. Scalar selection and slicing are the simplest and so
-are presented first. 
-
-% Numerical indexing and logical indexing both depends on specialized functions and
-% so these methods are discussed in Chapter 12
 
 
 
@@ -224,6 +277,11 @@ can be concatenation horizontally or vertically
 %---------------------------------------------%
 % KS 4.7 Accessing Elements of an Array
 \subsection{Accessing Elements of an Array }
+
+
+% Numerical indexing and logical indexing both depends on specialized functions and
+% so these methods are discussed in Chapter 12
+
 \begin{itemize}
 \item Four methods are available for accessing elements contained within an array: scalar selection, slicing,
 numerical indexing and logical (or Boolean) indexing. 
@@ -264,7 +322,7 @@ from scipy import log10 # Will not import the log2 from SciPy
 %KS page 59
 \item The only difference between these two is that \texttt{import scipy} is implicitly calling \texttt{import scipy as scipy}.
 \item When this formof import is used, functions are used with the “as” name. For example, the load provided
-by NumPy is accessed using sp.log2, while the pylab load is \texttt{pl.log2} – and both can be used where appropriate.
+by NumPy is accessed using \texttt{sp.log2}, while the pylab load is \texttt{pl.log2} – and both can be used where appropriate.
 \item While this method is the most general, it does require slightly more typing.
 \end{itemize}
 %--------------------------------------------------------------------------------------------%

@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  30 AUG 2014 09:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  30 AUG 2014 09:52
 entering extended mode
-**KSch06-BasicFunctions.tex
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch06-BasicFunctions.tex
+**KSch10-specialnumbers.tex
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch10-specialnumbers.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -460,7 +460,7 @@ Package tocloft Info: The document has section divisions on input line 44.
 \cftsubtabindent=\skip99
 \cftsubtabnumwidth=\skip100
 )))
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch06-BasicFunctions.aux)
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch10-specialnumbers.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
@@ -535,33 +535,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 ]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 96.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 96.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 96.
- [2] [3] [4] [5]
-[6] [7] [8]
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch06-BasicFunctions.aux) ) 
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch10-specialnumbers.aux) ) 
 Here is how much of TeX's memory you used:
- 3895 strings out of 493921
- 57584 string characters out of 3148886
- 124889 words of memory out of 3000000
- 7147 multiletter control sequences out of 15000+200000
- 9866 words of font info for 35 fonts, out of 3000000 for 9000
+ 3874 strings out of 493921
+ 57311 string characters out of 3148886
+ 120889 words of memory out of 3000000
+ 7131 multiletter control sequences out of 15000+200000
+ 6150 words of font info for 23 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 53i,10n,45p,578b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 53i,10n,45p,578b,186s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:
-/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fil
-es/Miktek/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/Miktek/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/Miktek/fonts/type1/publ
-ic/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/
-cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt10.pf
-b>
-Output written on KSch06-BasicFunctions.pdf (8 pages, 88944 bytes).
+/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program F
+iles/Miktek/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/Miktek/f
+onts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/p
+ublic/amsfonts/cm/cmtt10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfon
+ts/cm/cmtt12.pfb>
+Output written on KSch10-specialnumbers.pdf (1 page, 51965 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
+ 26 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -54,6 +54,7 @@ s
 4    Happy Eating!
 dtype: object
 \end{verbatim}
+
 Alternatively, you can specify an index to use when creating the Series.
 
 \begin{framed}
@@ -121,7 +122,7 @@ Portland    900
 dtype: float64
 \end{verbatim}
 \end{framed}
-That last one might be a little weird, so let's make it more clear - cities < 1000 returns a Series of True/False values, which we then pass to our Series cities, returning the corresponding True items.
+That last one might be a little strange, so let's make it more clear - \texttt{cities < 1000} returns a Series of \texttt{True/False} values, which we then pass to our Series cities, returning the corresponding \texttt{True} items.
 
 \begin{framed}
 \begin{verbatim}
@@ -142,6 +143,8 @@ Austin      450
 Portland    900
 dtype: float64
 
+\end{verbatim}
+\end{framed}
 You can also change the values in a Series on the fly.
 
 \begin{framed}
@@ -152,6 +155,8 @@ cities['Chicago'] = 1400
 print 'New value:', cities['Chicago']
 Old value: 1000.0
 New value: 1400.0
+\end{verbatim}
+\end{framed}
 
 \begin{framed}
 \begin{verbatim}
@@ -242,7 +247,7 @@ dtype: float64
 
 Notice that because Austin, Chicago, and Portland were not found in both Series, they were returned with NULL/NaN values.
 
-NULL checking can be performed with isnull and notnull.
+NULL checking can be performed with \texttt{isnull} and \texttt{notnull}.
 %----------------------------------------------------------------%
 \begin{framed}
 \begin{verbatim}
@@ -275,35 +280,36 @@ dtype: float64
 \end{verbatim}
 \end{framed}
 
-
-%---------------------------------------%
-\newpage
-\subsection{DataFrame}
-
-% pandas - chapter 5 - DataFrame
-
-A DataFrame is a tablular data structure comprised of rows and columns, akin to a spreadsheet, database table, or R's data.frame object. You can also think of a DataFrame as a group of Series objects that share an index (the column names).
-
-For the rest of the tutorial, we'll be primarily working with DataFrames.
-
-%---------------------------------------%
-\newpage
-\subsection{Panel}
-
-
- 
-\texttt{Panel} is a somewhat less-used, but still important container for 3-dimensional data. 
-The term panel data is derived from econometrics and is partially responsible for the name pandas: pan(el)-da(ta)-s. 
-The names for the 3 axes are intended to give some semantic meaning to describing operations involving panel data and, 
-in particular, econometric analysis of panel data. However, for the strict purposes of slicing and dicing a 
-collection of DataFrame objects, you may find the axis names slightly arbitrary:
- 
-\begin{itemize}
-\item items: axis 0, each item corresponds to a DataFrame contained inside
-\item major\_axis: axis 1, it is the index (rows) of each of the DataFrames
-\item minor\_axis: axis 2, it is the columns of each of the DataFrames
-\end{itemize}
-
-\newpage
-
 \end{document}
+
+%%---------------------------------------%
+%\newpage
+%\subsection{DataFrame}
+%
+%% pandas - chapter 5 - DataFrame
+%
+%A DataFrame is a tablular data structure comprised of rows and columns, akin to a spreadsheet, database table, or R's data.frame object. You can also think of a DataFrame as a group of Series objects that share an index (the column names).
+%
+%%For the rest of the tutorial, we'll be primarily working with DataFrames.
+%
+%%---------------------------------------%
+%\newpage
+%\subsection{Panel}
+%
+%
+% 
+%\texttt{Panel} is a somewhat less-used, but still important container for 3-dimensional data. 
+%The term panel data is derived from econometrics and is partially responsible for the name pandas: pan(el)-da(ta)-s. 
+%The names for the 3 axes are intended to give some semantic meaning to describing operations involving panel data and, 
+%in particular, econometric analysis of panel data. However, for the strict purposes of slicing and dicing a 
+%collection of DataFrame objects, you may find the axis names slightly arbitrary:
+% 
+%\begin{itemize}
+%\item items: axis 0, each item corresponds to a DataFrame contained inside
+%\item major\_axis: axis 1, it is the index (rows) of each of the DataFrames
+%\item minor\_axis: axis 2, it is the columns of each of the DataFrames
+%\end{itemize}
+%
+%\newpage
+%
+%\end{document}

@@ -85,9 +85,36 @@ l1,l2 = l1_l2_norm(x,y)
 print("The L1 distance is ",l1)
 print("The L2 distance is ",l2)
 \end{verbatim}
-All of these functions have been placed in the same file as the main program. Placing functions in modules
-allows for reuse in multiple programs, and will be discussed later in this chapter.
+All of these functions have been placed in the same file as the main program. 
+%Placing functions in modules allows for reuse in multiple programs, and will be discussed later on.
 
+%----------------------------%
+% 18.1.1
+%----------------------------%
+\subsubsection{Keyword Arguments}
+All input variables in functions are automatically keyword arguments, so that the function can be accessed
+either by placing the inputs in the order they appear in the function (positional arguments), or by calling
+the input by their name using keyword=value.
+\begin{framed}
+	\begin{verbatim}
+from __future__ import print_function, division
+import numpy as np
+def lp_norm(x,y,p):
+d = x y
+return sum(abs(d)**p)**(1/p)
+# Call the function
+x = np.random.randn(10)
+y = np.random.randn(10)
+z1 = lp_norm(x,y,2)
+z2 = lp_norm(p=2,x=x,y=y)
+print("The Lp distances are ",z1,z2)
+\end{verbatim}
+\end{framed}
+
+Because variable names are automatically keywords, it is important to use meaningful variable names
+when possible, rather than generic variables such as a, b, c or x, y and z. In some cases, x may be a reasonable
+default, but in the previous example which computed the Lp norm, calling the third input z would
+be bad idea.
 %----------------------------%
 % 18.1.2 Default Values
 %----------------------------%
@@ -121,9 +148,89 @@ could change every time the function is called.
 
 from __future__ import print_function, division
 import numpy as np
+def bad_function(x = zeros(1)):
+print(x)
+x[0] = np.random.randn(1)
+# Call the function
+bad_function()
+bad_function()
+bad_function()
+\end{verbatim}
+\end{framed}
+Each call to \texttt{bad\_function} shows that x has a different value – despite the default being 0. The solution
+to this problem is to initialize mutable objects to None, and then the use an if to check and initialize only
+if the value is None. Note that tests for None use the is keyword rather the testing for equality using ==.
+\begin{framed}
+\begin{verbatim}
+from __future__ import print_function, division
+import numpy as np
+def good_function(x = None):
+if x is None:
+x = zeros(1)
+print(x)
+x[0] = np.random.randn(1)
+# Call the function
+good_function()
+good_function()
 \end{verbatim}
 \end{framed}
 %----------------------------%
+\subsection{Variable Number of Inputs}
+Most function written as an “end user” have an known (ex ante) number of inputs. However, functions
+which evaluate other functions often must accept variable numbers of input. Variable inputs can be handled
+using the *args (arguments) or **kwargs (keyword arguments) syntax. The *args syntax will generate
+tuple a containing all inputs past the required input list. For example, consider extending the Lp function
+so that it can accept a set of p values as extra inputs (Note: in practice it would make more sense to accept
+an array for p).
+\begin{framed}
+\begin{verbatim}
+from __future__ import print_function, division
+import numpy as np
+def lp_norm(x,y,p = 2, *args):
+d = x-y
+print(’The L’ + str(p) + ’ distance is :’, sum(abs(d)**p)**(1/p))
+out = [sum(abs(d)**p)**(1/p)]
+print(’Number of *args:’, len(args))
+for p in args:
+print(’The L’ + str(p) + ’ distance is :’, sum(abs(d)**p)**(1/p))
+out.append(sum(abs(d)**p)**(1/p))
+return tuple(out)
+# Call the function
+x = np.random.randn(10)
+y = np.random.randn(10)
+# x & y are required inputs and so are not in *args
+lp = lp_norm(x,y)
+# Function takes 3 inputs, so no *args
+lp = lp_norm(x,y,1)
+# Inputs with default values can be ignored
+lp = lp_norm(x,y,1,2,3,4,1.5,2.5,0.5)
+\end{verbatim}
+\end{framed}
+The alternative syntax, **kwargs, generates a dictionary with all keyword inputs which are not in the
+function signature. One reason for using **kwargs is to allow a long list of optional inputs without having
+to have an excessively long function definition. This is how this input mechanism operates in many
+matplotlib functions such as plot.
+\begin{framed}
+	\begin{verbatim}
+from __future__ import print_function, division
+import numpy as np
+def lp_norm(x,y,p = 2, **kwargs):
+d = x y
+print(’Number of *kwargs:’, len(kwargs))
+for key in kwargs:
+print(’Key :’, key, ’ Value:’, kwargs[key])
+return sum(abs(d)**p)
+# Call the function
+x = np.random.randn(10)
+y = np.random.randn(10)
+# Inputs with default values can be ignored
+lp = lp_norm(x,y,kword1=1,kword2=3.2)
+# The p keyword is in the function def, so not in **kwargs
+lp = lp_norm(x,y,kword1=1,kword2=3.2,p=0)
+\end{verbatim}
+\end{framed}
+
+
 \newpage
 % 18.4 Anonymous Functions
 \subsection{Anonymous Functions}

@@ -100,38 +100,69 @@ with scalar selection is trivial since any scalar can be broadcast to any array 
 \end{verbatim}
 \end{framed}
 
-\subsubsection*{\texttt{argwhere}}
-\texttt{argwhere} returns an array containing the locations of elements where a logical condition is True. It is the
-same as \texttt{transpose(nonzero(x))}
+%12.1.2 Mixing Numerical Indexing with Slicing
+\subsubsection*{Mixing Numerical Indexing with Slicing}
+
+Mixing numerical indexing and slicing allow for entire rows or columns to be selected.
 
 \begin{framed}
-\begin{verbatim}
->>> x = randn(3)
->>> x
-array([-0.5910316 , 0.51475905, 0.68231135])
->>> argwhere(x<0.6)
-array([[0],
-[1]], dtype=int64)
->>> argwhere(x<-10.0) # Empty array
-array([], shape=(0L, 1L), dtype=int64)
->>>
->>> x = randn(3,2)
->>> x
-array([[ 0.72945913, 1.2135989 ],
-[ 0.74005449, -1.60231553],
-[ 0.16862077, 1.0589899 ]])
->>>
->>> argwhere(x<0)
-array([[1, 1]], dtype=int64)
->>>
->>> argwhere(x<1)
-array([[0, 0],
-[1, 0],
-[1, 1],
-[2, 0]], dtype=int64)
-
-\end{verbatim}
+	\begin{verbatim}
+	>>> x[:,[1]]
+	array([[ 2.],
+	[ 7.]])
+	>>> x[[1],:]
+	array([[ 6., 7., 8., 9., 10.]])
+	
+	\end{verbatim}
 \end{framed}
+
+Note that the mixed numerical indexing and slicing uses a list ([1]) so that it is not a scalar. This is important
+since using a scalar will result in dimension reduction.
+
+
+\begin{framed}
+	\begin{verbatim}
+>>> x[:,1] # 1dimensional
+array([ 2., 7.])
+	\end{verbatim}
+\end{framed}
+
+Numerical indexing and slicing can be mixed in more than 2-dimensions, although some care is required.
+In the simplest case where only one numerical index is used which is 1-dimensional, then the selection is
+equivalent to calling \texttt{ix\_} where the slice a:b:s is replaced with arange(a,b,s).
+
+
+
+\begin{framed}
+	\begin{verbatim}
+	>>> x = reshape(arange(3**3), (3,3,3)) # 3d
+	array
+	>>> sel1 = x[::2,[1,0],:1]
+	>>> sel2 = x[ix_(arange(0,3,2),[1,0],arange(0,1))]
+	>>> sel1.shape
+	(2L, 2L, 1L)
+	>>> sel2.shape
+	(2L, 2L, 1L)
+	>>> amax(abs(sel1sel2))
+	0
+	\end{verbatim}
+\end{framed}
+
+%12.1.3
+\subsubsection*{Linear Numerical Indexing using flat}
+Like slicing, numerical indexing can be combined with flat to select elements from an array using the
+row-major ordering of the array. The behavior of numerical indexing with flat is identical to that of using
+numerical indexing on a flattened version of the underlying array.
+\begin{framed}
+	\begin{verbatim}
+	>>> x.flat[[3,4,9]]
+array([ 4., 5., 10.])
+>>> x.flat[[[3,4,9],[1,5,3]]]
+array([[ 4., 5., 10.],
+[ 2., 6., 4.]])
+	\end{verbatim}
+\end{framed}
+
 %--------------------------------------------------%
 %12.2 Logical Indexing
 \newpage
@@ -215,5 +246,37 @@ array([ True, True, True, False], dtype=bool)
 >>> x[cols,rows] # Error
 ValueError: shape mismatch: objects cannot be broadcast to a single shape
 \end{verbatim}
+\end{framed}
+\subsubsection*{\texttt{argwhere}}
+\texttt{argwhere} returns an array containing the locations of elements where a logical condition is True. It is the
+same as \texttt{transpose(nonzero(x))}
+
+\begin{framed}
+	\begin{verbatim}
+	>>> x = randn(3)
+	>>> x
+	array([-0.5910316 , 0.51475905, 0.68231135])
+	>>> argwhere(x<0.6)
+	array([[0],
+	[1]], dtype=int64)
+	>>> argwhere(x<-10.0) # Empty array
+	array([], shape=(0L, 1L), dtype=int64)
+	>>>
+	>>> x = randn(3,2)
+	>>> x
+	array([[ 0.72945913, 1.2135989 ],
+	[ 0.74005449, -1.60231553],
+	[ 0.16862077, 1.0589899 ]])
+	>>>
+	>>> argwhere(x<0)
+	array([[1, 1]], dtype=int64)
+	>>>
+	>>> argwhere(x<1)
+	array([[0, 0],
+	[1, 0],
+	[1, 1],
+	[2, 0]], dtype=int64)
+	
+	\end{verbatim}
 \end{framed}
 \end{document}

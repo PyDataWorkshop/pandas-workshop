@@ -1,0 +1,83 @@
+\documentclass[KSmain.tex]{subfiles} 
+\begin{document} 
+\subsection{ \texttt{inf} and \texttt{NaN}}
+\texttt{inf} represents infinity and \texttt{inf} is distinct from \texttt{-inf}.
+\texttt{inf} can be constructed in a number for ways, for
+example or exp(710). 
+
+\texttt{nan} stands for \textbf{\textit{Not a Number}}, and nans are created whenever a function produces
+a result that cannot be clearly evaluated to produce a number or infinity. For example, \texttt{inf/-inf} results in
+\texttt{nan}. nans often cause problems since most mathematical operations involving a \texttt{nan }produce a \texttt{nan}.
+\begin{framed}
+\begin{verbatim}
+>>> x = nan
+>>> 1.0 + x
+nan
+>>> 1.0 * x
+nan
+>>> 0.0 * x
+nan
+>>> mean(x)
+nan
+\end{verbatim}
+\end{framed}
+
+%
+%10.2 Floating point precision
+%All numeric software has limited precision; Python is no different. 
+%
+%The easiest to understand the upper
+%and lower limits, which are 1.797610308 (see finfo(float).max) and􀀀1.797610308 (finfo(float).min).
+%Numbers larger (in absolute value) than these are inf. The smallest positive number that can be expressed
+%is 2.225010􀀀308 (see finfo(float).tiny). Numbers between 􀀀2.225110􀀀308 and 2.225110􀀀308 are
+%numerically 0.
+%However, the hardest concept to understand about numerical accuracy is the limited relative precision
+%which is 2.2204  10􀀀16 on most x86 and x86_64 systems. This value is returned from the command
+%finfo(float).eps and may vary based on the type of CPU and/or the operating system used. Numbers
+%which differ by less than 2.220410􀀀16 are numerically the same. To explore the role of precision, examine
+%the results of the following:
+%\begin{framed}
+%	\begin{verbatim}
+%	>>> x = 1.0
+%	>>> eps = finfo(float).eps
+%	>>> x = x+eps/2
+%	>>> x == 1
+%	True
+%	>>> x1
+%	0.0
+%	>>> x = 1 + 2*eps
+%	>>> x == 1
+%	False
+%	>>> x1
+%	ans = 4.4408920985006262e16
+%	\end{verbatim}
+%\end{framed}
+%Moreover, any number y where y <
+%􀀀
+%x  2.2204  10􀀀16
+%is treated as 0 when added or subtracted.
+%This is referred to as relative range.
+%\begin{framed}
+%	\begin{verbatim}
+%	>>> x=10
+%	>>> x+2*eps
+%	>>> x10
+%	0
+%	>>> (x10)
+%	== 0
+%	True
+%	>>> (1e120 1e103)
+%	== 1e120
+%	True
+%	>>> 1e103 / 1e120
+%	1e17
+%	\end{verbatim}
+%\end{framed}
+%In the first example, eps/2<eps when compared to 1 so it has no effect while 2*eps>eps and so this value
+%is different from 1. In the second example, 2*eps/10<eps, it has no effect when added. The final example
+%subtracts 10103 from 10120 and shows that this is numerically the same as 10120 – again, this occurs since
+%10103=10120 = 10􀀀17 <eps. While numeric limits is a tricky concept to understand, failure to understand
+%these limits can results in errors in code that appears to be otherwise correct. The practical usefulness of
+%limited precision is to consider data scaling since many variables have natural scales which are differ by
+%many orders of magnitude.
+\end{document}

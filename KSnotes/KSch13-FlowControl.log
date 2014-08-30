@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  29 AUG 2014 13:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  30 AUG 2014 10:09
 entering extended mode
-**C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSch13-FlowControl.tex
-(C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSch13-FlowControl.tex
+**KSch13-FlowControl.tex
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch13-FlowControl.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -534,25 +534,26 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-] [2] [3]
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch13-FlowControl.aux) ) 
+] [2] [3] [4] [5]
+[6] [7] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch13-FlowControl.aux)
+ ) 
 Here is how much of TeX's memory you used:
- 3877 strings out of 493921
- 57344 string characters out of 3148886
- 122889 words of memory out of 3000000
- 7135 multiletter control sequences out of 15000+200000
- 7427 words of font info for 27 fonts, out of 3000000 for 9000
+ 3879 strings out of 493921
+ 57365 string characters out of 3148886
+ 123889 words of memory out of 3000000
+ 7136 multiletter control sequences out of 15000+200000
+ 7596 words of font info for 28 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 53i,10n,45p,622b,188s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Pr
-ogram Files/Miktek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/
-Miktek/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/Miktek/fonts/
-type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/type1/public
-/amsfonts/cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm
-/cmtt10.pfb>
-Output written on KSch13-FlowControl.pdf (3 pages, 72551 bytes).
+ 53i,10n,45p,575b,215s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Progra
+m Files/Miktek/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/Mikte
+k/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/type
+1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/public/ams
+fonts/cm/cmtt10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmt
+t12.pfb>
+Output written on KSch13-FlowControl.pdf (7 pages, 88305 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
+ 50 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

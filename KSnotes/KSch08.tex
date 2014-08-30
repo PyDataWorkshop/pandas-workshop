@@ -9,10 +9,10 @@ of an array.
 \subsection{Views}
 Views are computationally efficient methods to produce objects of one type which behave as other objects
 of another type without copying data. For example, an array x can always be converted to a matrix using
-matrix(x), which will copy the elements in x. View “fakes” the call to matrix and only inserts a thin layer
+\texttt{matrix(x)}, which will copy the elements in x. View “fakes” the call to matrix and only inserts a thin layer
 so that x viewed as a matrix behaves like a matrix.
-\subsubsection{view}
-view can be used to produce a representation of an array, matrix or recarray as another type without copying
+\subsubsection{\texttt{view}}
+\texttt{view }can be used to produce a representation of an array, matrix or recarray as another type without copying
 the data. Using view is faster than copying data into a new class.
 \begin{framed}
 \begin{verbatim}
@@ -25,7 +25,7 @@ matrix([[0, 1, 2, 3, 4]])
 rec.array([0, 1, 2, 3, 4])
 \end{verbatim}
 \end{framed}
-\subsubsection{asmatrix, mat}
+\subsubsection{\texttt{asmatrix}, \texttt{mat}}
 asmatrix and mat can be used to view an array as a matrix. This view is useful since matrix views will use
 matrix multiplication by default.
 \begin{framed}
@@ -40,7 +40,7 @@ matrix([[ 7, 10],
 \end{verbatim}
 \end{framed}
 Both commands are equivalent to using view(matrix).
-\subsubsection{asarray}
+\subsubsection{\texttt{asarray}}
 asarray work in a similar matter as asmatrix, only that the view produced is that of ndarray. Calling
 asarray is equivalent to using view(ndarray)
 
@@ -50,10 +50,10 @@ asarray is equivalent to using view(ndarray)
 \subsection{Shape Information and Transformation}
 
 %-----------------------------------%
-\subsubsection{shape}
+\subsubsection{\texttt{shape}}
 
 \texttt{shape} returns the size of all dimensions or an array or matrix as a tuple. shape can be called as a function
-or an attribute. shape can also be used to reshape an array by entering a tuple of sizes. Additionally, the
+or an attribute. \texttt{shape} can also be used to reshape an array by entering a tuple of sizes. Additionally, the
 new shape can contain -1 which indicates to expand along this dimension to satisfy the constraint that
 the number of elements cannot change.
 \begin{framed}
@@ -73,7 +73,7 @@ the number of elements cannot change.
 \end{verbatim}
 \end{framed}
 %-----------------------------------%
-\subsubsection{reshape}
+\subsubsection{\texttt{reshape}}
 
 \texttt{reshape}  transforms an array with one set of dimensions and to one with a different set, preserving the
 number of elements. Arrays with dimensions M by N can be reshaped into an array with dimensions K
@@ -100,7 +100,7 @@ in arrays are counted first across rows and then then down columns. reshape will
 old array into the same position in the new array and so after calling reshape, \texttt{x (1) = y (1), x (2) = y (2)},
 and so on.
 %-----------------------------------%
-\subsubsection{size}
+\subsubsection{\texttt{size}}
 \texttt{size} returns the total number of elements in an array or matrix. \texttt{size} can be used as a function or an
 attribute.
 \begin{framed}
@@ -113,7 +113,7 @@ attribute.
 \end{verbatim}
 \end{framed}
 %-----------------------------------%
-\subsubsection{ndim}
+\subsubsection{\texttt{ndim}}
 \texttt{ndim} returns the size of all dimensions or an array or matrix as a tuple. \texttt{ndim} can be used as a function or
 an attribute .
 \begin{framed}
@@ -126,19 +126,19 @@ an attribute .
 \end{verbatim}
 \end{framed}
 %-----------------------------------%
-\subsubsection{tile}
+\subsubsection{\texttt{tile}}
 
 \texttt{tile}, along with \texttt{reshape}, are two of the most useful non-mathematical functions. tile replicates an array
 according to a specified size vector. To understand how tile functions, imagine forming an array composed
 of blocks. The generic form of tile is \texttt{tile(X , (M, N ) )} where X is the array to be replicated, M is
 the number of rows in the new block array, and N is the number of columns in the new block array. 
-
-For example, suppose X was an array
-MATRIX HERE
-and 
-MATRIX HERE
-was required. This could be accomplished by manually constructing y using hstack and vstack.
-an attribute .
+%
+%For example, suppose X was an array
+%MATRIX HERE
+%and 
+%MATRIX HERE
+%was required. This could be accomplished by manually constructing y using hstack and vstack.
+%an attribute .
 \begin{framed}
 \begin{verbatim}
 >>> x = array([[1,2],[3,4]])
@@ -168,7 +168,7 @@ as 3 rows and columns.
 \texttt{repeat} is a related function which copies data is a less useful manner.
 
 %-----------------------------------%
-\subsubsection{ravel}
+\subsubsection{\texttt{ravel}}
 \texttt{ravel} returns a flattened view (1-dimensional) of an array or matrix. \texttt{ravel} does not copy the underlying
 data (when possible), and so it is very fast.
 \begin{framed}
@@ -184,12 +184,12 @@ array([1, 3, 2, 4])
 \end{verbatim}
 \end{framed}
 %-----------------------------------%
-\subsubsection{flatten}
+\subsubsection{\texttt{flatten}}
 \texttt{flatten} works much like \texttt{ravel}, only that is copies the array when producing the flattened version.
 
 %-----------------------------------%
-\subsubsection{flat}
-flat produces a numpy.flatiter object (flat iterator) which is an iterator over a flattened view of an array.
+\subsubsection{\texttt{flat}}
+\texttt{flat} produces a \texttt{numpy.flatiter} object (\texttt{flat} iterator) which is an iterator over a flattened view of an array.
 Because it is an iterator, it is especially fast and memory friendly. flat can be used as an iterator in a for
 loop or with slicing notation.
 \begin{framed}
@@ -209,12 +209,14 @@ array([[ 1, 1],
 %=========================================================%
 
 % Page 90 KS
-\subsubsection{split, vsplit, hsplit}
+\subsubsection{\texttt{split}, \texttt{vsplit}, \texttt{hsplit}}
 \texttt{vsplit} and \texttt{hsplit} split arrays and matrices vertically and horizontally, respectively. Both can be used to
 split an array into n equal parts or into arbitrary segments, depending on the second argument. If scalar,
-the array is split into n equal sized parts. If a 1 dimensional array, the array is split using the elements of
-the array as break points. For example, if the array was [2,5,8], the array would be split into 4 pieces using
-[:2] , [2:5], [5:8] and [8:]. Both vsplit and hsplit are special cases of split, which can split along an
+the array is split into n equal sized parts. 
+
+\noindent If a 1 dimensional array, the array is split using the elements of
+the array as break points. For example, if the array was \texttt{[2,5,8]}, the array would be split into 4 pieces using
+[:2] , [2:5], [5:8] and [8:]. Both \texttt{vsplit} and \texttt{hsplit} are special cases of split, which can split along an
 arbitrary axis.
 \begin{framed}
 \begin{verbatim}
@@ -241,10 +243,10 @@ array([[ 1, 2],
 \end{verbatim}
 \end{framed}
 %-------------------------------%
-\subsubsection{delete}
+\subsubsection{\texttt{delete}}
 \texttt{delete} removes values from an array, and is similar to splitting an array, and then concatenating the values
-which are not deleted. The form of delete is delete(x,rc, axis) where rc are the row or column indices to
-delete, and axis is the axis to use (0 or 1 for a 2-dimensional array). If axis is omitted, delete operated on
+which are not deleted. The form of \texttt{delete} is \texttt{delete(x,rc, axis)} where rc are the row or column indices to
+delete, and axis is the axis to use (0 or 1 for a 2-dimensional array). If axis is omitted, \texttt{delete} operated on
 the flattened array.
 \begin{framed}
 \begin{verbatim}
@@ -264,7 +266,7 @@ array([ 0, 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
 \end{verbatim}
 \end{framed}
 %-------------------------------%
-\subsubsection{squeeze}
+\subsubsection{\texttt{squeeze}}
 \texttt{squeeze} removes \textit{singleton} dimensions from an array, and can be called as a function or a method.
 \begin{framed}
 \begin{verbatim}
@@ -278,7 +280,7 @@ array([ 0, 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
 \end{verbatim}
 \end{framed}
 %-------------------------------%
-\subsubsection{fliplr, flipud}
+\subsubsection{\texttt{fliplr}, \texttt{flipud}}
 \texttt{fliplr} and \texttt{flipud} flip arrays in a left-to-right and up-to-down directions, respectively. \texttt{flipud} reverses
 the elements in a 1-dimensional array, and \texttt{flipud(x)} is identical to \texttt{x[::1]}.
 \texttt{fliplr} cannot be used with 1-dimensional arrays.
@@ -297,7 +299,7 @@ array([[2, 3],
 \end{verbatim}
 \end{framed}
 %-------------------------------%
-\subsubsection{diag}
+\subsubsection{\texttt{diag}}
 The behavior of \texttt{diag} differs depending depending on the form of the input. 
 \begin{itemize}
 \item If the input is a square array, it
@@ -323,7 +325,7 @@ array([[1, 0],
 \end{verbatim}
 \end{framed}
 %-------------------------------%
-\subsubsection{triu, tril}
+\subsubsection{\texttt{triu}, \texttt{tril}}
 \texttt{triu} and \texttt{tril} produce upper and lower triangular arrays, respectively.
 \begin{framed}
 \begin{verbatim}
@@ -343,7 +345,7 @@ array([[1, 0],
 % 8.3 
 \subsection{Some Useful Linear Algebra Functions}
 %-------------------------------%
-\subsubsection{det}
+\subsubsection*{\texttt{det}}
 \texttt{det} computes the determinant of a square matrix or array.
 \begin{framed}
 \begin{verbatim}
@@ -354,7 +356,7 @@ array([[1, 0],
 \end{framed}
 
 %-------------------------------%
-\subsubsection{solve}
+\subsubsection*{\texttt{solve}}
 
 \texttt{solve} solves the system \textit{\textbf{Ax=b}} when X is square and invertible so that the solution is exact.
 \begin{framed}
@@ -369,7 +371,7 @@ array([[ 0.625],
 \end{framed}
 
 %-------------------------------%
-\subsubsection{eig}
+\subsubsection*{\texttt{eig}}
 \texttt{eig} computes the eigenvalues and eigenvectors of a square matrix. When used with one output, the eigenvalues
 and eigenvectors are returned as a tuple.
 \begin{framed}

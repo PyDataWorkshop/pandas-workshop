@@ -7,10 +7,10 @@
 % 6.1 Moved to last
 %=================================%
 \subsection{Mathematics}
-\subsubsection*{sum, cumsum}
-sum sums elements in an array. By default, it will sum all elements in the array, and so the second argument
-is normally used to provide the axis to use – 0 tosumdowncolumns, 1 tosumacross rows. cumsum produces
-the cumulativesumof the values in the array, and is also usually used with the second argument to indicate
+\subsubsection*{\texttt{sum}, \texttt{cumsum}}
+\texttt{sum} sums elements in an array. By default, it will sum all elements in the array, and so the second argument
+is normally used to provide the axis to use – 0 to sum down columns, 1 to sum across rows. \texttt{cumsum} produces
+the cumulative sum of the values in the array, and is also usually used with the second argument to indicate
 the axis to use.
 %----------------%
 \begin{framed}
@@ -48,20 +48,20 @@ array([[0.08542071,
 \end{verbatim}
 \end{framed}
 %----------------------%
-sum and cumsum can both be used as function or as methods. When used as methods, the first input is the
-axis so that sum(x,0) is the same as x.sum(0).
-\subsubsection*{prod, cumprod}
-prod and cumprod behave similarly to sum and cumsum except that the product and cumulative product are
-returned. prod and cumprod can be called as function or methods.
+\texttt{sum} and \texttt{cumsum} can both be used as function or as methods. When used as methods, the first input is the
+axis so that \texttt{sum(x,0)} is the same as\texttt{ x.sum(0)}.
+\subsubsection*{\texttt{prod}, \texttt{cumprod}}
+\texttt{prod} and \texttt{cumprod} behave similarly to \texttt{sum} and \texttt{cumsum} except that the product and cumulative product are
+returned. \texttt{prod} and \texttt{cumprod} can be called as function or methods.
 
-\subsubsection*{diff}
-diff computes the finite difference of a vector (also array) and returnsn-1 an element vectorwhenused on
+\subsubsection*{\texttt{diff}}
+\texttt{diff} computes the finite difference of a vector (also array) and returnsn-1 an element vectorwhenused on
 an n element vector. diff operates on the last axis by default, and so diff(x) operates across columns and
-returns x[:,1:size(x,1)]x[:,:
-size(x,1)1]
-for a 2-dimensional array. diff takes an optional keyword
-75
-argument axis so that diff(x, axis=0) will operate across rows. diff can also be used to produce higher
+returns \texttt{x[:,1:size(x,1)]x[:,:
+size(x,1)1]}
+for a 2-dimensional array. 
+
+\texttt{diff} takes an optional keyword argument axis so that diff(x, axis=0) will operate across rows. \texttt{diff} can also be used to produce higher
 order differences (e.g. double difference).
 %----------------%
 \begin{framed}
@@ -92,12 +92,12 @@ array([[0.11616531,
 \end{verbatim}
 \end{framed}
 %----------------------%
-\subsubsection*{exp}
-exp returns the element-by-element exponential ($e^x$) for an array.
-\subsubsection*{log}
-log returns the element-by-element natural logarithm (ln(x )) for an array.
-\subsubsection*{log10}
-log10 returns the element-by-element base-10 logarithm (log10 (x )) for an array.
+\subsubsection*{\texttt{exp}}
+\texttt{exp} returns the element-by-element exponential ($e^x$) for an array.
+\subsubsection*{\texttt{log}}
+\texttt{log} returns the element-by-element natural logarithm ($ln(x )$) for an array.
+\subsubsection*{\texttt{log10}}
+\texttt{log10} returns the element-by-element base-10 logarithm (\texttt{log10 (x )}) for an array.
 
 %====================================%
 \subsection{Rounding}
@@ -277,7 +277,7 @@ array([[ 10., 11., 12.],
 \end{framed}
 %=====================%
 \subsubsection{\texttt{mgrid}}
-mgrid is very similar to meshgrid but behaves like r\_ and c\_ in that it takes slices as input, and uses a
+\texttt{mgrid }is very similar to meshgrid but behaves like\texttt{ r\_} and \texttt{c\_} in that it takes slices as input, and uses a
 real valued variable to denote step size and complex to denote number of values. The output is an n + 1
 dimensional vector where the first index of the output indexes the meshes.
 \begin{framed}
@@ -290,9 +290,9 @@ dimensional vector where the first index of the output indexes the meshes.
 \end{framed}
 
 \subsubsection{\texttt{ogrid}}
-\texttt{ogrid} is identical to mgrid except that the arrays returned are always 1-dimensional. ogrid output is generally
+\texttt{ogrid} is identical to mgrid except that the arrays returned are always 1-dimensional. \texttt{ogrid} output is generally
 more appropriate for looping code, while \texttt{mgrid} is usually more appropriate for vectorized code.
-When the size of the arrays is large, then ogrid uses much less memory.
+When the size of the arrays is large, then \texttt{ogrid} uses much less memory.
 \begin{framed}
 \begin{verbatim}
 >>> ogrid[0:3,0:2:.5]

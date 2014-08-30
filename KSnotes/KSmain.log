@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  29 AUG 2014 23:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  30 AUG 2014 09:53
 entering extended mode
-**C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSmain.tex
-(C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSmain.tex
+**KSmain.tex
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -540,69 +540,66 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 51.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 52.
 
 ("C:\Program Files\Miktek\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 51.
-
-Overfull \hbox (4.62444pt too wide) in paragraph at lines 71--72
-[]\OT1/cmr/m/n/10.95 Matplotlib pro-vides so-phis-ti-cated 2-D and ba-sic 3-D g
-raph-ics ca-pa-bil-i-ties with Matlab-
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
+ [2] [3] [4]
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch02-versions.tex [5])
+[6] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch03-datatypes.tex
+[7] [8] [9] [10] [11] [12] [13])
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch10-specialnumbers.tex
+[14]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch04-arrays.tex
+[15] [16]
+Overfull \hbox (7.48853pt too wide) in paragraph at lines 91--97
+\OT1/cmr/m/n/10.95 '\OT1/cmtt/m/n/10.95 float64\OT1/cmr/m/n/10.95 ', which cor-
+re-sponds to the python built-in data type of float (andC/C++double).
  []
 
-[2] [3] [4] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch02-versions.tex
-[5]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch03-datatypes.tex
-[6] [7] [8] [9] [10] [11] [12] [13])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch04-arrays.tex [14] [15]
-[16] [17] [18] [19] [20]
-Overfull \hbox (1.80107pt too wide) in paragraph at lines 210--212
+[17] [18] [19] [20] [21] [22]
+Overfull \hbox (1.80107pt too wide) in paragraph at lines 263--265
 []\OT1/cmr/m/n/10.95 Higher di-men-sional ar-rays are use-ful when track-ing ma
 -trix val-ued pro-cesses through
  []
 
-[21]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch05-specialarrays.tex
-[22] [23])
+[23]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch05-specialarrays.tex
+[24] [25])
 (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch06-BasicFunctions.tex
-[24] [25] [26] [27] [28] [29] [30])
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch08.tex [31] [32] [33]
-[34] [35] [36] [37] [38] [39])
+[26] [27] [28] [29] [30] [31] [32])
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch08.tex [33] [34] [35]
+[36] [37] [38] [39] [40] [41])
 (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch11-relationallogicaloperato
-rs.tex [40] [41] [42]
+rs.tex [42] [43] [44] [45] [46] [47]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 148.
- [43]
-Overfull \hbox (47.39003pt too wide) in paragraph at lines 159--159
-[]\OT1/cmtt/m/n/10.95 isposfin,isnegfin & 1 for positive or negative inf & elem
-ent-by-element \\ \hline[] 
- []
-
-) [44] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.aux) ) 
+(Font)              <12> on input line 215.
+) [48]
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.aux) ) 
 Here is how much of TeX's memory you used:
- 3934 strings out of 493921
- 58670 string characters out of 3148886
+ 3937 strings out of 493921
+ 58835 string characters out of 3148886
  125564 words of memory out of 3000000
  7160 multiletter control sequences out of 15000+200000
  11355 words of font info for 40 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 44i,10n,43p,589b,392s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program
- Files/Miktek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/Mikte
-k/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Miktek/fonts/ty
-pe1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/Miktek/fonts/type1/public/a
-msfonts/cm/cmmi10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/c
-mmi8.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
-Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/
-Miktek/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts
-/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/c
-m/cmti10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt10.pfb
-><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on KSmain.pdf (44 pages, 227801 bytes).
+ 44i,11n,43p,542b,315s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/
+Miktek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/Miktek/fonts
+/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Miktek/fonts/type1/pub
+lic/amsfonts/cm/cmex10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts
+/cm/cmmi10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmmi8.pf
+b><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
+ Files/Miktek/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/Miktek/
+fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/type1/
+public/amsfonts/cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Pr
+ogram Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on KSmain.pdf (48 pages, 236812 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
+ 209 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

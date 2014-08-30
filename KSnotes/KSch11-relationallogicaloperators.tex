@@ -23,6 +23,29 @@ $!=$      & not\_equal & Not equal to \\ \hline
 \end{tabular} 
 \end{center}
 
+\begin{framed}
+\begin{verbatim}
+>>> x = array([[1,2],[3,
+4]])
+>>> x > 0
+array([[ True, True],
+[False, False]], dtype=bool)
+>>> x == 3
+array([[False, False],
+[ True, False]], dtype=bool)
+>>> y = array([1,1])
+>>> x < y # y broadcast to be (2,2)
+array([[False, False],
+[ True, True]], dtype=bool)
+>>> z = array([[1,1],[1,
+1]])
+# Same as broadcast y
+>>> x < z
+array([[False, False],
+[ True, True]], dtype=bool)
+\end{verbatim}
+\end{framed}
+\newpage
 %-----------------------------------------------%
 % 11.2
 \subsection{Logical Operators}
@@ -32,7 +55,7 @@ Logical expressions can be combined using four logical devices,
 \begin{tabular}{|c|c|c|c|}
 	\hline Keyword (Scalar) & Function & Bitwise & True if . . . \\ \hline
 	and & logical\_and & Both & True \\ \hline
-	or  & logical\_or & Either or Both True \\ \hline
+	or  & logical\_or & &Either or Both True \\ \hline
 	not & logical\_not & ~ & Not True \\ \hline
 	& logical\_xor & $\wedge$ & One True and One False \\ \hline
 \end{tabular} 
@@ -47,9 +70,52 @@ Logical expressions can be combined using four logical devices,
 % END OF TABLE
 %\end{verbatim}
 %-----------------------------------------------%
-There are three versions of all operators except XOR. The keyword version (e.g. and) can only be used
+\bigskip
+\noindent There are three versions of all operators except XOR. The keyword version (e.g. and) can only be used
 with scalars and so it not useful when working with NumPy. Both the function and bitwise operators
 can be used with NumPy arrays, although care is requires when using the bitwise operators.
+\begin{framed}
+\begin{verbatim}
+>>> x = arange(2.0,4)
+>>> y = x >= 0
+>>> z = x < 2
+>>> logical_and(y, z)
+array([False, False, True, True, False, False], dtype=bool)
+>>> y & z
+array([False, False, True, True, False, False], dtype=bool)
+>>> (x > 0) & (x < 2)
+array([False, False, True, True, False, False], dtype=bool)
+>>>
+>>> x > 0 & x < 4 # Error
+TypeError: ufunc ’bitwise_and’ not supported for the input types, 
+and the inputs could not
+be safely coerced to any supported types 
+according to the casting rule ’’safe’’
+>>> ~(y & z) # Not
+array([ True, True, False, False, True, True], dtype=bool)
+>>>
+\end{verbatim}
+\end{framed}
+\newpage
+%\subsection{\texttt{and}, \texttt{or}, \texttt{not} and \texttt{xor}}
+%\begin{framed}
+%\begin{verbatim}
+%>>> x = arange(2.0,4)
+%>>> y = x >= 0
+%>>> z = x < 2
+%>>> logical_and(y, z)
+%array([False, False, True, True, False, False], dtype=bool)
+%>>> y & z
+%array([False, False, True, True, False, False], dtype=bool)
+%>>> (x > 0) & (x < 2)
+%array([False, False, True, True, False, False], dtype=bool)
+%>>> x > 0 & x < 4 # Error
+%TypeError: ufunc ’bitwise_and’ not supported for the input types, and the inputs could not
+%be safely coerced to any supported types according to the casting rule ’’safe’’
+%>>> ~(y & z) # Not
+%array([ True, True, False, False, True, True], dtype=bool)
+%\end{verbatim}
+%\end{framed}
 %-----------------------------------------------%
  \subsection{Bitwise operators}
 Bitwise operators have high priority – higher than logical comparisons – and so parentheses are requires around
@@ -72,18 +138,19 @@ array([False, False, True, True, False, False], dtype=bool)
 %---------------------------------------------------------------------------------------%
 %---------------------------------------------------------------------------------------%
 %11.3
-\subsection{Multiple tests: all and any}
+\newpage
+\subsection{Multiple tests: \texttt{all} and \texttt{any}}
 The commands all and any take logical input and are self-descriptive. all returns True if all logical elements
 in an array are 1.
 %----------------------------%
 \begin{itemize}
-\item  If all is called without any additional arguments on an array, it returns True if all
+\item  If \texttt{all} is called without any additional arguments on an array, it returns True if all
 elements of the array are logical true and 0 otherwise. 
 \item 
 any returns logical(True) if any element of an array is True.
 \end{itemize}
 %----------------------------%
-Both all and any can be also be used along a specific dimension using a second argument or the
+Both \texttt{all }and \texttt{any} can be also be used along a specific dimension using a second argument or the
 keyword argument axis to indicate the axis of operation (0 is column-wise and 1 is row-wise). 
 
 When used column- or row-wise, the output is an array with one less dimension than the input, where each element
@@ -143,16 +210,16 @@ True
 \end{verbatim}
 \end{framed}
 %----------------------------%
-
+\newpage
 %page 116
 \subsection{ is$\ast$}
 A number of special purpose logical tests are provided to determine if an array has special characteristics.
 Some operate element-by-element and produce an array of the same dimension as the input while other
 produce only scalars. These functions all begin with is.
 
-\begin{verbatim}
-\begin{tabular}{|c|c|c|}
-Operator & True if . . . & Method of operation \\ \hline
+\begin{center}
+\begin{tabular}{|c|c|c|} \hline
+Operator & True if . . . & Method of operation \\ \hline \hline
 isnan & 1 if nan & element-by-element \\ \hline
 isinf & 1 if inf & element-by-element \\ \hline
 isfinite & 1 if not inf and not nan & element-by-element \\ \hline
@@ -160,12 +227,12 @@ isposfin,isnegfin & 1 for positive or negative inf & element-by-element \\ \hlin
 isreal & 1 if not complex valued & element-by-element \\ \hline
 iscomplex &1 if complex valued & element-by-element \\ \hline
 isreal & 1 if real valued & element-by-element \\ \hline
-is_string_like & 1 if argument is a string & scalar \\ \hline
-is_numlike& 1 if is a numeric type & scalar \\ \hline
+is\_string\_like & 1 if argument is a string & scalar \\ \hline
+is\_numlike& 1 if is a numeric type & scalar \\ \hline
 isscalar & 1 if scalar & scalar \\ \hline
 isvector & 1 if input is a vector & scalar \\ \hline
 \end{tabular}
-\end{verbatim}
+\end{center}
 
 
 \end{document}
