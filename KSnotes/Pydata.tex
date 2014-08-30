@@ -1,0 +1,129 @@
+%--------------------------------------------------------------------------------------------%
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} 
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} 
+\usepackage{graphicx} 
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} 
+\usepackage{subfiles}
+\usepackage{framed}
+\usepackage{subfiles}
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{Data Analysis with Python}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+%--------------------------------------------------------------------------------------------%
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} 
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+%--------------------------------------------------------------------------------------------%
+
+\title{Brief Article}
+\author{The Author}
+%--------------------------------------------------------------------------------------------%
+
+\begin{document}
+\large
+\setcounter{tocdepth}{2}
+\tableofcontents
+\newpage
+%-----------------------------------------------------------------------------------%
+\subsection*{An Introduction to Pandas}
+
+%
+%This tutorial will get you started with Pandas - a data analysis library for Python that is great for data preparation, joining, and ultimately generating well-formed, tabular data that's easy to use in a variety of visualization tools or (as we will see here) machine learning applications. 
+%
+%------------%
+\textbf{Book Review}\\
+\textbf{\textit{Python for Data Analysis}} is concerned with the nuts and bolts of manipulating, processing, cleaning, and crunching data in Python. It is also a practical, modern introduction to scientific computing in Python, tailored for data-intensive applications. This is a book about the parts of the Python language and libraries you’ll need to effectively solve a broad set of data analysis problems. This book is not an exposition on analytical methods using Python as the implementation language.
+
+Written by Wes McKinney, the main author of the pandas library, this hands-on book is packed with practical cases studies. It’s ideal for analysts new to Python and for Python programmers new to scientific computing.
+
+\begin{itemize}
+\item Use the IPython interactive shell as your primary development environment
+\item Learn basic and advanced NumPy (Numerical Python) features
+\item Get started with data analysis tools in the pandas library
+\item Use high-performance tools to load, clean, transform, merge, and reshape data
+\item Create scatter plots and static or interactive visualizations with matplotlib
+\item Apply the pandas groupby facility to slice, dice, and summarize datasets
+\item Measure data by points in time, whether it’s specific instances, fixed periods, or intervals
+\item Learn how to solve problems in web analytics, social sciences, finance, and economics, through detailed examples
+\end{itemize}
+%-----------------------------------------------------------------------------------%
+\newpage
+\subsection*{Introduction}
+
+\begin{itemize}
+\item Python has been one of the premier general scripting languages, and a major web development language. 
+
+\item Numerical and data analysis and scientific programming developed through the packages Numpy and Scipy, 
+which, along with the visualization package Matplotlib formed the basis for an open-source alternative to Matlab. 
+
+\item Numpy provided array objects, cross-language integration, linear algebra and other functionalities. 
+
+\item Scipy adds to this and provides optimization, linear algebra, optimization, statistics and basic image analysis 
+capabilities. 
+
+\item Matplotlib provides sophisticated 2-D and basic 3-D graphics capabilities with Matlab-like syntax.
+
+
+\item Further recent development has resulted in a rather complete stack for data manipulation and analysis, that includes Sympy for symbolic mathematics, pandas for data structures and analysis, and IPython as an enhanced console and HTML notebook that also facilitates parallel computation.
+\end{itemize}
+
+
+%-----------------------------------------------------------------------------------%
+\newpage
+\subsection*{Environment Setup}
+
+First thing, we'll need a Python environment suitable for scientific and statistical computing. 
+%Assuming you already have Python installed (no? Well then get it! Python 2.7 is recommended), we'll need three packages. 
+
+You should install each in the order they appear here:
+
+\begin{itemize}
+\item numpy - (pronounced num-pie) Powerful numerical arrays. A foundational package for the two packages below.
+\item scipy - (sigh-pie) Scientific, mathematical, and engineering package
+\item scikit-learn - Easy to use machine learning library
+\end{itemize}
+
+%Note: 64 bit versions of these libraries can be found here.
+
+Click through the links above for the home pages of each project and get the installation for your operating system or, if you're running Linux, you can install from a package manager (\texttt{pip}). If you're on a Windows machine, it's easiest to install using the setup executables for scipy and scikit-learn rather than installing from a package manager.
+
+It is recommend to setting up a decent Python development environment. You can certainly execute Python scripts from the command line, but it's much easier to use a proper environment with debugging support.
+
+%-----------------------------------------------------------------------------------%
+
+%\subsubsection*{references}
+%http://people.duke.edu/~ccc14/pcfb/analysis.html
+
+
+\newpage
+\subfile{KSch02-versions.tex}
+\newpage
+\subfile{KSch03-datatypes.tex}
+\subfile{KSch10-specialnumbers.tex}
+\subfile{KSch04-arrays.tex}
+\subfile{KSch05-specialarrays.tex}
+\subfile{KSch06-BasicFunctions.tex}
+
+\subfile{KSch08.tex}
+\subfile{KSch11-relationallogicaloperators.tex}
+\newpage
+%\subfile{DataStructures.tex}
+
+
+
+
+
+\end{document}

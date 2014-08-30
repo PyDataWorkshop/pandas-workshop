@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  30 AUG 2014 17:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  30 AUG 2014 17:04
 entering extended mode
-**C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSch02-versions.tex
-(C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSch02-versions.tex
+**C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/Pydata.tex
+(C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/Pydata.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,16 +13,6 @@ german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-("C:\Program Files\Miktek\tex\latex\subfiles\subfiles.cls"
-Document Class: subfiles 2012/05/23 Federico Garcia
-("C:\Program Files\Miktek\tex\latex\tools\verbatim.sty"
-Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks14
-\verbatim@line=\toks15
-\verbatim@in@stream=\read1
-)
-Preamble taken from file `KSmain.tex'
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.tex
 ("C:\Program Files\Miktek\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 ("C:\Program Files\Miktek\tex\latex\base\size11.clo"
@@ -42,8 +32,8 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 ("C:\Program Files\Miktek\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks16
-\inpenc@posthook=\toks17
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
 
 ("C:\Program Files\Miktek\tex\latex\base\utf8.def"
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
@@ -262,7 +252,7 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 
 ("C:\Program Files\Miktek\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks18
+\KV@toks@=\toks16
 )
 ("C:\Program Files\Miktek\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
@@ -286,7 +276,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutheight=\dimen108
 \Gm@layouthoffset=\dimen109
 \Gm@layoutvoffset=\dimen110
-\Gm@dimlist=\toks19
+\Gm@dimlist=\toks17
 
 ("C:\Program Files\Miktek\tex\latex\geometry\geometry.cfg"))
 ("C:\Program Files\Miktek\tex\latex\graphics\graphicx.sty"
@@ -341,7 +331,7 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen126
 \extrarowheight=\dimen127
-\NC@list=\toks20
+\NC@list=\toks18
 \extratabsurround=\skip43
 \backup@length=\skip44
 )
@@ -351,7 +341,13 @@ Package: paralist 2013/06/09 v2.4 Extended list environments
 \plpartopsep=\skip46
 \plitemsep=\skip47
 \plparsep=\skip48
-\pl@lab=\toks21
+\pl@lab=\toks19
+)
+("C:\Program Files\Miktek\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks20
+\verbatim@line=\toks21
+\verbatim@in@stream=\read1
 )
 ("C:\Program Files\Miktek\tex\latex\subfig\subfig.sty"
 Package: subfig 2005/06/28 ver: 1.3 subfig package
@@ -459,20 +455,20 @@ Package tocloft Info: The document has section divisions on input line 44.
 \cftbeforesubtabskip=\skip98
 \cftsubtabindent=\skip99
 \cftsubtabnumwidth=\skip100
-)))
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch02-versions.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
+)
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\Pydata.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -525,12 +521,15 @@ LaTeX Font Info:    ... okay on input line 2.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 7.
- ("C:\Program Files\Miktek\tex\latex\base\omscmr.fd"
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+ (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\Pydata.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 1.
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 7.
+\tf@toc=\write3
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -540,25 +539,81 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-] [2]
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch02-versions.aux) ) 
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 53.
+
+("C:\Program Files\Miktek\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
+ [2] [3] [4]
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch02-versions.tex [5])
+[6] (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch03-datatypes.tex
+[7] [8] [9] [10] [11] [12] [13] [14])
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch10-specialnumbers.tex)
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch04-arrays.tex
+Overfull \hbox (1.85017pt too wide) in paragraph at lines 29--31
+[]\OT1/cmr/m/n/12 Standard math-e-mat-i-cal op-er-a-tors on ar-rays op-er-ate e
+lement-by-element. This
+ []
+
+[15] [16] [17] [18] [19] [20] [21] [22] [23]
+Overfull \hbox (4.59656pt too wide) in paragraph at lines 319--319
+ []\OT1/cmtt/m/n/12 from scipy import log10 # Will not import the log2 from Sci
+Py[] 
+ []
+
+) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch05-specialarrays.tex
+[24] [25])
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch06-BasicFunctions.tex
+[26] [27] [28] [29] [30] [31] [32]
+Overfull \hbox (4.87143pt too wide) in paragraph at lines 293--296
+\OT1/cmtt/m/n/12 ogrid \OT1/cmr/m/n/12 is iden-ti-cal to mgrid ex-cept that the
+ ar-rays re-turned are al-ways 1-dimensional.
+ []
+
+[33]) (C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch08.tex [34] [35]
+[36] [37] [38] [39]
+Overfull \hbox (14.27151pt too wide) in paragraph at lines 264--264
+[]\OT1/cmtt/m/n/12 array([ 0, 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 
+17, 18,[] 
+ []
+
+[40] [41] [42])
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch11-relationallogicaloperato
+rs.tex [43] [44]
+Overfull \hbox (1.92151pt too wide) in paragraph at lines 90--90
+[]\OT1/cmtt/m/n/12 TypeError: ufunc 'bitwise_and' not supported for the input t
+ypes,[] 
+ []
+
+[45] [46] [47] [48]) [49]
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\Pydata.aux) ) 
 Here is how much of TeX's memory you used:
- 3895 strings out of 493921
- 57615 string characters out of 3148886
- 122889 words of memory out of 3000000
- 7150 multiletter control sequences out of 15000+200000
- 7684 words of font info for 28 fonts, out of 3000000 for 9000
+ 3934 strings out of 493921
+ 58772 string characters out of 3148886
+ 124564 words of memory out of 3000000
+ 7157 multiletter control sequences out of 15000+200000
+ 10740 words of font info for 38 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 53i,10n,45p,619b,238s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Progr
-am Files/Miktek/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/Mikt
-ek/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/typ
-e1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cm
-tt10.pfb>
-Output written on KSch02-versions.pdf (2 pages, 66850 bytes).
+ 44i,10n,43p,586b,330s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/
+Miktek/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/Miktek/fonts
+/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Miktek/fonts/type1/pub
+lic/amsfonts/cm/cmex10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts
+/cm/cmmi12.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmmi8.pf
+b><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
+ Files/Miktek/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/Miktek
+/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/Miktek/fonts/type1/p
+ublic/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfon
+ts/cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Pro
+gram Files/Miktek/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/M
+iktek/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Pydata.pdf (49 pages, 251680 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
+ 217 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

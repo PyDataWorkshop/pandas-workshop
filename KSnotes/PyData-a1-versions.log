@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  30 AUG 2014 17:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.26)  30 AUG 2014 17:07
 entering extended mode
-**C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSch02-versions.tex
-(C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/KSch02-versions.tex
+**C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/PyData-a1-versions.tex
+(C:/Users/Kevin/Documents/GitHub/pandas/KSnotes/PyData-a1-versions.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -21,8 +21,8 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks15
 \verbatim@in@stream=\read1
 )
-Preamble taken from file `KSmain.tex'
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSmain.tex
+Preamble taken from file `Pydata.tex'
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\Pydata.tex
 ("C:\Program Files\Miktek\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 ("C:\Program Files\Miktek\tex\latex\base\size11.clo"
@@ -460,7 +460,7 @@ Package tocloft Info: The document has section divisions on input line 44.
 \cftsubtabindent=\skip99
 \cftsubtabnumwidth=\skip100
 )))
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch02-versions.aux)
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\PyData-a1-versions.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
@@ -525,12 +525,17 @@ LaTeX Font Info:    ... okay on input line 2.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 7.
- ("C:\Program Files\Miktek\tex\latex\base\omscmr.fd"
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
+("C:\Program Files\Miktek\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 7.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -541,22 +546,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 ] [2]
-(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\KSch02-versions.aux) ) 
+(C:\Users\Kevin\Documents\GitHub\pandas\KSnotes\PyData-a1-versions.aux) ) 
 Here is how much of TeX's memory you used:
  3895 strings out of 493921
- 57615 string characters out of 3148886
+ 57645 string characters out of 3148886
  122889 words of memory out of 3000000
  7150 multiletter control sequences out of 15000+200000
  7684 words of font info for 28 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 53i,10n,45p,619b,238s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Progr
-am Files/Miktek/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/Mikt
-ek/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/typ
-e1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm/cm
-tt10.pfb>
-Output written on KSch02-versions.pdf (2 pages, 66850 bytes).
+ 53i,10n,45p,622b,238s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Pr
+ogram Files/Miktek/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/M
+iktek/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/Miktek/fonts/
+type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/Miktek/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb><C:/Program Files/Miktek/fonts/type1/public/amsfonts/cm
+/cmtt10.pfb>
+Output written on PyData-a1-versions.pdf (2 pages, 66561 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

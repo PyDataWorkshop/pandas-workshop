@@ -1,0 +1,39 @@
+\documentclass[Pydata.tex]{subfiles} 
+\begin{document} 
+%-------------------------------------------------------------------------%
+% KS page 59
+% KS - 4.9 import and Modules
+\newpage
+\section{The \texttt{import} function}
+\begin{itemize}
+\item Python, by default, only has access to a small number of built-in types and functions. The vast majority of
+functions are located in modules, and before a function can be accessed, the module which contains the
+function must be imported. 
+
+\item For example, when using \texttt{ipython --pylab} (or any variants), a large number
+of modules are automatically imported, including NumPy and matplotlib.
+\item This is style of importing useful
+for learning and interactive use, but care is needed to make sure that the correct module is imported when
+designing more complex programs.
+
+\item \texttt{import} can be used in a variety of ways. The simplest is to use from module \texttt{import *} which imports
+all functions in module. 
+\item This method of using import can dangerous since if you use it more than once,
+it is possible for functions to be hidden by later imports. 
+\item A better method is to just import the required
+functions. 
+\item This still places functions at the top level of the namespace, but can be used to avoid conflicts.
+\begin{framed}
+\begin{verbatim}
+from pylab import log2 # Will import log2 only
+from scipy import log10 # Will not import the log2 from SciPy
+\end{verbatim}
+\end{framed}
+%KS page 59
+\item The only difference between these two is that \texttt{import scipy} is implicitly calling \texttt{import scipy as scipy}.
+\item When this formof import is used, functions are used with the “as” name. For example, the load provided
+by NumPy is accessed using \texttt{sp.log2}, while the pylab load is \texttt{pl.log2} – and both can be used where appropriate.
+\item While this method is the most general, it does require slightly more typing.
+\end{itemize}
+%--------------------------------------------------------------------------------------------%
+\end{document}
