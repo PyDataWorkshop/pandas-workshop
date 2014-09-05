@@ -60,8 +60,10 @@ movie_ratings = pd.merge(movies, ratings)
 lens = pd.merge(movie_ratings, users)
 What are the 25 most rated movies?
 
+\begin{verbatim}
 In [62]:
 most_rated = lens.groupby('title').size().order(ascending=False)[:25]
+\end{verbatim}
 print most_rated
 title
 Star Wars (1977)                             583
@@ -106,7 +108,7 @@ LIMIT 25;
 \end{framed}
 Alternatively, pandas has a nifty value_counts method - yes, this is simpler - the goal above was to show a basic groupby example.
 
-In [63]:
+\begin{verbatim}
 lens.title.value_counts()[:25]
 Out[63]:
 Star Wars (1977)                             583
@@ -135,6 +137,7 @@ Mission: Impossible (1996)                   344
 Fugitive, The (1993)                         336
 Indiana Jones and the Last Crusade (1989)    331
 dtype: int64
+\end{verbatim}
 Which movies are most highly rated?
 
 

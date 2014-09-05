@@ -9,14 +9,17 @@
 \author{}
 
 \begin{document}
-Working with DataFrames
+\section{Working with DataFrames - by Greg Reda}
 
-Now that we can get data into a DataFrame, we can finally start working with them. pandas has an abundance of functionality, far too much for me to cover in this introduction. I'd encourage anyone interested in diving deeper into the library to check out its excellent documentation. Or just use Google - there are a lot of Stack Overflow questions and blog posts covering specifics of the library.
-
+\begin{itemize}
+\item Now that we can get data into a DataFrame, we can finally start working with them.
+% pandas has an abundance of functionality, far too much for me to cover in this introduction. I'd encourage anyone interested in %diving deeper into the library to check out its excellent documentation. Or just use Google - there are a lot of Stack Overflow %questions and blog posts covering specifics of the library.
+\item 
 We'll be using the MovieLens dataset in many examples going forward. The dataset contains 100,000 ratings made by 943 users on 1,682 movies.
 
-
+\end{itemize}
 %--------------------------------%
+\begin{framed}
 \begin{verbatim}
 # pass in column names for each CSV
 u_cols = ['user_id', 'age', 'sex', 'occupation', 'zip_code']
@@ -28,10 +31,12 @@ ratings = pd.read_csv('ml-100k/u.data', sep='\t', names=r_cols)
 # the movies file contains columns indicating the movie's genres
 # let's only load the first five columns of the file with usecols
 m_cols = ['movie_id', 'title', 'release_date', 'video_release_date', 'imdb_url']
-movies = pd.read_csv('ml-100k/u.item', sep='|', names=m_cols, usecols=range(5))
+movies = pd.read_csv('ml-100k/u.item', sep='|', names=m_cols, 
+usecols=range(5))
 \end{verbatim}
+\end{framed}
 %--------------------------------%
-\subsection{Inspection}
+\subsection{Inspection of the Data Set}
 
 pandas has a variety of functions for getting basic information about your DataFrame, the most basic of which is calling your DataFrame by name.
 %--------------------------------%
@@ -51,17 +56,18 @@ dtypes: float64(1), int64(1), object(3)
 The output tells a few things about our DataFrame.
 
 \begin{itemize}
-\item It's obviously an instance of a DataFrame.
+\item It is eveidently an instance of a DataFrame.
 \item Each row was assigned an index of 0 to N-1, where N is the number of rows in the DataFrame. pandas will do this by default if an index is not specified. Don't worry, this can be changed later.
 \item There are 1,682 rows (every row must have an index).
-\item  dataset has five total columns, one of which isn't populated at all (video\_release\_date) and two that are missing some values (\texttt{release\_date} and i\texttt{mdb\_url}).
+\item  dataset has five total columns, one of which isn't populated at all (video\_release\_date) and two that are missing some values (\texttt{release\_date} and \texttt{imdb\_url}).
 \item The last line displays the datatypes of each column, but not necessarily in the corresponding order to the listed columns. You should use the dtypes method to get the datatype for each column.
 \end{itemize}
+
+\begin{verbatim}
+movies.dtypes
+\end{verbatim}
 \begin{framed}
 \begin{verbatim}
-In [33]:
-movies.dtypes
-Out[33]:
 movie_id                int64
 title                  object
 release_date           object
@@ -74,7 +80,7 @@ DataFrame's also have a describe method, which is great for seeing basic statist
 
 \begin{verbatim}
 users.describe()
-Out[34]:
+
 user_id	age
 count	 943.000000	 943.000000
 mean	 472.000000	 34.051962
