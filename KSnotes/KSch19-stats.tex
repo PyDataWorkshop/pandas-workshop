@@ -14,11 +14,19 @@
 %	19.5 Select Statistics Functions	
 %	19.6 Select Statistical Tests	
 
-\documentclass[KSmain.tex]{subfiles} 
+\documentclass[Pydata.tex]{subfiles} 
 \begin{document} 
 	\large
-\section{Probability and Statistics Functions}
+\section{Probability Functions}
+
+
 \subsection{Random Number Generation with NumPy}
+\begin{framed}
+\noindent For the sake of brevity, the specific functions names are given in the example below, rather than the full specification.
+\\
+The \texttt{rand()} command is fully specified as \texttt{np.random.rand()}
+
+\end{framed}
 % 19.1 Simulating Random Variables
 % - 19.1.1 Core Random Number Generators
 NumPy random number generators are all stored in the module \texttt{numpy.random}. 
@@ -29,11 +37,11 @@ by importing \texttt{import numpy.random as rnd} and \texttt{using rnd.rand.1}.
  identicalexceptthat rand takes a variable number 
 of integer inputs – one for each dimension – while \texttt{random\_sample} takes a n-element tuple. 
 
-\texttt{random\_sample} is the preferred NumPy function, and \texttt{rand} is a convenience function primarily for \textit{MATLAB} users.
+\noindent \texttt{random\_sample} is the preferred NumPy function, and \texttt{rand} is a convenience function primarily for \textit{MATLAB} users.
 \begin{framed}
 \begin{verbatim}
->>> x = rand(3,4,5) 
->>> y = random_sample((3,4,5))
+x = rand(3,4,5) 
+y = random_sample((3,4,5))
 \end{verbatim}
 \end{framed}
 %===============================================%
@@ -42,8 +50,8 @@ of integer inputs – one for each dimension – while \texttt{random\_sample} t
 % -------19.1.1 Core Random Number Generators
 
 \subsubsection{\texttt{randn, standard\_normal}}
-randn and standard\_normal are standard normal random number generators. randn, like rand, takes a
-variable number of integer inputs, and standard\_normal takes an n-element tuple. Both can be called
+\texttt{randn} and \texttt{standard\_normal} are standard norma (i.e. Z-value)l random number generators. \texttt{randn}, like \texttt{rand}, takes a
+variable number of integer inputs, and \texttt{standard\_normal} takes an n-element tuple. Both can be called
 with no arguments to generate a single standard normal (e.g. randn()). \texttt{standard\_normal }is the preferred
 NumPy function, and randn is a convenience function primarily for MATLAB users .
 \begin{framed}
@@ -53,23 +61,28 @@ NumPy function, and randn is a convenience function primarily for MATLAB users .
 \end{verbatim}
 \end{framed}
 \subsubsection{\texttt{randint, random\_integers}}
-\texttt{randint} and \texttt{random\_integers} are uniform integer random number generators which take 3 inputs, low,
-high and size. Low is the lower bound of the integers generated, high is the upper and size is a n-element
-tuple. \texttt{randint} and \texttt{random\_integers} differ in that \texttt{randint} generates integers exclusive of the value in high
-(as do most Python functions), while \texttt{random\_integers} includes the value in high in its range.
+\texttt{randint} and \texttt{random\_integers} are uniform integer random number generators which take 3 inputs: low,
+high and size. 
+\begin{itemize}
+\item \texttt{low} is the lower bound of the integers generated, 
+\item \texttt{high} is the upper,
+\item \texttt{size} is a n-elementtuple. 
+\end{itemize}
+
+\noindent \textbf{Important:}\\
+ \texttt{randint} and \texttt{random\_integers} differ in that \texttt{randint} generates integers exclusive of the value in \texttt{high}
+(as do most Python functions), while \texttt{random\_integers} includes the value in \texttt{high} in its range.
 \begin{framed}
 \begin{verbatim}
->>> x = randint(0,10,(100))
->>> x.max() # Is 9 since range is [0,10)
-9
->>> y = random_integers(0,10,(100))
->>> y.max() # Is 10 since range is [0,10]
-10
+x = randint(0,10,(100))
+x.max() # Is 9 since range is [0,10)
+y = random_integers(0,10,(100))
+ y.max() # Is 10 since range is [0,10]
 \end{verbatim}
 \end{framed}
 % -------19.1.2 Random Array Functions
 \subsubsection{\texttt{shuffle}}
-shuffle randomly reorders the elements of an array in place.
+\texttt{shuffle} randomly reorders the elements of an array in place.
 \begin{framed}
 \begin{verbatim}
 >>> x = arange(10)
@@ -113,14 +126,16 @@ output. All random number generators are in the module numpy.random.
 
 %19.2 Simulation and Random Number Generation
 \subsection{Simulation and Random Number Generation}
-Computer simulated random numbers are usually constructed from very complex but ultimately deterministic
-functions. Because they are not actually random, simulated random numbers are generally described
+\begin{itemize}
+\item Computer simulated random numbers are usually constructed from very complex but ultimately deterministic
+functions. 
+\item Because they are not actually random, simulated random numbers are generally described
 to as \textbf{pseudo-random}. 
-
-All pseudo-random numbers inNumPy use one core random number generator
+\item All pseudo-random numbers in NumPy use one core random number generator
 based on the \textbf{\textit{Mersenne Twister}}, a generator which can produce a very long series of pseudo-random
-data before repeating (up to $2^19937 - 1$ non-repeating values)
-.
+data before repeating (up to $2^19937 - 1$ non-repeating values).
+\end{itemize}
+
 \subsubsection{\texttt{RandomState}}
 \texttt{RandomState} is the class used to control the random number generators. Multiple generators can be initialized
 by RandomState.
@@ -173,7 +188,7 @@ on a particular instance of RandomState.
 %19.2.1
 \texttt{set\_state(state)} sets the state of the random number generator. It can be called as a function, in which
 case it sets the state of the default random number generator, or as a method on a particular instance of
-RandomState. \texttt{set\_state} should generally only be called using a state tuple returned by get\_state.
+RandomState.\\ \texttt{set\_state} should generally only be called using a state tuple returned by \texttt{get\_state}.
 
 \subsubsection*{\texttt{seed}}
 % 19.2.2 
@@ -183,7 +198,8 @@ actual random data provided by the operating system.
 
 \texttt{seed( s )} takes a vector of values (can be scalar) to
 initialize the random number generator at particular state. seed( s ) is particularly useful for producing
-simulation studies which are reproducible. In the following example, calls to \texttt{seed()} produce different
+simulation studies which are reproducible. \\
+\\ In the following example, calls to \texttt{seed()} produce different
 random numbers, since these reinitialize using random data from the computer, while calls to \texttt{seed(0)}
 produce the same (sequence) of random numbers.
 \begin{framed}
@@ -271,11 +287,11 @@ distribution name in SciPy.
 	between 0 and 1 that contains the values to use when evaluating inverse CDF.
 	\item \texttt{dist.fit}\\
 	Estimate shape, location, and scale parameters from data by maximum likelihood using an array of data.
-	Generically, fit is called using \texttt{dist.fit(data, *args, floc=0, fscale=1)} where data is a data array used
-	to estimate the parameters. floc forces the location to a particular value (e.g. floc=0). \texttt{fscale} similarly
-	forces the scale to a particular value (e.g. \texttt{fscale=1}) . It is necessary to use floc and/or fscale when
-	computing MLEs if the distribution does not have a location and/or scale. For example, the gamma distribution
-	is defined using 2 parameters, often referred to as shape and scale. In order to useMLto estimate
+	\\ Generically, fit is called using \texttt{dist.fit(data, *args, floc=0, fscale=1)} where data is a data array used
+	to estimate the parameters. \\ floc forces the location to a particular value (e.g. floc=0). \texttt{fscale} similarly
+	forces the scale to a particular value (e.g. \texttt{fscale=1}) .\\  It is necessary to use floc and/or fscale when
+	computing MLEs if the distribution does not have a location and/or scale.\\ For example, the gamma distribution
+	is defined using 2 parameters, often referred to as shape and scale. \\ In order to useMLto estimate
 	parameters from a gamma, floc=0 must be used.
 	\item \texttt{dist.median}\\
 	Returns the median of the distribution. Generically, median is called using dist.median(*args, loc=0, scale=1).
@@ -290,9 +306,9 @@ distribution name in SciPy.
 	Returns the standard deviation of the distribution. Generically, std is called using dist.std(*args, loc=0, scale=1).
 \end{itemize}
 %------------------------------------------------------------------%
-%19.4.1 Example: gamma
+\newpage %19.4.1 Example: gamma
 \subsubsection{Example}
-The gamma distribution is used as an example. The gamma distribution takes 1 shape parameter a (a is
+The gamma distribution is used as an example. \\ The gamma distribution takes 1 shape parameter a (a is
 the only element of *args), which is set to 2 in all examples.
 \begin{framed}
 	\begin{verbatim}
@@ -304,13 +320,16 @@ the only element of *args), which is set to 2 in all examples.
 		(2.0, 1.6783469900166608, 1.4142135623730951, 2.0)
 		>>> gamma.moment(2,2) gamma.
 		moment(1,2)**2 # Variance
+
 		>>> gamma.cdf(5, 2), gamma.pdf(5, 2)
 		(0.95957231800548726, 0.033689734995427337)
 		>>> gamma.ppf(.95957231800548726, 2)
 		5.0000000000000018
+
 		>>> log(gamma.pdf(5, 2)) gamma.
 		logpdf(5, 2)
 		0.0
+
 		>>> gamma.rvs(2, size=(2,2))
 		array([[ 1.83072394, 2.61422551],
 		[ 1.31966169, 2.34600179]])

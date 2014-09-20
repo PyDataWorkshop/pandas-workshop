@@ -1,20 +1,23 @@
+\documentclass[Pydata.tex]{subfiles} 
+% More Work Needed
 
-scipy.stats.linregress(x, y=None)[source]
-Calculate a regression line
+%17.2 Statistical Functions - Short Section - Good
+%17.3 Now in 17a
+%17.4 Now in 17a
+%17.5 Graphics - Completed - Now in 17a
+%17.6 FRED Example - make as new section (17b)
+\begin{document} 
+
+\texttt{scipy.stats.linregress(x, y=None)}
+
+\textbf{\textit{Calculate a regression line}}
 
 This computes a least-squares regression for two sets of measurements.
 
 Parameters:	
-x, y : array_like
-two sets of measurements. Both arrays should have the same length. If only x is given (and y=None), then it must be a two-dimensional array where one dimension has
-scipy.stats.linregress(x, y=None)[source]
-Calculate a regression line
-
-This computes a least-squares regression for two sets of measurements.
-
-Parameters:	
-x, y : array_like
+x, y : array\_like
 two sets of measurements. Both arrays should have the same length. If only x is given (and y=None), then it must be a two-dimensional array where one dimension has length 2. The two sets of measurements are then found by splitting the array along the length-2 dimension.
+
 Returns:
 \begin{itemize}	
 \item slope : float
@@ -52,6 +55,8 @@ Standard error of the estimate
 
 \subsubsection*{Examples}
 
+\begin{framed}
+\begin{verbatim}
 >>>
 >>> from scipy import stats
 >>> import numpy as np
@@ -63,3 +68,8 @@ Standard error of the estimate
 >>> $
 >>> print "r-squared:", r_value**2
 r-squared: 0.15286643777
+
+\end{verbatim}
+\end{framed}
+
+\end{document}
