@@ -1,0 +1,13 @@
+% http://www.bearrelroll.com/2013/05/python-pandas-tutorial/
+
+pd.set_option('display.line_width', 300)
+#Load csv into pandas dataframe
+df = pd.read_csv('path_to_file' + '/' + 'nyc-condominium-dataset.csv')
+
+#Load csv into pandas dataframe and set an index column
+df =pd.read_csv('path_to_file', + '/' + 'nyc-condominium-dataset.csv', index_col = 'property_id')
+
+#Load csv into pandas dataframe w/out Excel dialect
+dia = csv.excel()
+dia.quaoting = csv.QUOTE_NONE
+df = pd.read_csv('path_to_file', + '/' + 'nyc-condominium-dataset.csv', index_col='property_id', dialect=dia)
