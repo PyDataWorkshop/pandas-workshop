@@ -1,0 +1,84 @@
+\section{Descriptive statistics}
+
+To illustrate basic functions we will use some pseudo-random numbers from a Gaussian or Normal distribution. 
+
+The function scipy.randn can be used to generate random numbers from a standard Gaussian. This function is the same as the numpy.random.randn function.
+
+\begin{framed}
+\begin{verbatim}
+>>> s = sp.randn(100) # Hundred random numbers from a standard Gaussian
+>>> print len(s)
+100
+\end{verbatim}
+\end{framed}
+%--------------------------------------------%
+Since the value returned is a Numpy array we can use its methods to find descriptive statistics for the data.
+
+\begin{framed}
+\begin{verbatim}
+>>> print("Mean : {0:8.6f}".format(s.mean()))
+Mean           : -0.105170
+>>> print("Minimum : {0:8.6f}".format(s.min()))
+Minimum        : -3.091940
+>>> print("Maximum : {0:8.6f}".format(s.max()))
+Maximum        : 2.193828
+>>> print("Variance : {0:8.6f}".format(s.var()))
+Variance       : 0.863475
+>>> print("Std. deviation : {0:8.6f}".format(s.std()))
+Std. deviation : 0.929233
+\end{verbatim}
+\end{framed}
+%--------------------------------------------%
+We can also use Numpy functions for performing the same calculations.
+
+\begin{framed}
+\begin{verbatim}
+>>> print("Mean : {0:8.6f}".format(sp.mean(s)))
+Mean           : -0.105170
+>>> print("Variance : {0:8.6f}".format(sp.var(s)))
+Variance       : 0.863475
+>>> print("Std. deviation : {0:8.6f}".format(sp.std(s)))
+Std. deviation : 0.929233
+\end{verbatim}
+\end{framed}
+
+The median can be calculated using:
+\begin{framed}
+\begin{verbatim}
+>>> print("Median : {0:8.6f}".format(sp.median(s)))
+Median          : 0.001611
+\end{verbatim}
+\end{framed}
+Note that both variance calculations above use N in the denominator i.e., they are biased estimators of the variance of the parent distribution. But when we are merely trying to describe the data, these are the appropriate equations to use.
+
+The scipy.var function takes a keyword parameter ddof that can be used to change the denominator. The denominator is set as N - ddof and by default ddof = 0; set ddof = 1.0 to find the unbiased estimator of the variance of the parent distribution.
+\begin{framed}
+\begin{verbatim}
+>>> print("Variance with N in denominator = {0:8.6f}".format(sp.var(s)))
+Variance (N in denominator)      =  0.863475
+>>> print("Variance with N - 1 in denominator = {0:8.6f}".format(sp.var(s,ddof=1)))
+Variance (N - 1 in denominator)  =  0.872197
+\end{verbatim}
+\end{framed}
+The scipy.stats sub-package has a function describe that will provide most of the above numbers. In this case, the variance has N - 1 in the denominator.
+
+\begin{framed}
+\begin{verbatim}
+>>> from scipy import stats
+>>> n, min_max, mean, var, skew, kurt = stats.describe(s)
+>>> print("Number of elements: {0:d}".format(n))
+Number of elements: 100
+>>> print("Minimum: {0:8.6f} Maximum: {1:8.6f}".format(min_max[0], min_max[1]))
+Minimum: -3.091940 Maximum: 2.193828
+>>> print("Mean: {0:8.6f}".format(mean))
+Mean: -0.105170
+>>> print("Variance: {0:8.6f}".format(var))
+Variance: 0.872197
+>>> print("Skew : {0:8.6f}".format(skew))
+Skew : -0.146500
+>>> print("Kurtosis: {0:8.6f}".format(kurt))
+Kurtosis: 0.117884
+\end{verbatim}
+\end{framed}
+%==========================================================================%
+\end{document}
