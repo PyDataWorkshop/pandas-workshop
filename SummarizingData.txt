@@ -1,0 +1,19 @@
+
+http://bconnelly.net/2013/10/summarizing-data-in-python-with-pandas/
+
+import pandas
+
+# Load the data into a DataFrame
+data = pandas.read_csv('TradeoffData.csv')
+
+data.head(n=10)
+
+bytreatment = data.groupby('Treatment')
+
+bytreatment['RelativeFitness'].describe()
+
+bygroup_treatment = data.groupby(['Group', 'Treatment'])
+
+bygroup_treatment['RelativeFitness'].describe()
+
+bygroup_treatment['RelativeFitness'].mean()
