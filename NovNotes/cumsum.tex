@@ -1,0 +1,21 @@
+
+I have a DataFrame like this:
+
+df:
+ fruit    val1 val2
+0 orange    15    3
+1 apple     10   13
+2 mango     5    5 
+ How do I get Pandas to give me a cumulative sum and percentage column on only val1?
+
+Desired output:
+
+df_with_cumsum:
+ fruit    val1 val2   cum_sum    cum_perc
+0 orange    15    3    15          50.00
+1 apple     10   13    25          83.33
+2 mango     5    5     30          100.00
+
+df['cum_sum'] = df.val1.cumsum()
+df['cum_perc'] = 100*df.cum_sum/df.val1.sum()
+This will add the columns to df. If you want a copy, copy df first and then do these operations on the copy.
