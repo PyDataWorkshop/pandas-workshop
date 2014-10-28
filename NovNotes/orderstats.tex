@@ -1,0 +1,67 @@
+Order statistics
+ 
+
+numpy.amax() will find the max value in an array, and numpy.amin() does the same for the min value.
+
+Examples
+%--------------------------------------------------------------------------------------%
+\begin{verbatim}
+
+ 
+
+>>>>>> a = np.arange(4).reshape((2,2))
+>>> a
+array([[0, 1],
+       [2, 3]])
+>>> np.amin(a)           # Minimum of the flattened array
+0
+>>> np.amin(a, axis=0)   # Minima along the first axis
+array([0, 1])
+>>> np.amin(a, axis=1)   # Minima along the second axis
+array([0, 2])
+ 
+
+>>>>>> b = np.arange(5, dtype=np.float)
+>>> b[2] = np.NaN
+>>> np.amin(b)
+nan
+>>> np.nanmin(b)
+0.0
+
+\end{verbatim}
+%--------------------------------------------------------------------------------------%
+
+
+amin(a[, axis, out, keepdims])
+ 
+Return the minimum of an array or minimum along an axis.
+ 
+
+
+amax(a[, axis, out, keepdims])
+ 
+Return the maximum of an array or maximum along an axis.
+ 
+
+
+nanmin(a[, axis, out, keepdims])
+ 
+Return minimum of an array or minimum along an axis, ignoring any NaNs.
+ 
+
+
+nanmax(a[, axis, out, keepdims])
+ 
+Return the maximum of an array or maximum along an axis, ignoring any
+ 
+
+
+ptp(a[, axis, out])
+ 
+Range of values (maximum - minimum) along an axis.
+ 
+
+
+percentile(a, q[, axis, out, overwrite_input])
+ 
+Compute the qth percentile of the data along the specified axis.
