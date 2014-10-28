@@ -1,0 +1,37 @@
+There are two kinds of standard deviations (SD): the population SD and the sample SD.
+%--------------------------------%
+The population SD
+
+
+
+is used when the values represent the entire universe of values that you are studying.
+
+%--------------------------------%
+The sample SD
+
+
+
+is used when the values are a mere sample from that universe.
+
+np.std calculates the population SD by default, while Pandas' Series.std calculates the sample SD by default.
+%--------------------------------%
+
+In [42]: np.std([4,5])
+Out[42]: 0.5
+
+In [43]: np.std([4,5], ddof=0)
+Out[43]: 0.5
+
+In [44]: np.std([4,5], ddof=1)
+Out[44]: 0.70710678118654757
+
+In [45]: x = pd.Series([4,5])
+
+In [46]: x.std()
+Out[46]: 0.70710678118654757
+
+In [47]: x.std(ddof=0)
+Out[47]: 0.5
+ddof stands for "degrees of freedom", and controls the number subtracted from N in the SD formulas.
+
+The formula images above come from this Wikipedia page. There the "uncorrected sample standard deviation" is what I called the population SD, and the "corrected sample standard deviation" is the sample SD.
