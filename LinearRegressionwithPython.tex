@@ -1,0 +1,219 @@
+% - https://dataaspirant.wordpress.com/2014/12/20/linear-regression-implementation-in-python/
+
+ZooZoo have the following data set
+
+% Table Here
+ 
+
+
+No.    
+ 
+        square_feet       
+ 
+         price     
+ 
+
+
+1
+ 
+150
+ 
+6450
+ 
+
+
+2
+ 
+200
+ 
+7450
+ 
+
+
+3
+ 
+250
+ 
+8450
+ 
+
+
+4
+ 
+300
+ 
+9450
+ 
+
+
+5
+ 
+350
+ 
+11450
+ 
+
+
+6
+ 
+400
+ 
+15450
+ 
+
+
+7
+ 
+600
+ 
+18450
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+About data set:
+ ■Square feet is the  Area of house.
+ ■Price is the corresponding cost of  that house.
+ 
+Steps to Follow :
+ ■As we learn linear regression we know that we have to find linear line for this data so that we can get  θ0 and θ1.
+ ■As you remember our hypothesis equation looks like this
+ 
+
+
+where:
+ ■hθ(x) is nothing but the value price(which we are going to predicate ) for particular square_feet  ( means price is a linear function of square_feet)
+ ■θ0 is a constant
+ ■θ1 is the regression coefficient
+ 
+As we clear what we have to do, let’s start coding.
+ 
+STEP – 1 :
+ ■First open your favorite text editor and name it as predict_house_price.py.
+ ■The below packages we gonna use in our program ,so  copy them in your predict_house_price.py file.
+ 
+  %=============================================================================%
+
+\begin{framed}
+\begin{verbatim}
+# Required Packages
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from sklearn import datasets, linear_model
+\end{verbatim}
+\end{framed}
+
+ ■Just run your code once. if your program is error free then most of the job was done. If you facing  any errors , this means you missed some  packages so please go to this packages page  
+ ■Install all the packages in that blog post and run your code once again . This time most probably you will never face any problem.
+ ■Means your program is error free now so we can go to STEP – 2.
+  %=============================================================================%
+
+STEP – 2
+ ■I stored our data set in to a csv file with name input_data.csv
+ ■So let’s write a function to get our data into X values ( square_feet  ) Y values (Price)
+ 
+# Function to get data
+def get_data(file_name):
+ data = pd.read_csv(file_name)
+ X_parameter = []
+ Y_parameter = []
+ for single_square_feet ,single_price_value in zip(data['square_feet'],data['price']):
+       X_parameter.append([float(single_square_feet)])
+       Y_parameter.append(float(single_price_value))
+ return X_parameter,Y_parameter
+ 
+Line 3:
+ 
+Reading csv data to pandas DataFrame.
+ 
+Line 6-9:
+ 
+Converting pandas dataframe data to X_parameter and Y_parameter data returning them
+ 
+So let’s print our X_parameters and Y_parameters
+ 
+X,Y = get_data('input_data.csv')
+print X
+print Y
+  %=============================================================================%
+
+\subsection*{Script Output}
+
+ [[150.0], [200.0], [250.0], [300.0], [350.0], [400.0], [600.0]]
+[6450.0, 7450.0, 8450.0, 9450.0, 11450.0, 15450.0, 18450.0]
+[Finished in 0.7s] 
+Step – 3
+ 
+we converted data to X\_parameters and Y\_parameter so let’s fit our X_parameters and Y_parameters to Linear Regression model
+ 
+So we gonna write a function which will take  X\_parameters ,Y\_parameter and the value you gonna predict  as input and return the θ0 ,θ1  and predicted value
+ 
+  %=============================================================================%
+ 
+# Function for Fitting our data to Linear model
+def linear_model_main(X_parameters,Y_parameters,predict_value):
+
+ # Create linear regression object
+ regr = linear_model.LinearRegression()
+ regr.fit(X_parameters, Y_parameters)
+ predict_outcome = regr.predict(predict_value)
+ predictions = {}
+ predictions['intercept'] = regr.intercept_
+ predictions['coefficient'] = regr.coef_
+ predictions['predicted_value'] = predict_outcome
+ return predictions
+ 
+Line 5-6:
+ 
+First we are creating an linear model and the training it with our X_parameters and Y_parameters
+ 
+Line 8-12:
+ 
+we are creating one dictionary with name predictions and storing θ0 ,θ1  and predicted values. and returning predictions dictionary as an output.
+ 
+So let’s call our function with predicting value as 700
+ 
+X,Y = get_data('input_data.csv')
+predictvalue = 700
+result = linear_model_main(X,Y,predictvalue)
+print "Intercept value " , result['intercept']
+print "coefficient" , result['coefficient']
+print "Predicted value: ",result['predicted_value']
+ 
+ %=============================================================================%
+ 
+Script Output:
+ Intercept value 1771.80851064
+coefficient [ 28.77659574]
+Predicted value: [ 21915.42553191]
+[Finished in 0.7s] 
+Here Intercept value is nothing but   θ0 value and coefficient value is nothing but  θ1 value.
+ 
+We got the predicted values as 21915.4255 means we done our job of predicting the house price.
+ 
+For checking purpose we have to see how our data fit to linear regression.So we have to write a function which takes X_parameters and Y_parameters as input and show the linear line fitting for our data.
+ 
+ 
+ 
+# Function to show the resutls of linear fit model
+def show_linear_line(X_parameters,Y_parameters):
+ # Create linear regression object
+ regr = linear_model.LinearRegression()
+ regr.fit(X_parameters, Y_parameters)
+ plt.scatter(X_parameters,Y_parameters,color='blue')
+ plt.plot(X_parameters,regr.predict(X_parameters),color='red',linewidth=4)
+ plt.xticks(())
+ plt.yticks(())
+ plt.show()
+
+ 
+So let call our show_linear_line Function
+ 
+show_linear_line(X,Y)
+
