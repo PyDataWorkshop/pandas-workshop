@@ -1,0 +1,181 @@
+Data Aggregation and Group Operations
+
+
+Categorizing a data set and applying a function to each group, whether an aggregation
+or transformation, is often a critical component of a data analysis workflow. After
+loading, merging, and preparing a data set, a familiar task is to compute group statistics
+or possibly pivot tables for reporting or visualization purposes. pandas provides a flexible
+and high-performance groupby facility, enabling you to slice and dice, and summarize
+data sets in a natural way.
+
+One reason for the popularity of relational databases and SQL (which stands for
+“structured query language”) is the ease with which data can be joined, filtered, transformed,
+and aggregated. However, query languages like SQL are rather limited in the
+kinds of group operations that can be performed. 
+
+As you will see, with the expressiveness
+and power of Python and pandas, we can perform much more complex grouped
+operations by utilizing any function that accepts a pandas object or NumPy array. In
+this chapter, you will learn how to:
+• Split a pandas object into pieces using one or more keys (in the form of functions,
+arrays, or DataFrame column names)
+• Computing group summary statistics, like count, mean, or standard deviation, or
+a user-defined function
+• Apply a varying set of functions to each column of a DataFrame
+• Apply within-group transformations or other manipulations, like normalization,
+linear regression, rank, or subset selection
+• Compute pivot tables and cross-tabulations
+• Perform quantile analysis and other data-derived group analyses
+
+%================%
+GroupBy Mechanics
+Hadley Wickham, an author of many popular packages for the R programming language,
+coined the term split-apply-combine for talking about group operations, and I
+think that’s a good description of the process. In the first stage of the process, data
+contained in a pandas object, whether a Series, DataFrame, or otherwise, is split into
+groups based on one or more keys that you provide. The splitting is performed on a
+particular axis of an object. For example, a DataFrame can be grouped on its rows
+(axis=0) or its columns (axis=1). Once this is done, a function is applied to each group,
+producing a new value. Finally, the results of all those function applications are combined
+into a result object. The form of the resulting object will usually depend on what’s
+being done to the data. See Figure 9-1 for a mockup of a simple group aggregation.
+Figure 9-1. Illustration of a group aggregation
+Each grouping key can take many forms, and the keys do not have to be all of the same
+type:
+• A list or array of values that is the same length as the axis being grouped
+• A value indicating a column name in a DataFrame
+• A dict or Series giving a correspondence between the values on the axis being
+grouped and the group names
+• A function to be invoked on the axis index or the individual labels in the index
+Note that the latter three methods are all just shortcuts for producing an array of values
+to be used to split up the object. Don’t worry if this all seems very abstract. Throughout
+this chapter, I will give many examples of all of these methods. To get started, here is
+a very simple small tabular dataset as a DataFrame:
+In [13]: df = DataFrame({'key1' : ['a', 'a', 'b', 'b', 'a'],
+....: 'key2' : ['one', 'two', 'one', 'two', 'one'],
+....: 'data1' : np.random.randn(5),
+....: 'data2' : np.random.randn(5)})
+In [14]: df
+Out[14]:
+data1 data2 key1 key2
+0 -0.204708 1.393406 a one
+1 0.478943 0.092908 a two
+2 -0.519439 0.281746 b one
+3 -0.555730 0.769023 b two
+4 1.965781 1.246435 a one
+
+Suppose you wanted to compute the mean of the data1 column using the groups labels
+from key1. There are a number of ways to do this. One is to access data1 and call
+groupby with the column (a Series) at key1:
+In [15]: grouped = df['data1'].groupby(df['key1'])
+In [16]: grouped
+Out[16]: <pandas.core.groupby.SeriesGroupBy at 0x2d78b10>
+
+This grouped variable is now a GroupBy object. It has not actually computed anything
+yet except for some intermediate data about the group key df['key1']. The idea is that
+this object has all of the information needed to then apply some operation to each of
+the groups. For example, to compute group means we can call the GroupBy’s mean
+method:
+In [17]: grouped.mean()
+Out[17]:
+key1
+a 0.746672
+b -0.537585
+Later, I'll explain more about what’s going on when you call .mean(). The important
+thing here is that the data (a Series) has been aggregated according to the group key,
+producing a new Series that is now indexed by the unique values in the key1 column.
+The result index has the name 'key1' because the DataFrame column df['key1'] did.
+If instead we had passed multiple arrays as a list, we get something different:
+In [18]: means = df['data1'].groupby([df['key1'], df['key2']]).mean()
+
+
+numeric columns are aggregated, though it is possible to filter down to a subset as you’ll
+see soon.
+Regardless of the objective in using groupby, a generally useful GroupBy method is
+size which return a Series containing group sizes:
+In [26]: df.groupby(['key1', 'key2']).size()
+Out[26]:
+key1 key2
+a one 2
+two 1
+b one 1
+two 1
+As of this writing, any missing values in a group key will be excluded
+from the result. It’s possible (and, in fact, quite likely), that by the time
+you are reading this there will be an option to include the NA group in
+the result.
+%===============================================%
+\subsection{Iterating Over Groups}
+The GroupBy object supports iteration, generating a sequence of 2-tuples containing
+the group name along with the chunk of data. Consider the following small example
+data set:
+In [27]: for name, group in df.groupby('key1'):
+....: print name
+....: print group
+....:
+a
+data1 data2 key1 key2
+0 -0.204708 1.393406 a one
+1 0.478943 0.092908 a two
+4 1.965781 1.246435 a one
+b
+data1 data2 key1 key2
+2 -0.519439 0.281746 b one
+3 -0.555730 0.769023 b two
+In the case of multiple keys, the first element in the tuple will be a tuple of key values:
+In [28]: for (k1, k2), group in df.groupby(['key1', 'key2']):
+....: print k1, k2
+....: print group
+....:
+a one
+data1 data2 key1 key2
+0 -0.204708 1.393406 a one
+4 1.965781 1.246435 a one
+a two
+data1 data2 key1 key2
+1 0.478943 0.092908 a two
+b one
+data1 data2 key1 key2
+2 -0.519439 0.281746 b one
+b two
+data1 data2 key1 key2
+3 -0.55573 0.769023 b two
+Of course, you can choose to do whatever you want with the pieces of data. A recipe
+you may find useful is computing a dict of the data pieces as a one-liner:
+In [29]: pieces = dict(list(df.groupby('key1')))
+In [30]: pieces['b']
+Out[30]:
+data1 data2 key1 key2
+2 -0.519439 0.281746 b one
+3 -0.555730 0.769023 b two
+By default groupby groups on axis=0, but you can group on any of the other axes. For
+example, we could group the columns of our example df here by dtype like so:
+In [31]: df.dtypes
+Out[31]:
+data1 float64
+data2 float64
+key1 object
+key2 object
+In [32]: grouped = df.groupby(df.dtypes, axis=1)
+In [33]: dict(list(grouped))
+Out[33]:
+{dtype('float64'): data1 data2
+0 -0.204708 1.393406
+1 0.478943 0.092908
+2 -0.519439 0.281746
+3 -0.555730 0.769023
+4 1.965781 1.246435,
+dtype('object'): key1 key2
+0 a one
+1 a two
+2 b one
+3 b two
+4 a one}
+Selecting a Column or Subset of Columns
+Indexing a GroupBy object created from a DataFrame with a column name or array of
+column names has the effect of selecting those columns for aggregation. This means that:
+df.groupby('key1')['data1']
+df.groupby('key1')[['data2']]
+are syntactic sugar for:
+df['data1'].groupby(df['key1'])
+df[['data2']].groupby(df['key1'])
