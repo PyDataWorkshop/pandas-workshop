@@ -1,0 +1,46 @@
+key1 key2
+one a 1 2
+b 3 4
+c 5 6
+d 7 8
+two a 9 10
+b 11 12
+c 13 14
+d 15 16
+In some cases, a table might not have a fixed delimiter, using whitespace or some other
+pattern to separate fields. In these cases, you can pass a regular expression as a delimiter
+for read_table. Consider a text file that looks like this:
+In [858]: list(open('ch06/ex3.txt'))
+Out[858]:
+[' A B C\n',
+'aaa -0.264438 -1.026059 -0.619500\n',
+'bbb 0.927272 0.302904 -0.032399\n',
+'ccc -0.264273 -0.386314 -0.217601\n',
+'ddd -0.871858 -0.348382 1.100491\n']
+While you could do some munging by hand, in this case fields are separated by a variable
+amount of whitespace. This can be expressed by the regular expression \s+, so we have
+then:
+In [859]: result = pd.read_table('ch06/ex3.txt', sep='\s+')
+In [860]: result
+Out[860]:
+A B C
+aaa -0.264438 -1.026059 -0.619500
+bbb 0.927272 0.302904 -0.032399
+ccc -0.264273 -0.386314 -0.217601
+ddd -0.871858 -0.348382 1.100491
+Because there was one fewer column name than the number of data rows, read_table
+infers that the first column should be the DataFrame’s index in this special case.
+The parser functions have many additional arguments to help you handle the wide
+variety of exception file formats that occur (see Table 6-2). For example, you can skip
+the first, third, and fourth rows of a file with skiprows:
+In [861]: !cat ch06/ex4.csv
+# hey!
+a,b,c,d,message
+# just wanted to make things more difficult for you
+# who reads CSV files with computers, anyway?
+1,2,3,4,hello
+5,6,7,8,world
+9,10,11,12,foo
+In [862]: pd.read_csv('ch06/ex4.csv', skiprows=[0, 2, 3])
+Out[862]:
+a b c d message
