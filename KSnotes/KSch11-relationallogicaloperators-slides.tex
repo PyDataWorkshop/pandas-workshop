@@ -1,0 +1,322 @@
+\documentclass[KSmainSlides.tex]{subfiles} 
+\begin{document} 
+
+%======================================================================== %
+\begin{frame}
+\frametitle{Logical and Relational Operators}
+Logical operators are useful when writing code. Logical operators, when combined
+with flow control, allow for complex choices to be compactly expressed.
+
+%--------------------------------%
+%11.1
+\end{frame}
+%======================================================================== %
+\begin{frame}
+\frametitle{Relational Operators}
+\Large
+
+The core logical operators are
+\begin{center}
+\begin{tabular}{|c|l|l|} \hline
+Symbol & Function & Definition \\ \hline
+$> $     &   \texttt{greater}   & Greater than \\ \hline
+$>=$    &  \texttt{greater\_equal} & Greater than or equal to \\ \hline
+$< $      &  \texttt{less} & Less than \\ \hline
+$<=$    &  \texttt{less\_equal} & Less than or equal to \\ \hline
+$==$    &  \texttt{equal} & Equal to \\ \hline
+$!=$      & \texttt{not\_equal} & Not equal to \\ \hline
+\end{tabular} 
+\end{center}
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+\begin{framed}
+\begin{verbatim}
+>>> x = array([[1,2],[3,
+4]])
+>>> x > 0
+array([[ True, True],
+[False, False]], dtype=bool)
+>>> x == 3
+array([[False, False],
+[ True, False]], dtype=bool)
+\end{verbatim}
+\end{framed}
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+\begin{framed}
+\begin{verbatim}
+>>> y = array([1,1])
+>>> x < y # y broadcast to be (2,2)
+array([[False, False],
+[ True, True]], dtype=bool)
+>>> z = array([[1,1],[1,
+1]])
+# Same as broadcast y
+>>> x < z
+array([[False, False],
+[ True, True]], dtype=bool)
+\end{verbatim}
+\end{framed}
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+\frametitle{Logical Operators}
+%-----------------------------------------------%
+% 11.2
+
+
+Logical expressions can be combined using four logical devices,
+
+\begin{tabular}{|c|c|c|c|}
+	\hline Keyword (Scalar) & Function & Bitwise & True if . . . \\ \hline
+	and & logical\_and & Both & True \\ \hline
+	or  & logical\_or & &Either or Both True \\ \hline
+	not & logical\_not & ~ & Not True \\ \hline
+	& logical\_xor & $\wedge$ & One True and One False \\ \hline
+\end{tabular} 
+%\begin{verbatim}
+% BEGIN TABLE
+%Keyword (Scalar) & Function & Bitwise & True if . . . \\ \hline
+%and & logical_and & Both & True \\ \hline
+%or  & logical_or & Either or Both True \\ \hline
+%not & logical_not & ~ & Not True \\ \hline
+%& logical_xor & ^ & One True and One False \\ \hline
+
+% END OF TABLE
+%\end{verbatim}
+\end{frame}
+
+%======================================================================== %
+\begin{frame}[fragile]
+
+\noindent There are three versions of all operators except XOR. The keyword version (e.g. and) can only be used
+with scalars and so it not useful when working with NumPy. Both the function and bitwise operators
+can be used with NumPy arrays, although care is requires when using the bitwise operators.
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+	
+\begin{framed}
+\begin{verbatim}
+>>> x = arange(2.0,4)
+>>> y = x >= 0
+>>> z = x < 2
+>>> logical_and(y, z)
+array([False, False, True, True, False, False], dtype=bool)
+>>> y & z
+array([False, False, True, True, False, False], dtype=bool)
+>>> (x > 0) & (x < 2)
+array([False, False, True, True, False, False], dtype=bool)
+>>>
+\end{verbatim}
+\end{framed}
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+
+\begin{framed}
+\begin{verbatim}
+>>> x > 0 & x < 4 # Error
+TypeError: ufunc ’bitwise_and’ not supported for the input types, 
+and the inputs could not
+be safely coerced to any supported types 
+according to the casting rule ’’safe’’
+
+>>> ~(y & z) # Not
+array([ True, True, False, False, True, True], dtype=bool)
+>>>
+\end{verbatim}
+\end{framed}
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+	\newpage
+%\subsection{\texttt{and}, \texttt{or}, \texttt{not} and \texttt{xor}}
+%\begin{framed}
+%\begin{verbatim}
+%>>> x = arange(2.0,4)
+%>>> y = x >= 0
+%>>> z = x < 2
+%>>> logical_and(y, z)
+%array([False, False, True, True, False, False], dtype=bool)
+%>>> y & z
+%array([False, False, True, True, False, False], dtype=bool)
+%>>> (x > 0) & (x < 2)
+%array([False, False, True, True, False, False], dtype=bool)
+%>>> x > 0 & x < 4 # Error
+%TypeError: ufunc ’bitwise_and’ not supported for the input types, and the inputs could not
+%be safely coerced to any supported types according to the casting rule ’’safe’’
+%>>> ~(y & z) # Not
+%array([ True, True, False, False, True, True], dtype=bool)
+%\end{verbatim}
+%\end{framed}
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+\frametitle{Bitwise operators}
+Bitwise operators have high priority – higher than logical comparisons – and so parentheses are requires around
+comparisons. 
+For example, $(x>1) \& (x<5)$ is a valid statement, while $x>1 \& x<5$, which is evaluated as
+$(x>(1 \& x))<5$, produces an error.
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+\frametitle{Bitwise operators}
+\begin{framed}
+\begin{verbatim}
+>>> x = arange(2.0,4)
+>>> y = x >= 0
+>>> z = x < 2
+>>> logical_and(y, z)
+array([False, False, True, True, False, False], dtype=bool)
+>>> y & z
+array([False, False, True, True, False, False], dtype=bool)
+>>> (x > 0) & (x < 2)
+array([False, False, True, True, False, False], dtype=bool)
+\end{verbatim}
+\end{framed}
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+	\frametitle{Multiple tests: \texttt{all} and \texttt{any}}
+The commands all and any take logical input and are self-descriptive. all returns True if all logical elements
+in an array are 1.
+%----------------------------%
+\begin{itemize}
+\item  If \texttt{all} is called without any additional arguments on an array, it returns True if all
+elements of the array are logical true and 0 otherwise. 
+\item 
+any returns logical(True) if any element of an array is True.
+\end{itemize}
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+	\frametitle{Multiple tests: \texttt{all} and \texttt{any}}
+\begin{itemize}
+\item Both \texttt{all }and \texttt{any} can be also be used along a specific dimension using a second argument or the
+keyword argument axis to indicate the axis of operation (0 is column-wise and 1 is row-wise). 
+
+\item When used column- or row-wise, the output is an array with one less dimension than the input, where each element
+of the output contains the truth value of the operation on a column or row.
+\end{itemize}
+
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+	\frametitle{Multiple tests: \texttt{all} and \texttt{any}}
+\begin{framed}
+\begin{verbatim}
+>>> x = array([[1,2][3,4]])
+>>> y = x <= 2
+>>> y
+array([[ True, True],
+[False, False]], dtype=bool)
+>>> any(y)
+True
+>>> any(y,0)
+array([[ True, True]], dtype=bool)
+>>> any(y,1)
+array([[ True],
+[False]], dtype=bool)
+\end{verbatim}
+\end{framed}
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+	\frametitle{allclose}
+\begin{itemize}
+\item \texttt{allclose} can be used to compare two arrays for near equality.
+\item  This type of function is important when
+comparing floating point values which may be effectively the same although not identical.
+\end{itemize}
+
+%----------------------------%
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+\begin{framed}
+\begin{verbatim}
+>>> eps = np.finfo(np.float64).eps
+>>> eps
+2.2204460492503131e16
+>>> x = randn(2)
+>>> y = x + eps
+115
+>>> x == y
+array([False, False], dtype=bool)
+>>> allclose(x,y)
+True
+\end{verbatim}
+\end{framed}
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+The tolerance for being close can be set using keyword arguments either relatively (rtol) or absolutely
+(atol).
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+\textbf{array\_equal}\\
+\texttt{array\_equal} tests if two arrays have the same shape and elements. It is safer than comparing arrays directly
+since comparing arrays which are not broadcastable produces an error.
+\textbf{array\_array\_equiv}\\
+\texttt{array\_equiv} tests if two arrays are equivalent, even if they do not have the exact same shape. Equivalence
+is defined as one array being broadcastable to produce the other.
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+\begin{framed}
+\begin{verbatim}>>> x = randn(10,1)
+>>> y = tile(x,2)
+>>> array_equal(x,y)
+False
+>>> array_equiv(x,y)
+True
+\end{verbatim}
+\end{framed}
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+%page 116
+\frametitle{ is$\ast$}
+\begin{itemize}
+\item A number of special purpose logical tests are provided to determine if an array has special characteristics.
+\item Some operate element-by-element and produce an array of the same dimension as the input while other
+produce only scalars. #\item These functions all begin with \texttt{is}.
+\end{itemize}
+
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+\begin{center}
+\begin{tabular}{|c|c|c|} \hline
+Operator & True if . . . & Method of operation \\ \hline \hline
+\texttt{isnan} & 1 if nan & element-by-element \\ \hline
+\texttt{isinf} & 1 if inf & element-by-element \\ \hline
+\texttt{isfinite} & 1 if not inf and not nan & element-by-element \\ \hline
+\texttt{isposfin,isnegfin} & 1 for positive or negative inf & element-by-element \\ \hline
+\texttt{isreal} & 1 if not complex valued & element-by-element \\ \hline
+\end{tabular}
+\end{center}
+
+\end{frame}
+%======================================================================== %
+\begin{frame}[fragile]
+	\begin{center}
+		\begin{tabular}{|c|c|c|} \hline
+iscomplex &1 if complex valued & element-by-element \\ \hline
+isreal & 1 if real valued & element-by-element \\ \hline
+is\_string\_like & 1 if argument is a string & scalar \\ \hline
+is\_numlike& 1 if is a numeric type & scalar \\ \hline
+isscalar & 1 if scalar & scalar \\ \hline
+isvector & 1 if input is a vector & scalar \\ \hline
+\end{tabular}
+\end{center}
+
+\end{frame}
+%======================================================================== %
+
+
+\end{document}

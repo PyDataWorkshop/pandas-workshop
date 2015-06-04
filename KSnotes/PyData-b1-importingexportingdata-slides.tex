@@ -1,0 +1,130 @@
+\documentclass[KSmainSlides.tex]{subfiles} 
+\begin{document} 
+	%===============================================%
+	
+	%	9.1 Importing Data using pandas	
+	%		9.1.1 CSV and other formatted text files
+	%		9.1.2 Excel files
+	%		9.1.3 STATA files
+	%	9.2 Importing Data without pandas	NOT USING
+	%		9.2.1 CSV and other formatted text files
+	%		9.2.2 Excel Files
+	%		9.2.3 MATLAB Data Files (.mat)
+	%		9.2.4 Reading Complex Files
+	%	9.3 Saving or Exporting Data using pandas	
+	%	9.4 Saving or Exporting Data without pandas	 NOT USING
+	%		9.4.1 Writing MATLAB Data Files (.mat)
+	%		9.4.2 Exporting Data to Text Files
+	
+	%===============================================%
+	\begin{frame}[fragile]
+	\frametitle{Importing and Exporting Data}
+	
+	\begin{framed}
+		\noindent \textbf{Important}: The following notes were written for Machines that have Microsoft Operating Systems. As a result, the following code may not work on Machines with other operating systems.
+	\end{framed}
+	
+	\end{frame}
+	% 9.1
+	
+	\begin{frame}[fragile]
+	\frametitle{Importing Data using pandas}
+	
+	%Pandas is an increasingly important component of the Python scientific stack, and a complete discussion
+	% of its main features is included in Chapter 17. 
+	
+	All of the data reading functions in pandas load data into a pandas
+	DataFrame, and so these examples all make use of the values property to extract a
+	NumPy array. 
+	
+	\noindent In practice, the DataFrame is much more useful since it includes useful information such
+	as column names read from the data source. \\
+	In addition to the three main formats, pandas can
+	also read json, SQL, html tables or from the clipboard, which is particularly useful for interactive work
+	since virtually any source that can be copied to the clipboard can be imported.
+\end{frame}
+%======================================================= %
+	% 9.1.1 
+\begin{frame}[fragile]
+	\frametitle{CSV and other formatted text files}
+	
+	Comma-separated value (CSV) files can be read using \texttt{read\_csv}. When the CSV file contains \textit{mixed data},
+	the default behavior will read the file into an array with an object data type, and so further processing is
+	usually required to extract the individual series.
+\end{frame}
+%======================================================= %
+\begin{frame}[fragile]
+	\begin{framed}
+		\begin{verbatim}
+		>>> from pandas import read_csv
+		>>> csv_data = read_csv(’FTSE_1984_2012.csv’)
+		>>> csv_data = csv_data.values
+		>>> csv_data[:4]
+		array([[’2012-02-15’, 5899.9, 5923.8, 5880.6, 
+		5892.2, 801550000L, 5892.2],
+		[’2012-02-14’, 5905.7, 5920.6, 5877.2, 5899.9, 832567200L, 5899.9],
+		[’2012-02-13’, 5852.4, 5920.1, 5852.4, 5905.7, 643543000L, 5905.7],
+		[’2012-02-10’, 5895.5, 5895.5, 5839.9, 5852.4, 948790200L, 5852.4]], 
+		dtype=object)
+		>>> open = csv_data[:,1]
+		\end{verbatim}
+	\end{framed}
+\end{frame}
+%======================================================= %
+\begin{frame}[fragile]
+\begin{itemize}
+\item 	When the entire file is numeric, the data will be stored as a homogeneous array using one of the numeric
+	data types, typically float64. 
+	\item In this example, the first column contains Excel dates as numbers, which are
+	the number of days past January 1, 1900.
+\end{itemize}
+
+\end{frame}
+%======================================================= %
+\begin{frame}[fragile]
+	\begin{framed}
+		\begin{verbatim}
+		>>> csv_data = read_csv(’FTSE_1984_2012_numeric.csv’)
+		>>> csv_data = csv_data.values
+		>>> csv_data[:4,:2]
+		array([[ 40954. , 5899.9],
+		[ 40953. , 5905.7],
+		[ 40952. , 5852.4],
+		[ 40949. , 5895.5]])
+		\end{verbatim}
+	\end{framed}
+\end{frame}
+%======================================================= %
+\begin{frame}[fragile]
+	\frametitle{Excel files}
+\begin{itemize}
+\item Excel files, both 97/2003 (xls) and 2007/10/13 (xlsx), can be imported using \texttt{read\_excel}. 
+\item Two inputs are
+	required to use \texttt{read\_excel}, the filename and the sheet name containing the data. 
+	\item In this example, pandas
+	makes use of the information in the Excel workbook that the first column contains dates and converts
+	these to datetimes. 
+\item Like the mixed CSV data, the array returned has object data type.
+\end{itemize}
+
+\end{frame}
+%======================================================= %
+\begin{frame}[fragile]
+
+	\begin{framed}
+		\begin{verbatim}
+		>>> from pandas import read_excel
+		>>> excel_data = read_excel(’FTSE_1984_2012.xls’,’FTSE_1984_2012’)
+		>>> excel_data = excel_data.values
+		>>> excel_data[:4,:2]
+		array([[datetime.datetime(2012, 2, 15, 0, 0), 5899.9],
+		[datetime.datetime(2012, 2, 14, 0, 0), 5905.7],
+		[datetime.datetime(2012, 2, 13, 0, 0), 5852.4],
+		[datetime.datetime(2012, 2, 10, 0, 0), 5895.5]], dtype=object)
+		>>> open = excel_data[:,1]
+		\end{verbatim}
+	\end{framed}
+	%===============================================%
+\end{frame}
+\end{document}
+
