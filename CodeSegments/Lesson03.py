@@ -17,9 +17,8 @@ import matplotlib
 print('Python version ' + sys.version)
 print('Pandas version: ' + pd.__version__)
 print('Matplotlib version ' + matplotlib.__version__)
-Python version 3.4.3 |Anaconda 2.4.0 (64-bit)| (default, Dec  1 2015, 11:39:45) [MSC v.1600 64 bit (AMD64)]
-Pandas version: 0.17.1
-Matplotlib version 1.5.0
+##################################################
+
 We will be creating our own test data for analysis.
 ## Part 3:
 # set seed
@@ -64,15 +63,8 @@ def CreateDataSet(Number=1):
 dataset = CreateDataSet(4)
 myDF = pd.DataFrame(data=dataset, columns=['State','Status','CustomerCount','StatusDate'])
 myDF.info()
-<class 'pandas.core.frame.DataFrame'>
-Int64Index: 836 entries, 0 to 835
-Data columns (total 4 columns):
-State            836 non-null object
-Status           836 non-null int64
-CustomerCount    836 non-null int64
-StatusDate       836 non-null datetime64[ns]
-dtypes: datetime64[ns](1), int64(2), object(1)
-memory usage: 32.7+ KB
+
+############################
 
 ## Part 5:
 myDF.head()
@@ -96,7 +88,8 @@ Done
 
 ## Part 7:
 pd.read_excel?
-Note: The location on the Excel file will be in the same folder as the notebook, unless specified otherwise.
+
+## Note: The location on the Excel file will be in the same folder as the notebook, unless specified otherwise.
 
 ## Part 8:
 # Location of file
@@ -105,54 +98,35 @@ Location = r'C:\Users\david\notebooks\update\Lesson3.xlsx'
 # Parse a specific sheet
 myDF = pd.read_excel(Location, 0, index_col='StatusDate')
 myDF.dtypes
-Out[8:
-State            object
-Status            int64
-CustomerCount     int64
-dtype: object
+
+
 ## Part 9:
 myDF.index
-Out[9:
-DatetimeIndex(['2009-01-05', '2009-01-12', '2009-01-19', '2009-01-26',
-               '2009-02-02', '2009-02-09', '2009-02-16', '2009-02-23',
-               '2009-03-02', '2009-03-09',
-               ...
-               '2012-10-29', '2012-11-05', '2012-11-12', '2012-11-19',
-               '2012-11-26', '2012-12-03', '2012-12-10', '2012-12-17',
-               '2012-12-24', '2012-12-31'],
-              dtype='datetime64[ns]', name='StatusDate', length=836, freq=None)
+
 ## Part 10:
 myDF.head()
-Out[10:
-State	Status	CustomerCount
-StatusDate			
-2009-01-05	GA	1	877
-2009-01-12	FL	1	901
-2009-01-19	fl	3	749
-2009-01-26	FL	3	111
-2009-02-02	GA	1	300
-Prepare Data
-This section attempts to clean up the data for analysis.
 
-Make sure the state column is all in upper case
-Only select records where the account status is equal to "1"
-Merge (NJ and NY) to NY in the state column
-Remove any outliers (any odd results in the data set)
-Lets take a quick look on how some of the State values are upper case and some are lower case
+## Prepare Data
+## This section attempts to clean up the data for analysis.
+
+## Make sure the state column is all in upper case
+## Only select records where the account status is equal to "1"
+## Merge (NJ and NY) to NY in the state column
+## Remove any outliers (any odd results in the data set)
+## Lets take a quick look on how some of the State values are upper case and some are lower case
 
 ## Part 11:
 myDF['State'].unique()
-Out[11:
-array(['GA', 'FL', 'fl', 'TX', 'NY', 'NJ'], dtype=object)
-To convert all the State values to upper case we will use the upper() function and the dataframe's apply attribute. The lambda function simply will apply the upper function to each value in the State column.
+
+## To convert all the State values to upper case we will use the upper() function and the dataframe's apply attribute. 
+## The lambda function simply will apply the upper function to each value in the State column.
 
 ## Part 12:
 # Clean State Column, convert to upper case
 myDF['State'] = myDF.State.apply(lambda x: x.upper())
 ## Part 13:
 myDF['State'].unique()
-Out[13:
-array(['GA', 'FL', 'TX', 'NY', 'NJ'], dtype=object)
+
 ## Part 14:
 # Only grab where Status == 1
 mask = myDF['Status'] == 1
@@ -166,12 +140,12 @@ myDF.State[myDF.State == 'NJ'] = 'NY' - For all records in the State column wher
 # Convert NJ to NY
 mask = myDF.State == 'NJ'
 myDF['State'][mask] = 'NY'
-Now we can see we have a much cleaner data set to work with.
+
+# Now we can see we have a much cleaner data set to work with.
 
 ## Part 16:
 myDF['State'].unique()
-Out[16:
-array(['GA', 'FL', 'NY', 'TX'], dtype=object)
+
 At this point we may want to graph the data to check for any outliers or inconsistencies in the data. We will be using the plot() attribute of the dataframe.
 
 As you can see from the graph below it is not very conclusive and is probably a sign that we need to perform some more data preparation.
@@ -221,8 +195,7 @@ Daily.index
 ## Part 22:
 # Select the State index
 Daily.index.levels[0]
-Out[22:
-Index(['FL', 'GA', 'NY', 'TX'], dtype='object', name='State')
+
 ## Part 23:
 # Select the StatusDate index
 Daily.index.levels[1]
