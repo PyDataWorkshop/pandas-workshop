@@ -172,15 +172,15 @@ type(x)
 
 ########################################
 
-x = xrange(10)
+x = range(10)
 type(x)
 print(x)
 list(x)
-x = xrange(3,10)
+x = range(3,10)
 list(x)
 ########################################
 
-x = xrange(3,10,3)
+x = range(3,10,3)
 list(x)
 y = range(10)
 type(y)
@@ -253,6 +253,8 @@ y
 
 ########################################
 x=[[0,1],[2,3]]
+
+import copy as cp
 y = cp.deepcopy(x)
 y[0][0] = -10.0
 y
