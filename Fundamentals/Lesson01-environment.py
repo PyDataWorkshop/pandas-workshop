@@ -28,4 +28,16 @@ os.getcwd()
 
 #####################
 
+print("Current Working Directory")
+print(os.getcwd() + "\n")
+
+
+#Change Directory
+#Tip - Use double backslashes
+# Reason : Escape Characters in Text Processing
+
+# Remove the commenting below 
+# os.chdir("C:\Users")
+
 ​
+
