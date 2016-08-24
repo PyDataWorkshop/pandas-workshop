@@ -21,6 +21,7 @@ x = arange(5.0)
 y = x[0] # Pure scalar selection
 z = x[:1] # A pure slice
 y = -3.14
+
 y # y Changes
 x # No propagation
 z  # No changes to z either
