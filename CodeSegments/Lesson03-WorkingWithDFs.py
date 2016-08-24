@@ -1,8 +1,5 @@
 Lesson 3
-Get Data - Our data set will consist of an Excel file containing customer counts per date. We will learn how to read in the excel file for processing.
-Prepare Data - The data is an irregular time series having duplicate dates. We will be challenged in compressing the data and coming up with next years forecasted customer count.
-Analyze Data - We use graphs to visualize trends and spot outliers. Some built in computational tools will be used to calculate next years forecasted customer count.
-Present Data - The results will be plotted.
+####################################################
 
 ## Part 1:
 # Import libraries
@@ -18,7 +15,7 @@ print('Python version ' + sys.version)
 print('Pandas version: ' + pd.__version__)
 print('Matplotlib version ' + matplotlib.__version__)
 ##################################################
-
+## Creating Data
 We will be creating our own test data for analysis.
 ## Part 3:
 # set seed
@@ -79,7 +76,7 @@ myDF.head()
 # Save results to excel
 myDF.to_excel('Lesson3.xlsx', index=False)
 print('Done')
-Done
+
 #########################################################################
 
 ## Grab Data from Excel
@@ -131,10 +128,9 @@ myDF['State'].unique()
 # Only grab where Status == 1
 mask = myDF['Status'] == 1
 myDF = myDF[mask]
-To turn the NJ states to NY we simply...
 
-[myDF.State == 'NJ'] - Find all records in the State column where they are equal to NJ.
-myDF.State[myDF.State == 'NJ'] = 'NY' - For all records in the State column where they are equal to NJ, replace them with NY.
+[myDF.State == 'NJ'] ##- Find all records in the State column where they are equal to NJ.
+myDF.State[myDF.State == 'NJ'] = 'NY' ##- For all records in the State column where they are equal to NJ, replace them with NY.
 
 ## Part 15:
 # Convert NJ to NY
@@ -146,40 +142,41 @@ myDF['State'][mask] = 'NY'
 ## Part 16:
 myDF['State'].unique()
 
-At this point we may want to graph the data to check for any outliers or inconsistencies in the data. We will be using the plot() attribute of the dataframe.
-
-As you can see from the graph below it is not very conclusive and is probably a sign that we need to perform some more data preparation.
+## At this point we may want to graph the data to check for any outliers or inconsistencies in the data. 
+## We will be using the plot() attribute of the dataframe.
+##
+## As you can see from the graph below it is not very conclusive and is probably a sign that we need
+##   to perform some more data preparation.
 
 ## Part 17:
 myDF['CustomerCount'].plot(figsize=(15,5));
 
-If we take a look at the data, we begin to realize that there are multiple values for the same State, StatusDate, and Status combination. It is possible that this means the data you are working with is dirty/bad/inaccurate, but we will assume otherwise. We can assume this data set is a subset of a bigger data set and if we simply add the values in the CustomerCount column per State, StatusDate, and Status we will get the Total Customer Count per day.
+## If we take a look at the data, we begin to realize that there are multiple values for the same 
+##    State, StatusDate, and Status combination. 
+## It is possible that this means the data you are working with is dirty/bad/inaccurate, but we will assume otherwise.
+## We can assume this data set is a subset of a bigger data set and if we simply add the values in the CustomerCount 
+##     column per State, StatusDate, and Status we will get the Total Customer Count per day.
 
 ## Part 18:
 sortmyDF = myDF[myDF['State']=='NY'].sort_index(axis=0)
 sortmyDF.head(10)
-Out[18:
-State	Status	CustomerCount
-StatusDate			
-2009-01-19	NY	1	522
-2009-02-23	NY	1	710
-2009-03-09	NY	1	992
-2009-03-16	NY	1	355
-2009-03-23	NY	1	728
-2009-03-30	NY	1	863
-2009-04-13	NY	1	520
-2009-04-20	NY	1	820
-2009-04-20	NY	1	937
-2009-04-27	NY	1	447
-Our task is now to create a new dataframe that compresses the data so we have daily customer counts per State and StatusDate. We can ignore the Status column since all the values in this column are of value 1. To accomplish this we will use the dataframe's functions groupby and sum().
 
-Note that we had to use reset_index . If we did not, we would not have been able to group by both the State and the StatusDate since the groupby function expects only columns as inputs. The reset_index function will bring the index StatusDate back to a column in the dataframe.
+#################################
+# Our task is now to create a new dataframe that compresses the data so we have daily customer counts per State and StatusDate. 
+# We can ignore the Status column since all the values in this column are of value 1. 
+# To accomplish this we will use the dataframe's functions groupby and sum().
+
+# Note that we had to use reset_index . 
+# If we did not, we would not have been able to group by both the State and the StatusDate since the groupby 
+#   function expects only columns as inputs. The reset_index function will bring the index StatusDate 
+#   back to a column in the dataframe.
 
 ## Part 19:
 # Group by State and StatusDate
 Daily = myDF.reset_index().groupby(['State','StatusDate']).sum()
 Daily.head()
 
+###################################
 The State and StatusDate columns are automatically placed in the index of the Daily dataframe. You can think of the index as the primary key of a database table but without the constraint of having unique values. Columns in the index as you will see allow us to easily select, plot, and perform calculations on the data.
 
 Below we delete the Status column since it is all equal to one and no longer necessary.
@@ -229,10 +226,10 @@ Daily.loc['TX']['2012':].plot();
 
 We will assume that per month the customer count should remain relatively steady. Any data outside a specific range in that month will be removed from the data set. The final result should have smooth graphs with no spikes.
 
-StateYearMonth - Here we group by State, Year of StatusDate, and Month of StatusDate.
+### StateYearMonth - Here we group by State, Year of StatusDate, and Month of StatusDate.
 Daily['Outlier'] - A boolean (True or False) value letting us know if the value in the CustomerCount column is ouside the acceptable range.
 
-We will be using the attribute transform instead of apply. The reason is that transform will keep the shape(# of rows and columns) of the dataframe the same and apply will not. By looking at the previous graphs, we can realize they are not resembling a gaussian distribution, this means we cannot use summary statistics like the mean and stDev. We use percentiles instead. Note that we run the risk of eliminating good data.
+### We will be using the attribute transform instead of apply. The reason is that transform will keep the shape(# of rows and columns) of the dataframe the same and apply will not. By looking at the previous graphs, we can realize they are not resembling a gaussian distribution, this means we cannot use summary statistics like the mean and stDev. We use percentiles instead. Note that we run the risk of eliminating good data.
 
 ## Part 26:
 # Calculate Outliers
