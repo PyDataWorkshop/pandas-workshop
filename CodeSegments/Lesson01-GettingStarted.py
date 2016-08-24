@@ -1,3 +1,4 @@
+## Lession 1
 
 # Import all libraries needed for the tutorial
 
@@ -14,11 +15,11 @@ import matplotlib #only needed to determine Matplotlib version number
 
 # Enable inline plotting
 %matplotlib inline
-### Part 2]:
+### Part 2:
 print('Python version ' + sys.version)
 print('Pandas version ' + pd.__version__)
 print('Matplotlib version ' + matplotlib.__version__)
-P
+
 #################################
 
 ### Section 1 : Create Data
@@ -77,7 +78,7 @@ read_csv?
 ################################
 
 ### Part 10:
-Location = r'C:\Users\david\notebooks\update\births2016.csv'
+Location = r'C:\WorkArea\births2016.csv'
 myDF = pd.read_csv(Location)
 
 ## N.B. Notice the r before the string. 
@@ -109,6 +110,8 @@ myDF
 ## You can think of the index as the priMarissa key of a sql table with the exception that an index is allowed to have duplicates.
 ## [Names, Births] can be though of as column headers similar to the ones found in an Excel spreadsheet or sql database.
 
+#------------------------------------------------------------------#
+
 ### Part 14:
 ## Delete the csv file now that we do not need it anymore.
 
@@ -129,7 +132,10 @@ os.remove(Location)
 ## It would not make sense to have this column have a data type of float. 
 ## Let's not worry about any possible outliers at this point of the analysis at this stage.
 
-Realize that aside from the check we did on the "Names" column, briefly looking at the data inside the dataframe should be as far as we need to go at this stage of the game. As we continue in the data analysis life cycle we will have plenty of opportunities to find any issues with the data set.
+## Realize that aside from the check we did on the "Names" column, briefly looking 
+## at the data inside the dataframe should be as far as we need to go at this stage of the game. 
+## As we continue in the data analysis life cycle we will have plenty of opportunities 
+## to find any issues with the data set.
 
 ### Part 15:
 # Check data type of the columns
@@ -139,16 +145,19 @@ myDF.dtypes
 # Check data type of Births column
 myDF.Births.dtype
 
-As you can see the Births column is of type int64, thus no floats (decimal numbers) or alpha numeric characters will be present in this column.
+## As you can see the Births column is of type int64, thus no floats (decimal numbers) 
+## or alpha numeric characters will be present in this column.
 
 ##########################################
 
 ## Section 4 - Analyze Data
-To find the most popular name or the baby name with the higest birth rate, we can do one of the following.
+## To find the most popular name or the baby name with the higest birth rate, we can do one of the following.
 
-Sort the dataframe and select the top row
-Use the max() attribute to find the maximum value
+## Sort the dataframe and select the top row
+## Use the max() attribute to find the maximum value
+
 ### Part 17:
+
 # Method 1:
 Sorted = myDF.sort_values(['Births'], ascending=False)
 Sorted.head(1)
@@ -156,21 +165,29 @@ Sorted.head(1)
 ### Part 18]:
 # Method 2:
 myDF['Births'].max()
-
-#############################
-
+#------------------------------------------------------------------#
 ## Present Data
-Here we can plot the Births column and label the graph to show the end user the highest point on the graph. In conjunction with the table, the end user has a clear picture that David is the most popular baby name in the data set.
+## Here we can plot the Births column and label the graph to show the end user the highest point on the graph. 
+## In conjunction with the table, the end user has a clear picture that David is the most popular baby name in the data set.
 
-plot() is a convinient attribute where pandas lets you painlessly plot the data in your dataframe. We learned how to find the maximum value of the Births column in the previous section. Now to find the actual baby name of the 973 value looks a bit tricky, so lets go over it.
+## plot() is a convinient attribute where pandas lets you painlessly plot the data in your dataframe. 
+## We learned how to find the maximum value of the Births column in the previous section. 
+## Now to find the actual baby name of the 973 value looks a bit tricky, so lets go over it.
 
 ## Explain the pieces:
-myDF['Names'] - This is the entire list of baby names, the entire Names column
-myDF['Births'] - This is the entire list of Births in the year 2016, the entire Births column
-myDF['Births'].max() - This is the maximum value found in the Births column
+myDF['Names'] ## - This is the entire list of baby names, the entire Names column
+myDF['Births'] ## - This is the entire list of Births in the year 2016, the entire Births column
+myDF['Births'].max() ## - This is the maximum value found in the Births column
 
-[myDF['Births'] == myDF['Births'].max()] IS EQUAL TO [Find all of the records in the Births column where it is equal to 973]
-myDF['Names'][myDF['Births'] == myDF['Births'].max()] IS EQUAL TO Select all of the records in the Names column WHERE [The Births column is equal to 973]
+#------------------------------------------------------------------#
+
+## [myDF['Births'] == myDF['Births'].max()] 
+##    IS EQUAL TO 
+## [Find all of the records in the Births column where it is equal to 973]
+
+## myDF['Names'][myDF['Births'] == myDF['Births'].max()] 
+##   IS EQUAL TO 
+## Select all of the records in the Names column WHERE [The Births column is equal to 973]
 
 ## An alternative way could have been to use the Sorted dataframe:
 Sorted['Names'].head(1).value
