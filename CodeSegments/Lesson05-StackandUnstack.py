@@ -1,4 +1,3 @@
-
 # Lesson 5
  #We will be taking a brief look at the stack and unstack functions.
 
@@ -27,7 +26,7 @@ myDF.index
 ## --- Part5:
 # Bring the columns and place them in the index
 stack = myDF.stack()
-stack
+print(stack)
 
 ## --- Part6:
 # The index now includes the column names
@@ -45,7 +44,7 @@ unstack.index
 
 ## --- Part9:
 transpose = myDF.T
-transpose
+print(transpose)
 
 ## --- Part10:
 transpose.index
