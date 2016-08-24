@@ -1,7 +1,11 @@
+# Lesson 13
+# - Linear Algebra Functions
 
-# det()
-# solve()
-# eig()
+#############################
+
+# 1. det()
+# 2. solve()
+# 3. eig()
 
 import numpy as np
 from numpy.linalg import *
