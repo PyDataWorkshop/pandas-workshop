@@ -1,5 +1,9 @@
 ## Lesson 4
-In this lesson were going to go back to the basics. We will be working with a small data set so that you can easily understand what I am trying to explain. We will be adding columns, deleting columns, and slicing the data many different ways. Enjoy!
+## In this lesson were going to go back to the basics. 
+## We will be working with a small data set so that you can easily understand what I am trying to explain. 
+## We will be adding columns, deleting columns, and slicing the data many different ways.
+
+#####################################
 
 # Import libraries
 import pandas as pd
@@ -7,16 +11,16 @@ import sys
 ##  -- Part2:
 print('Python version ' + sys.version)
 print('Pandas version: ' + pd.__version__)
-Python version 3.4.3 |Anaconda 2.4.0 (64-bit)| (default, Dec  1 2015, 11:39:45) [MSC v.1600 64 bit (AMD64)]
-Pandas version: 0.17.1
+
+##################################
 
 
 ##  -- Part3:
 # Our small data set
-d = [0,1,2,3,4,5,6,7,8,9]
+somedata = [0,1,2,3,4,5,6,7,8,9]
 
 # Create dataframe
-myDF = pd.DataFrame(d)
+myDF = pd.DataFrame(somedata)
 myDF
 
 
@@ -55,7 +59,7 @@ i = ['a','b','c','d','e','f','g','h','i','j']
 myDF.index = i
 myDF
 
-We can now start to select pieces of the dataframe using loc.
+## We can now start to select pieces of the dataframe using loc.
 
 ##  -- Part10:
 myDF.loc['a']
@@ -72,7 +76,7 @@ myDF.loc['a':'d']
 myDF.iloc[0:3]
 
 
-We can also select using the column name.
+## We can also select using the column name.
 
 ##  -- Part13:
 myDF['Rev']
@@ -85,7 +89,7 @@ myDF[['Rev', 'test']]
 # myDF.ix[rows,columns]
 myDF.ix[0:3,'Rev']
 
-Name: Rev, dtype: int64
+
 ##  -- Part16:
 myDF.ix[5:,'col']
 
