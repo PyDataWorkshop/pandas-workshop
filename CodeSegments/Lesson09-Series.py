@@ -1,15 +1,11 @@
 
 # Introduction to pandas Series
 
-
+#############################################################################
 # Preliminaries
 # Imports
 #  - not everything here is necessary for this particular exercise
-#  - Saves some typing for these exercises.
-​
-from __future__ import division
-from __future__ import print_function
-from __future__ import print_function, division
+
 from numpy import array
 from numpy import sqrt
 from pandas import Series
