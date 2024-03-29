@@ -3,39 +3,6 @@
 
 
 
-\documentclass[11pt]{article} % use larger type; default would be 10pt
-
-\usepackage[utf8]{inputenc} 
-\usepackage{geometry} % to change the page dimensions
-\geometry{a4paper} 
-\usepackage{graphicx} 
-\usepackage{booktabs} % for much better looking tables
-\usepackage{array} % for better arrays (eg matrices) in maths
-\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
-\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
-\usepackage{subfig} 
-\usepackage{framed}
-\usepackage{subfiles}
-\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
-\pagestyle{fancy} % options: empty , plain , fancy
-\renewcommand{\headrulewidth}{0pt} % customise the layout...
-\lhead{}\chead{Data Analysis with Python}\rhead{}
-\lfoot{}\cfoot{\thepage}\rfoot{}
-%--------------------------------------------------------------------------------------------%
-\usepackage{sectsty}
-\allsectionsfont{\sffamily\mdseries\upshape} 
-\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
-\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
-\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
-\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
-%--------------------------------------------------------------------------------------------%
-
-\title{Brief Article}
-\author{The Author}
-%--------------------------------------------------------------------------------------------%
-
-\begin{document}
-
 %------------------------------------------------------------------ %
 
 Using pandas on the MovieLens dataset
@@ -105,7 +72,7 @@ GROUP BY title
 ORDER BY 2 DESC
 LIMIT 25;
 \end{verbatim}
-\end{framed}
+
 Alternatively, pandas has a nifty value_counts method - yes, this is simpler - the goal above was to show a basic groupby example.
 
 \begin{verbatim}
@@ -146,7 +113,7 @@ Which movies are most highly rated?
 movie_stats = lens.groupby('title').agg({'rating': [np.size, np.mean]})
 print movie_stats.head()
 \end{verbatim}
-\end{framed}
+
                            rating          
                              size      mean
 title                                      
@@ -165,7 +132,7 @@ Let's sort the resulting DataFrame so that we can see which movies have the high
 # sort by rating average
 print movie_stats.sort([('rating', 'mean')], ascending=False).head()
 \end{verbatim}
-\end{framed}
+
 
 
                                             rating      

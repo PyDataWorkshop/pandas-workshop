@@ -1,23 +1,13 @@
-% Greg Reda
-\documentclass[]{article}
 
-\usepackage{framed}
-\usepackage{graphicx}
-
-%opening
-\title{}
-\author{}
-
-\begin{document}
 \section{Working with DataFrames - by Greg Reda}
 
-\begin{itemize}
-\item Now that we can get data into a DataFrame, we can finally start working with them.
+
+*  Now that we can get data into a DataFrame, we can finally start working with them.
 % pandas has an abundance of functionality, far too much for me to cover in this introduction. I'd encourage anyone interested in %diving deeper into the library to check out its excellent documentation. Or just use Google - there are a lot of Stack Overflow %questions and blog posts covering specifics of the library.
-\item 
+*  
 We'll be using the MovieLens dataset in many examples going forward. The dataset contains 100,000 ratings made by 943 users on 1,682 movies.
 
-\end{itemize}
+
 %--------------------------------%
 \begin{framed}
 \begin{verbatim}
@@ -34,7 +24,7 @@ m_cols = ['movie_id', 'title', 'release_date', 'video_release_date', 'imdb_url']
 movies = pd.read_csv('ml-100k/u.item', sep='|', names=m_cols, 
 usecols=range(5))
 \end{verbatim}
-\end{framed}
+
 %--------------------------------%
 \subsection{Inspection of the Data Set}
 
@@ -55,13 +45,13 @@ dtypes: float64(1), int64(1), object(3)
 \end{verbatim}
 The output tells a few things about our DataFrame.
 
-\begin{itemize}
-\item It is eveidently an instance of a DataFrame.
-\item Each row was assigned an index of 0 to N-1, where N is the number of rows in the DataFrame. pandas will do this by default if an index is not specified. Don't worry, this can be changed later.
-\item There are 1,682 rows (every row must have an index).
-\item  dataset has five total columns, one of which isn't populated at all (video\_release\_date) and two that are missing some values (\texttt{release\_date} and \texttt{imdb\_url}).
-\item The last line displays the datatypes of each column, but not necessarily in the corresponding order to the listed columns. You should use the dtypes method to get the datatype for each column.
-\end{itemize}
+
+*  It is eveidently an instance of a DataFrame.
+*  Each row was assigned an index of 0 to N-1, where N is the number of rows in the DataFrame. pandas will do this by default if an index is not specified. Don't worry, this can be changed later.
+*  There are 1,682 rows (every row must have an index).
+*   dataset has five total columns, one of which isn't populated at all (video\_release\_date) and two that are missing some values (\texttt{release\_date} and \texttt{imdb\_url}).
+*  The last line displays the datatypes of each column, but not necessarily in the corresponding order to the listed columns. You should use the dtypes method to get the datatype for each column.
+
 
 \begin{verbatim}
 movies.dtypes
@@ -75,7 +65,7 @@ video_release_date    float64
 imdb_url               object
 dtype: object
 \end{verbatim}
-\end{framed}
+
 DataFrame's also have a describe method, which is great for seeing basic statistics about the dataset's numeric columns. Be careful though, since this will return information on all columns of a numeric datatype.
 
 \begin{verbatim}
@@ -114,7 +104,7 @@ print movies.head()
 3  http://us.imdb.com/M/title-exact?Get%20Shorty%...  
 4  http://us.imdb.com/M/title-exact?Copycat%20(1995)  
 \end{verbatim} 
-\end{framed}
+
 %---------------------------------------------------- %
 \begin{framed}
 \begin{verbatim}
@@ -129,7 +119,7 @@ print movies.tail(3)
 1680                 NaN  http://us.imdb.com/M/title-exact?You%20So%20Cr...  
 1681                 NaN  http://us.imdb.com/M/title-exact?Schrei%20aus%...  
 \end{verbatim}
-\end{framed}
+
 Alternatively, Python's regular slicing syntax works as well.
 
 \begin{verbatim}
@@ -143,7 +133,7 @@ print movies[20:22]
 21  http://us.imdb.com/M/title-exact?Braveheart%20...  
 \end{verbatim}
 %--------------------------------%
-\newpage
+
 
 \subsection{Selecting}
 
@@ -162,7 +152,7 @@ Out[38]:
 4         other
 Name: occupation, dtype: object
 \end{verbatim}
-\end{framed}
+
 
 %-----------------------------------------%
 To select multiple columns, simply pass a list of column names to the DataFrame, the output of which will be a DataFrame.
@@ -191,7 +181,7 @@ print users[columns_you_want].head()
 3  technician   M
 4       other   F
 \end{verbatim}
-\end{framed}
+
 
 %-----------------------------------------%
 Row selection can be done multiple ways, but doing so by an individual index or boolean indexing are typically easiest.
@@ -226,7 +216,7 @@ print users[(users.sex == 'F') | (users.age < 30)].head(3)
 1        2   53   F       other    94043
 2        3   23   M      writer    32067
 \end{verbatim}
-\end{framed}
+
 Since our index is kind of meaningless right now, let's set it to the userid\_ using the set\_index method. By default, set\_index returns a new DataFrame, so you'll have to specify if you'd like the changes to occur in place.
 
 This has confused me in the past, so look carefully at the code and output below.
@@ -252,7 +242,7 @@ user_id
 5         33   F       other    15213
 
 \end{verbatim}
-\end{framed}
+
 \begin{framed}
 	\begin{verbatim}
    user_id  age sex  occupation zip_code
@@ -275,7 +265,7 @@ user_id
 ^^^ set_index actually returns a new DataFrame. ^^^
 
 \end{verbatim}
-\end{framed}
+
 If you want to modify your existing DataFrame, use the inplace parameter.
 
 
@@ -291,7 +281,7 @@ user_id
 4         24   M  technician    43537
 5         33   F       other    15213
 \end{verbatim}
-\end{framed}
+
 
 %-----------------------------------------%
 Notice that we've lost the default pandas 0-based index and moved the user\_id into its place. We can select rows based on the index using the ix method.
@@ -314,7 +304,7 @@ Name: 99, dtype: object
 50    21   M      writer    52245
 300   26   F  programmer    55106
 \end{verbatim}
-\end{framed}
+
 
 If we realize later that we liked the old pandas default index, we can just \texttt{reset\_index}. The same rules for inplace apply.
 \begin{framed}
@@ -328,13 +318,13 @@ print users.head()
 3        4   24   M  technician    43537
 4        5   33   F       other    15213
 \end{verbatim}
-\end{framed}
+
 
 
 %-----------------------------------------%
 I've found that I can usually get by with boolean indexing and the \texttt{ix} method, but pandas has a whole host of other ways to do selection.
 
-\newpage
+
 \subsection{Joining}
 
 Throughout an analysis, we'll often need to merge/join datasets as data is typically stored in a relational manner.
@@ -380,8 +370,8 @@ print right_frame
 3    5           i
 4    6           j
 \end{verbatim}
-\end{framed}
-\newpage
+
+
 %-----------------------------------------%
 \subsection{inner join (default)}
 
@@ -393,7 +383,7 @@ print pd.merge(left_frame, right_frame, on='key', how='inner')
 1    3          d           g
 2    4          e           h
 \end{verbatim}
-\end{framed}
+
 
 %-----------------------------------------%
 We lose values from both frames since certain keys do not match up. The SQL equivalent is:
@@ -424,7 +414,7 @@ print pd.merge(left_frame, right_frame, on='key', how='left')
 3    3          d           g
 4    4          e           h
 \end{verbatim}
-\end{framed}
+
 
 We keep everything from the left frame, pulling in the value from the right frame where the keys match up. The right_value is NULL where keys do not match (NaN).
 \begin{framed}
@@ -456,7 +446,7 @@ RIGHT JOIN right_frame
     ON left_frame.key = right_frame.key;
 full outer join
 \end{verbatim}
-\end{framed}
+
 
 
 \begin{framed}
@@ -471,7 +461,7 @@ print pd.merge(left_frame, right_frame, on='key', how='outer')
 5    5        NaN           i
 6    6        NaN           j
 \end{verbatim}
-\end{framed}
+
 
 %-----------------------------------------%
 We've kept everything from both frames, regardless of whether or not there was a match on both sides. Where there was not a match, the values corresponding to that key are NULL.
@@ -484,7 +474,7 @@ FROM left_frame
 FULL OUTER JOIN right_frame
     ON left_frame.key = right_frame.key;
 %--------------------------------%
-\newpage
+
 \section{Combining}
 
 pandas also provides a way to combine DataFrames along an axis - pandas.concat. While the function is equivalent to SQL's UNION clause, there's a lot more that can be done with it.
@@ -508,7 +498,7 @@ key	left_value	right_value
 3	 5	 NaN	 i
 4	 6	 NaN	 j
 \begin{verbatim}
-\end{framed}
+
 
 %-----------------------------------------%
 By default, the function will vertically append the objects to one another, combining columns with the same name. We can see above that values not matching up will be NULL.
@@ -555,7 +545,7 @@ Name,Position Title,Department,Employee Annual Salary
 "AARON,  ELVIA J",WATER RATE TAKER,WATER MGMNT,$85512.00
 "AARON,  JEFFERY M",POLICE OFFICER,POLICE,$75372.00
 \begin{verbatim}
-\end{framed}
+
 
 %-----------------------------------------%
 Since the data contains a dollar sign for each salary, python will treat the field as a series of strings. We can use the converters parameter to change this when reading in the file.
@@ -579,7 +569,7 @@ print chicago.head()
 3    ABAD JR,  VICENTE M         CIVIL ENGINEER IV       WATER MGMNT   99648
 4  ABBATACOLA,  ROBERT J       ELECTRICAL MECHANIC          AVIATION   89440
 \begin{verbatim}
-\end{framed}
+
 
 %-----------------------------------------%
 pandas groupby returns a DataFrameGroupBy object which has a variety of methods, many of which are similar to standard SQL aggregate functions.
@@ -614,7 +604,7 @@ TREASURER           25
 WATER MGMNT       1857
 dtype: int64
 \begin{verbatim}
-\end{framed}
+
 
 %-----------------------------------------%
 Summation can be done via sum, averaging by mean, etc. (if it's a SQL function, chances are it exists in pandas). Oh, and there's median too, something not available in most databases.
@@ -653,7 +643,7 @@ IPRA                82524
 LAW                 66492
 LICENSE APPL COMM   65436
 \begin{verbatim}
-\end{framed}
+
 
 %-----------------------------------------%
 \end{document}
